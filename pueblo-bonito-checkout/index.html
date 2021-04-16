@@ -29,24 +29,22 @@
 <script type="text/javascript" src="https://www.reservhotel.com/ibe5/assets/js/sisy.js"></script>
 <script src='https://www.google.com/recaptcha/api.js?onload=recaptchaOnload&render=explicit' async defer></script>
 <script>
-                    var _captchaTries = 0;
-                    function recaptchaOnload() {
-                        _captchaTries++;
-                        if (_captchaTries > 9)
-                            return;
-                        if ($('.g-recaptcha').length > 0) {
-                            grecaptcha.render("recaptcha", {
-                                sitekey: "6LfX6qAUAAAAAFf3k6o4QvqIdCHKAxWmnnWEUVQL",
-                                callback: function() {
-                                }
-                            });
-                            return;
-                        }
-                        window.setTimeout(recaptchaOnload, 1000);
-                    }
-                </script>
+  var _captchaTries = 0;
+  function recaptchaOnload() {
+    _captchaTries++;
+    if (_captchaTries > 9)
+        return;
+    if ($('.g-recaptcha').length > 0) {
+      grecaptcha.render("recaptcha", {
+        sitekey: "6LfX6qAUAAAAAFf3k6o4QvqIdCHKAxWmnnWEUVQL",
+        callback: function() {}
+      });
+      return;
+    }
+    window.setTimeout(recaptchaOnload, 1000);
+  }
+</script>
 <script>
-  alert("first");
   window.upReady = function(){
     alert('up ready');
   }
