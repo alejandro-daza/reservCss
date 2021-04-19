@@ -1,0 +1,12 @@
+.payment-options-list{
+   margin-left: 1em;
+}
+
+.depp_label{
+   display: inline-block;
+}
+
+.up-payment-switch-container {
+   margin-left: 0 !important;
+   width: 100%;
+}
