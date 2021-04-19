@@ -1,0 +1,2659 @@
+
+
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"><!--<![endif]-->
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+   <title>Catalonia Hotel Test Only - Hotel Itinerary</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+   <link href="//fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://www.reservhotel.com/ibe5/assets/css/confirmation_new.css">
+   <link rel="stylesheet" href="https://www.reservhotel.com/ibe5/assets/css/modal_index.css">
+   <link rel="stylesheet" href="https://www.reservhotel.com/ibe5/assets/css/perfect-scrollbar-0.4.5.min.css">
+   <link rel="stylesheet" href="https://www.reservhotel.com/ibe5/assets/css/jquery.fancybox.css">
+   <link rel="stylesheet" href="https://www.reservhotel.com/ibe5/assets2/css/jquery-ui.min.css">
+   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://www.reservhotel.com/ibe5/assets2/css/jquery-ui.theme.min.css">
+   <meta property="og:url" content="http://www.reservhotel.com/win/owa/ibe5.main?hotel=444" />
+   <meta property="og:type" content="website" />
+   <meta property="og:title" content="CATALONIA HOTEL TEST ONLY" />
+   <meta property="og:description" content="Book now for CATALONIA HOTEL TEST ONLY" />
+   <meta property="og:image" content="http://www.reservhotel.com" />
+   <meta property="og:image:secure_url" content="https://www.reservhotel.com" />
+   <style type="text/css">
+
+      body{
+         height: 100%;
+      }
+      .flag{width:14px;}
+      #price_compare_XML li{
+         display: list-item;
+      }
+      .hide{display:none;}
+      .iti-flag.hr{position:inherit !important;}
+      .intl-tel-input{width:100%;}
+      .childages_font{
+         font-family: 'FiraSans-Regular' !important;
+         font-weight: lighter;
+         font-size: 14.1px;
+      }
+      .owl-carousel .owl-dots.disabled, .owl-carousel .owl-nav.disabled{display:block !important;}
+      .airport-input.ui-autocomplete-input.invalid{border: 1px solid red !important;}
+      .bdisabled{
+         background: #c6c6c6 !important;
+      }
+
+      .buttontextbottom .price:before, .money-format:before, .flightclassinner .price:before, .money:before, .grand:before, .price-total:before, .col-content .price:before, .col-content-right .price:before, .custom-price:before, .money:before, .prices-box-inner .f-right:before{
+         content: '$';
+      }
+
+      .buttontextbottom .price:after, .money-format:after,.money:after, .flightclassinner .price:after, .grand:after, .price-total:after, .col-content .price:after, .col-content-right .price:after, .custom-price:after, .money:after, .prices-box-inner .f-right:after{
+         content: 'usd';
+      }
+
+
+      .lowest-rate-wrap .lowest-rate:before {
+         content: '$';
+      } 
+
+      .box{margin: auto;border: 1px solid #ccc;padding-top: 30px;padding-left: 20px;padding-right: 20px;padding-bottom: 30px;;text-align:center;}
+
+      header#header .header-image-box {
+      height: 113px;
+      margin-top: 32px;
+      position: relative;
+      background: #FFF no-repeat;
+      background-position: center;
+      background-size: contain;
+      }
+
+      @media screen and (max-width: 768px) {
+         header#header .header-image-box {
+            height: 113px;
+            margin-top: 32px;
+            position: relative;
+            background: #FFF no-repeat;
+            background-position: center;
+            background-size: contain;
+         }
+         
+         
+         .hotel-list-box .compare-btn2, .hotel-list-box .select-room-btn2 {
+            font-size: 14px;
+            padding: 10px;
+         }
+
+      }
+
+      /* @media screen and (max-width: 1000px) {
+            body {
+                  background : #E0E0E0 !important;
+            }
+      } */
+
+      @media screen and (max-width: 480px) {
+         header#header .header-image-box {
+            height: 113px;
+            margin-top: 32px;
+            position: relative;
+            background: #FFF no-repeat;
+            background-position: center;
+            background-size: contain;
+         }
+            
+      }
+
+      
+      @media screen and (max-width: 480px) {
+         .mobile_only {
+               display: block;
+         }
+      }
+
+      @media screen and (min-width: 481px) {
+         .mobile_only {
+               display: none;
+         }
+      }
+
+      @media screen and (min-width: 481px) {
+         .web_only {
+               display: block;
+         }
+      }
+
+      @media screen and (max-width: 480px) {
+         .web_only, .compare-btn2 {
+               display: none;
+         }
+      }
+         
+
+      body {
+         background: linear-gradient(to bottom, #E0E0E0, #B3B3B3) 
+      }
+      .all-wrap { background-color: #FFF;}
+
+      .travel-options .ui-autocomplete li a {
+         text-align: initial;
+      }
+      .travel-options .ui-autocomplete{
+         width:299px !important;
+      }
+      .ui-menu-item h5 {
+         text-align: initial;
+         margin-left: 27px;
+         font-size: 10px;
+      }
+
+      .strike{font-size:14px;  text-align: center;}
+
+      #myProgress {
+         width: 100%;
+         background-color: #ddd;
+      }
+
+      .loader4 {
+         height: 10px;
+         width: 100%;
+         position: relative;
+         overflow: hidden;
+         background-color: #ddd;
+      }
+      .loader4:before{
+         display: block;
+         position: absolute;
+         content: "";
+         left: -200px;
+         width: 200px;
+         height: 10px;
+         background-color: #030303;
+         animation: loading 4s linear infinite;
+      }
+
+      @keyframes loading {
+         from {left: -380px; width: 40%;}
+         50% {width: 40%;}
+         70% {width: 40%;}
+         80% { width: 40%;}
+         95% {width: 40%;}
+         to {left: 100%;}
+      }
+
+                     
+      #footer { background-color:  #F7F7F7; color: #BBB !important;}
+      header#header>div.top-nav .travel-summary-box>.summary { color: #BBB !important;}
+      :root { --padlock-color:white;}
+      .select-room-btn2{margin-left:5px;margin-top:5px;}
+      .moreflightbtn,#next-step.enabled,#next-step-2.enabled,#ch_submit,.container-imgun {background-color: #030303 !important}
+      .rate-types-list>li .rate-type .rate-type-btn,.rate-type-btn,.compare-btn,.compare-btn-summ,.add-amenity-btn,.select-room-btn2,.select-room-btn,.select-btn,.select-btn-summ,.load-more-flights,.edit-link,.details-link,.yes,.reglog,.section_right {background-color: #030303 !important; border-radius: 1px !important;}
+      .rate-types-list>li .rate-type.selected .price .rate-type-btn {background: #030303 url('https://www.reservhotel.com/ibe5/assets/images/right-arrow-selected.png') no-repeat 92% center !important;}
+      .travel-summary-box.active,.travel-summary-box:hover { background: #030303 !important ;}
+      .compare-btn2:hover,.select-room-btn2:hover{background: #030303;}
+      .pop-up-title-match,.btn-gold{background: #030303 !important;color:#ffffff !important}
+      .travel-summary-box:hover, .rate-types-list>li .rate-type .price .rate-type-btn:hover, .btn-gold:hover, #next-step.enabled:hover, #next-step-2.enabled:hover, .select-room-btn2:hover { background: #030303 !important; filter: brightness(115%) !important;   }
+      .fa-check-circle,#reset-calendar {color:#030303 !important;}
+      .Rectangulo{ border-bottom:15px solid #030303 !important; border-top: 13px solid #030303 !important;}
+      header#header>div.top-nav .travel-summary-box, header#header>div.top-nav .travel-summary-box>.summary  { background-color:  #030303; color: #000000 !important;}
+      :root { --shadow-color:#030303; --main-bg-color:#030303; } .modal__header,.word1{color:#030303;}.cls-2{fill:#030303}
+      .container-link {border: 1.2px solid #030303 !important;}
+      .flightclassinner .price, .flightclassinner .price-detail, .altairline{color: #030303 !important;}
+      .fcrhov:hover,.fcrhov:hover .price, .fcrhov:hover .price-detail, .fcrhov:hover .notavail{color: #fff !important;background-color: #030303 !important;cursor:pointer;}
+      .box{border: 1px solid #030303 !important;color: #030303 !important;}
+      .info-v { color: #000000 !important}
+      header#header>.sec-nav>ul.steps>li.current {color: #000000 !important; border-bottom: 2px solid #000000 !important; }
+   </style>
+   <script type="text/javascript" src="https://www.reservhotel.com/ibe5/assets/js/jquery-3.5.1.min.js"></script>
+   <script type="text/javascript" src="https://www.reservhotel.com/ibe5/assets2/js/jquery-ui.min.js"></script>
+   <script type="text/javascript" src="https://www.reservhotel.com/ibe5/assets/js/script-ck.js"></script>
+   <script type="text/javascript" src="https://www.reservhotel.com/ibe5/assets/js/libs/jquery.flexslider.min.js"></script>
+   <script type="text/javascript" src="https://www.reservhotel.com/ibe5/assets/js/libs/jquery.fancybox.pack.js"></script>
+   <script>
+
+      function getChangeOpts(){
+         var opt = $("#change-opt").val();
+         if (opt != -1){
+            $("#itin-content").hide();
+            $("#itin-content" + opt).show();        
+         }
+
+         if (opt == "07"){
+            getQuotes("ChangeRoomRate");
+         }
+      }
+
+      function showCancel() {
+         $.fancybox({
+            href: '#modifications',
+            fitToView  : false,
+            autoSize: true,
+            wrapCSS    : "custom-pop-up",
+            padding    : 0,
+            maxWidth: "90%",
+            margin     : 15,
+            closeClick  : false,
+            'closeBtn' : true,
+            'hideOnOverlayClick':true,
+            'hideOnContentClick':false
+         });
+      }
+
+      function validateCancel(){
+
+      if ($("#lastname2").val() == ""){
+         $("#lastname2").css("border", "1px solid red");
+         return false;
+      }
+
+      $.ajax({
+         type: "GET",
+         url: "ibe5_ext.CHECK_RES",
+         dataType: "html",
+         data: {
+               hotel: "444",
+               conf: $("#confCancel").val(),
+               lastname: $("#lastname2").val(),
+               firstname: $("#firstname1").val(),
+               aYear: $("#aYear1").val(),
+               aMon: $("#aMon1").val(),
+               aDay: $("#aDay1").val(),
+               dYear: $("#dYear1").val(),
+               dMon: $("#dMon1").val(),
+               dDay: $("#dDay1").val(),
+               cc: $("#cc41").val()
+         },
+         success: function( response ) {                                       
+               if (response == -1){
+                  $('.error_message_content').empty().append('<p class="center a95f5f">Sorry that reservation does not match our records.  Please check and try again.</p>');
+                  $.fancybox({
+                     href: '#error-pop-up',
+                     fitToView  : false,
+                     autoSize: true,
+                     closeClick  : true,
+                     wrapCSS    : 'custom-pop-up',
+                     padding    : 0,
+                     maxWidth: "90%",
+                     margin     : 15
+                  });
+               } else {
+                  location.href= "https://www.reservhotel.com/win/owa/ibe5_ext.check_itin?hotel=444&lang=1&conf=" + response + "&lastname=" + $("#lastname2").val();
+               }
+         }
+      });
+      return false;
+   }
+
+      function saveQuotes(xAction, MCO){
+
+         $("#final-btn1").hide(200);
+         if (xAction == "ChangeRoomRates"){
+               $("#itin-final-sub").append("<h4 id='processing'>Processing...</h4>");
+               
+               $(".room-rate").each(function(){
+                  if($(this).is(':checked')){
+                     MCO = $(this).attr("mco");
+                  }
+               });
+
+         } else {
+               $("#itin-final-sub").append("<h4 id='processing'>Processing...</h4>");
+         }
+         
+         $(".red").remove();
+         
+         if (Number(MCO).toFixed(2) > 0){
+               var req = "conf=B213360&amount=" + Number(MCO).toFixed(2);
+               $.ajax({
+                     type: "get", 
+                     data: req, 
+                     url: "https://www.reservhotel.com/win/owa/CHARGE_EXTRA_MCO",
+                     success: function(res) {
+                           if (res.toLowerCase().indexOf("1") >= 0){                            
+                              continueSave(xAction,MCO);
+                           } else {
+                              if (res.toLowerCase().indexOf("0") == 0){
+                                 $("#itin-final-sub").html("<h4 class='red'>Error</h4>");
+                              } else {
+                                 $("#itin-final-sub").html("<h4 class='red'>"+res+"</h4>");
+                              }
+                              return false;
+                           }
+                     },
+                     error: function(res) {
+                           $("#itin-final-sub").html("<h4 class='red'>Error</h4>");
+                           return false;
+                     }
+               });
+         } else {
+               continueSave(xAction,MCO);
+         }
+
+      }
+
+      function continueSave(xAction,MCO) {
+         
+         if (xAction == "ChangeRoomRates"){
+               
+               var room = "";
+               var rate = "";
+               var diff = "";
+               
+               $(".room-rate").each(function(){
+                  if($(this).is(':checked')){
+                     room = $(this).attr("room");
+                     rate = $(this).attr("rate");
+                     diff = $(this).attr("diff");
+                     MCO = $(this).attr("mco");
+                  }
+               });
+
+               if (room == "" || rate == ""){
+                  $("#processing").remove();
+                  $("#itin-final-sub").append("<h4 class='red'>Select Hotel Rate:</h4>");
+                  $("#final-btn1").show(200);
+                  return;
+               }
+
+               var req = "xXML=<OTA_ActionRQ><UniqueID ResID='B213360'/><Action value='ChangeRoomRate' confirm='true' usr='' isAgent='' ><Parameters room='"+room+"' rate='"+rate+"' diff='"+diff+"' /></Action></OTA_ActionRQ>";
+               $("#itin-final-main").html("Loading.....");
+               $("#itin-final").show();
+               $("#itin-content07").hide();
+               $("#final-btn1, #final-btn2").hide();
+               $.ajax({type: "get", 
+                     data: req, 
+                     url: "https://www.reservhotel.com/win/owa/modify_xml.controller",
+                     success: function(res) {
+                           if (res.toLowerCase().indexOf("error") > 0){                            
+                              $res = $( $.parseXML(res) );
+                              $("#itin-final-main").html($res.find( "Error" ).text());
+                              $("#final-btn3").show();
+                           } else {
+                              var xmlDoc = jQuery.parseXML(res);
+                              var it = Number($(xmlDoc).find("Difference").text()) * 1;
+                              $("#itin-final-main").html("Change Complete! Total extra cost:");
+                              $("#itin-final-sub").html(it.toFixed(2) + " ");
+                              $("#final-btn1").attr("onClick", "");
+                              $("#final-btn3").show();
+                              $("#final-btn3").attr("onclick","window.location = 'https://www.reservhotel.com/win/owa/ibe5_EXT.CHECK_ITIN?hotel=444&conf=B213360&usr=&agent=&was_modified=Y&lastname=PEREZ&lang=1&currency=';");
+                           }
+                     }
+               });
+         } else if (xAction == "saveRoom"){
+
+               
+
+               var currentRooms = "1";
+               var rooms = $("#rooms").val();
+               var req = "xXML=<OTA_ActionRQ><UniqueID ResID='B213360'/><Action value='AddRoom' confirm='true' isAgent=''><Parameters amount='"+rooms+"'/></Action></OTA_ActionRQ>";
+               $("#itin-final-main").html("Loading.....");
+               $("#itin-final").show();
+               $("#itin-content08").hide();
+               $("#final-btn1, #final-btn2").hide();
+               $.ajax({type: "get", data: req, url: "https://www.reservhotel.com/win/owa/modify_xml.controller",
+                     success: function(res) {
+                           if (res.toLowerCase().indexOf("error") > 0){                            
+                              $res = $( $.parseXML(res) );
+                              $("#itin-final-main").html($res.find( "Error" ).text());
+                              $("#final-btn3").show();
+                           } else {
+                              var xmlDoc = jQuery.parseXML(res);
+                              var it = Number($(xmlDoc).find("Difference").text()) * 1;
+                              $("#itin-final-main").html("Change Complete! Total extra cost:");
+                              $("#itin-final-sub").html(it.toFixed(2)  + " ");
+                              $("#final-btn1").attr("onClick", "");
+                              $("#final-btn3").show();
+                              $("#final-btn3").attr("onclick","window.location = 'https://www.reservhotel.com/win/owa/ibe5_EXT.CHECK_ITIN?hotel=444&conf=B213360&usr=&agent=&was_modified=Y&lastname=PEREZ&lang=1&currency=';");
+                           }
+                     }
+               });
+         } else if (xAction == "saveAdults"){
+               var currentAdults = Number("2");
+               var changeAdults = Number($("#change-adults").val());
+               var adults, fnames, lnames;
+               var ok = true;
+               if (currentAdults < changeAdults){
+                  adults = changeAdults - currentAdults;
+                  $(".fnameadd").each(function(){
+                     if ($(this).val() == ""){
+                           ok = false;
+                     }
+                     fnames += "<fname>"+$(this).val()+"</fname>";
+                  });
+                  $(".lnameadd").each(function(){
+                     if ($(this).val() == ""){
+                           ok = false;
+                     }
+                     lnames += "<lname>"+$(this).val()+"</lname>";
+                  });
+                  if (ok == false){
+                        $("#processing").remove();
+                        $("#itin-final-sub").append("<h4 class='red'>Please Enter Name(s)</h4>");
+                        $("#final-btn1").show(200);
+                        return;
+                  }
+                  var req = "xXML=<OTA_ActionRQ><UniqueID ResID='B213360'/><Action value='AddAdult' confirm='true' isAgent=''><Parameters amount='"+adults+"'/>"+fnames+lnames+"</Action></OTA_ActionRQ>";
+               } else if (currentAdults > changeAdults) {
+                  adults = currentAdults - changeAdults;
+                  var xform = "";
+                  var count = 0;
+                  $(".pass_check","#delete_in_form").each(function(){
+                     if ($(this).is(":checked")){count++;xform+="<remove_id>"+$(this).val()+"</remove_id>";}
+                  });
+                  if (count != adults){
+                     $("#processing").remove();
+                     $("#itin-final-sub").append("<h4 class='red'>Please select " + adults + " passenger(s)</h4>");
+                     $("#final-btn1").show(200);
+                     return;
+                  }
+                  var req = "xXML=<OTA_ActionRQ><UniqueID ResID='B213360'/><Action value='RemoveAdult' confirm='true' isAgent=''><Parameters amount='"+adults+"'/>"+xform+"</Action></OTA_ActionRQ>";
+               } else {
+                  $("#itin-final-main").html("Error, same number of adults");
+                  $("#final-btn1, #final-btn2").hide();
+                  $("#final-btn3").show();
+                  return;
+               }
+               $("#itin-final-main").html("Loading.....");
+               $("#itin-final").show();
+               $("#itin-content02").hide();
+               $("#final-btn1, #final-btn2").hide();
+               $.ajax({type: "get", data: req, url: "https://www.reservhotel.com/win/owa/modify_xml.controller",
+                     success: function(res) {
+                           if (res.toLowerCase().indexOf("error") > 0){                            
+                              $res = $( $.parseXML(res) );
+                              $("#itin-final-main").html($res.find( "Error" ).text());
+                              $("#final-btn3").show();
+                           } else {
+                              var xmlDoc = jQuery.parseXML(res);
+                              var it = Number($(xmlDoc).find("Difference").text()) * 1;
+                              $("#itin-final-main").html("Change Complete! Total extra cost:");
+                              $("#itin-final-sub").html(it.toFixed(2)  + " ");
+                              $("#final-btn1").attr("onClick", "");
+                              $("#final-btn3").show();
+                              $("#final-btn3").attr("onclick","window.location = 'https://www.reservhotel.com/win/owa/ibe5_EXT.CHECK_ITIN?hotel=444&conf=B213360&usr=&lastname=PEREZ&was_modified=Y&agent=&lang=1&currency=';");
+                           }
+                     }
+               });
+         } else if (xAction == "saveChildren"){
+
+               var currentChildren = "0";
+               var children, fnames, lnames;
+               var ok = true;
+               var change_children = $("#change-children").val();
+               if (currentChildren < change_children){
+                  children = change_children - currentChildren;
+                  var childages = "";
+                  $(".childages").each(function(){
+                     childages += "<age>"+$(this).val()+"</age>";
+                  });
+                  $(".fnameadd").each(function(){
+                     if ($(this).val() == ""){
+                           ok = false;
+                     }
+                     fnames += "<fname>"+$(this).val()+"</fname>";
+                  });
+                  $(".lnameadd").each(function(){
+                     if ($(this).val() == ""){
+                           ok = false;
+                     }
+                     lnames += "<lname>"+$(this).val()+"</lname>";
+                  });
+                  if (ok == false){
+                        $("#processing").remove();
+                        $("#itin-final-sub").append("<h4 class='red'>Please Enter Name(s)</h4>");
+                        $("#final-btn1").show(200);
+                        return;
+                  }
+                  var req = "xXML=<OTA_ActionRQ><UniqueID ResID='B213360'/><Action value='AddChild' confirm='true' isAgent=''><Parameters amount='"+children+"'/>"+childages+fnames+lnames+"</Action></OTA_ActionRQ>";
+            } else if (currentChildren > change_children) {
+                  children = currentChildren - change_children;
+                  var xform = "";
+                  var count = 0;
+                  $(".pass_check_children").each(function(){
+                     if ($(this).is(":checked")){count++;xform+="<remove_id>"+$(this).val()+"</remove_id>";}
+                  });
+                  if (count != children){
+                     $("#processing").remove();
+                        $("#itin-final-sub").append("<h4 class='red'>Please select " + children + " passenger(s)</h4>");
+                        $("#final-btn1").show(200);
+                     return;
+                  }
+                  var req = "xXML=<OTA_ActionRQ><UniqueID ResID='B213360'/><Action value='RemoveChild' confirm='true' isAgent=''><Parameters amount='"+children+"'/>"+xform+"</Action></OTA_ActionRQ>";
+               } else {
+                  $("#itin-final-main").html("Error, same number of children");
+                  $("#final-btn1, #final-btn2").hide();
+                  $("#final-btn3").show();    
+                  return;
+               }
+               $("#itin-final-main").html("Loading.....");
+               $("#itin-final").show();
+               $("#itin-content03").hide();
+               $("#final-btn1, #final-btn2").hide();
+               $.ajax({type: "get", data: req, url: "https://www.reservhotel.com/win/owa/modify_xml.controller",
+                     success: function(res) {
+                           if (res.toLowerCase().indexOf("error") > 0){                            
+                              $res = $( $.parseXML(res) );
+                              $("#itin-final-main").html($res.find( "Error" ).text());
+                              $("#final-btn1, #final-btn2").hide();
+                              $("#final-btn3").show();
+                              
+                           } else {
+                              var xmlDoc = jQuery.parseXML(res);
+                              var it = Number($(xmlDoc).find("Difference").text()) * 1;
+                              $("#itin-final-main").html("Change Complete! Total extra cost:");
+                              $("#itin-final-sub").html(it.toFixed(2)  + " ");
+                              $("#final-btn1").attr("onClick", "");
+                              $("#final-btn3").show();
+                              
+                              $("#final-btn3").attr("onclick","window.location = 'https://www.reservhotel.com/win/owa/ibe5_EXT.CHECK_ITIN?hotel=444&conf=B213360&usr=&was_modified=Y&lastname=PEREZ&agent=&lang=1&currency=';");
+                           }
+                     }
+               });
+         } else if (xAction == "saveInfant"){
+
+               var currentChildren = "0";
+               var children, fnames, lnames;
+               var ok = true;
+               var change_infant = $("#change-infant").val();
+               if (currentChildren < change_infant){
+                  children = change_infant - currentChildren;
+                  var childages = "";
+                  $(".childages").each(function(){
+                     childages += "<age>"+$(this).val()+"</age>";
+                  });
+                  $(".fnameadd").each(function(){
+                     if ($(this).val() == ""){
+                           ok = false;
+                     }
+                     fnames += "<fname>"+$(this).val()+"</fname>";
+                  });
+                  $(".lnameadd").each(function(){
+                     if ($(this).val() == ""){
+                           ok = false;
+                     }
+                     lnames += "<lname>"+$(this).val()+"</lname>";
+                  });
+                  if (ok == false){
+                        $("#processing").remove();
+                        $("#itin-final-sub").append("<h4 class='red'>Please Enter Name(s)</h4>");
+                        $("#final-btn1").show(200);
+                        return;
+                  }
+                  var req = "xXML=<OTA_ActionRQ><UniqueID ResID='B213360'/><Action value='AddInfant' confirm='true' isAgent=''><Parameters amount='"+children+"'/>"+childages+fnames+lnames+"</Action></OTA_ActionRQ>";
+            } else if (currentChildren > change_infant) {
+                  children = currentChildren - change_infant;
+                  var xform = "";
+                  var count = 0;
+                  $(".pass_check_infant").each(function(){
+                     if ($(this).is(":checked")){count++;xform+="<remove_id>"+$(this).val()+"</remove_id>";}
+                  });
+                  if (count != children){
+                     $("#processing").remove();
+                        $("#itin-final-sub").append("<h4 class='red'>Please select " + children + " passenger(s)</h4>");
+                        $("#final-btn1").show(200);
+                     return;
+                  }
+                  var req = "xXML=<OTA_ActionRQ><UniqueID ResID='B213360'/><Action value='RemoveInfant' confirm='true' isAgent=''><Parameters amount='"+children+"'/>"+xform+"</Action></OTA_ActionRQ>";
+               } else {
+                  $("#itin-final-main").html("Error, same number of children");
+                  $("#final-btn1, #final-btn2").hide();
+                  $("#final-btn3").show();    
+                  return;
+               }
+               $("#itin-final-main").html("Loading.....");
+               $("#itin-final").show();
+               $("#itin-content03").hide();
+               $("#final-btn1, #final-btn2").hide();
+               $.ajax({type: "get", data: req, url: "https://www.reservhotel.com/win/owa/modify_xml.controller",
+                     success: function(res) {
+                           if (res.toLowerCase().indexOf("error") > 0){                            
+                              $res = $( $.parseXML(res) );
+                              $("#itin-final-main").html($res.find( "Error" ).text());
+                              $("#final-btn1, #final-btn2").hide();
+                              $("#final-btn3").show();
+                              
+                           } else {
+                              var xmlDoc = jQuery.parseXML(res);
+                              var it = Number($(xmlDoc).find("Difference").text()) * 1;
+                              $("#itin-final-main").html("Change Complete! Total extra cost:");
+                              $("#itin-final-sub").html(it.toFixed(2)  + " ");
+                              $("#final-btn1").attr("onClick", "");
+                              $("#final-btn3").show();
+                              
+                              $("#final-btn3").attr("onclick","window.location = 'https://www.reservhotel.com/win/owa/ibe5_EXT.CHECK_ITIN?hotel=444&conf=B213360&usr=&was_modified=Y&lastname=PEREZ&agent=&lang=1&currency=';");
+                           }
+                     }
+               });
+         } else if (xAction == "saveDates"){
+
+               
+
+            $("#itin-final-main").html("Loading.....");
+               $("#itin-content01").hide();
+               $("#itin-final").show();
+               $("#final-btn1, #final-btn2").hide();
+               var req = "xXml=<OTA_ActionRQ><UniqueID ResID='B213360' /><Action value='ChangeDates' confirm='true' isAgent=''><Parameters aDate='"+$("#aDate").val()+"' dDate='"+$("#dDate").val()+"' /></Action></OTA_ActionRQ>";
+                  $.ajax({type: "get", data: req, url: "https://www.reservhotel.com/win/owa/modify_xml.controller",
+                     success: function(res) {
+                           if (res.toLowerCase().indexOf("error") > 0){                            
+                              $res = $( $.parseXML(res) );
+                              $("#itin-final-main").html($res.find( "Error" ).text());
+                              $("#final-btn3").show();
+                           } else {
+                              var xmlDoc = jQuery.parseXML(res);
+                              var it = Number($(xmlDoc).find("Difference").text()) * 1;
+                              $("#itin-final-main").html("Change Complete! Total extra cost:");
+                              $("#itin-final-sub").html(it.toFixed(2)  + " ");
+                              $("#final-btn1").attr("onClick", "");
+                              $("#final-btn3").show();
+                              
+                              $("#final-btn3").attr("onclick","window.location = 'https://www.reservhotel.com/win/owa/ibe5_EXT.CHECK_ITIN?hotel=444&conf=B213360&usr=&was_modified=Y&lastname=PEREZ&agent=&lang=1&currency=';");
+                           }
+                     }
+               });
+         } else { 
+               resetChgs();
+         }
+      }
+
+      function customEncode(xVar){
+         if (xVar){
+               var res = xVar.split("&").join("and");
+               res = encodeURIComponent(res);
+               return res;
+         } else {
+               return "";
+         }
+         
+      }
+
+      function numberWithCommas(x) {
+         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+
+      function getQuotes(xAction){
+         
+
+         if (xAction == "ChangeRoomRate"){
+               $("#itin-content07").hide();
+               var req = "xXML=<OTA_ActionRQ><UniqueID ResID='B213360'/><Action value='ChangeRoomRate' confirm='false' usr='' isAgent=''></Action></OTA_ActionRQ>";
+               $("#itin-final-main").html("Loading.....");
+               $("#itin-final").show();
+               $.ajax({type: "get", 
+                     data: req, 
+                     url: "https://www.reservhotel.com/win/owa/modify_xml.controller",
+                     success: function(res) {
+                           if (res.toLowerCase().indexOf("error") > 0){                            
+                              $res = $( $.parseXML(res) );
+                              $("#itin-final-main").html($res.find( "Error" ).text());
+                              $("#final-btn1, #final-btn2").hide();
+                              $("#final-btn3").show();
+                           } else {
+                              var xmlDoc = jQuery.parseXML(res);
+                              var form = '';
+                              $(".fancybox-wrap").width(900);
+                              $(".fancybox-inner").width(900);
+                              $.fancybox.reposition();
+                              $("#check-itinerary .pop-content").css("width","100%");
+                              $("#itin-final-main").html("Change room rate<br>*Prices display total extra cost");
+                              
+                              var temp = "";
+
+                              $(res).find("ul").each(function(){
+                                 temp += "<h3>" + $(this).attr("name") + "</h3>";
+                                 temp += "<ul class='ul-modify' style='text-align: left;list-style-type: none;padding-left: 0px;'>";
+                                 $(this).find("li").sort(function (a, b) {
+                                       return parseInt(a.id) > parseInt(b.id);
+                                 }).each(function () {
+                                       var elem = $(this);
+                                       elem.remove();
+                                       temp += "<li>" + $(elem).html().replace("<!--[CDATA[", "").replace("]]-->", "").replace("]]>", "").replace("]]&gt;", "") + "</li>";
+                                 });
+                                 temp += "</ul>";
+                              });
+
+                              $("#itin-final-sub").html(temp);
+                              $("#final-btn1, #final-btn2").show();
+                              $("#final-btn1").attr("onClick", "saveQuotes('ChangeRoomRates', 0)");
+                              
+                           }
+                     }
+               });
+         } else if (xAction == "AddRoom"){
+               $("#itin-content08").hide();
+               var currentRooms = "1";
+               var rooms = $("#rooms").val();
+               if (Number(currentRooms) == Number(rooms)) {
+                  $("#itin-final").show();
+                  $("#itin-final-main").html("Error, same number of rooms");
+                  $("#final-btn1, #final-btn2").hide();
+                  $("#final-btn3").show();
+                  return;
+               }
+               var req = "xXML=<OTA_ActionRQ><UniqueID ResID='B213360'/><Action value='AddRoom' confirm='false' isAgent=''><Parameters amount='"+rooms+"'/></Action></OTA_ActionRQ>";
+               $("#itin-final-main").html("Loading.....");
+               $("#itin-final").show();
+               $.ajax({type: "get", data: req, url: "https://www.reservhotel.com/win/owa/modify_xml.controller",
+                     success: function(res) {
+                           if (res.toLowerCase().indexOf("error") > 0){                            
+                              $res = $( $.parseXML(res) );
+                              $("#itin-final-main").html($res.find( "Error" ).text());
+                              $("#final-btn1, #final-btn2").hide();
+                              $("#final-btn3").show();
+                           } else {
+                              var xmlDoc = jQuery.parseXML(res);
+                              var form = '';
+                              var it = Number($(xmlDoc).find("Difference").text()) * 1;
+                              $("#itin-final-main").html("Change rooms from "+currentRooms+" to "+$("#rooms").val()+"");
+                              $("#itin-final-sub").html("Total extra cost: " + it.toFixed(2) + " <br>" + form);
+                              $("#final-btn1, #final-btn2").show();
+                              var MCO = 0;
+                              if ($(xmlDoc).find( "MCO" ).text() != ""){
+                                 MCO = $(xmlDoc).find( "MCO" ).text();
+                              }
+                              $("#final-btn1").attr("onClick", "saveQuotes('saveRoom', "+MCO+")");
+                              
+                           }
+                     }
+               });
+         } else if (xAction == "quoteAdults"){
+
+               $("#itin-content02").hide();
+               var currentAdults = Number("2");
+               var changeAdults = Number($("#change-adults").val());
+               var adults;
+
+               if (currentAdults < changeAdults){
+                  adults = changeAdults - currentAdults;
+                  var req = "xXML=<OTA_ActionRQ><UniqueID ResID='B213360'/><Action value='AddAdult' confirm='false' isAgent=''><Parameters amount='"+adults+"'/></Action></OTA_ActionRQ>";
+               } else if (currentAdults > changeAdults) {
+                  adults = currentAdults - changeAdults;
+                  var req = "xXML=<OTA_ActionRQ><UniqueID ResID='B213360'/><Action value='RemoveAdult' confirm='false' isAgent=''><Parameters amount='"+adults+"'/></Action></OTA_ActionRQ>";
+               } else {
+                  $("#itin-final").show();
+                  $("#itin-final-main").html("Error, same number of adults");
+                  $("#final-btn1, #final-btn2").hide();
+                  $("#final-btn3").show();
+                  return;
+               }
+               $("#itin-final-main").html("Loading.....");
+               $("#itin-final").show();
+               $.ajax({type: "get", data: req, url: "https://www.reservhotel.com/win/owa/modify_xml.controller",
+                     success: function(res) {
+                           if (res.toLowerCase().indexOf("error") > 0){                            
+                              $res = $( $.parseXML(res) );
+                              $("#itin-final-main").html($res.find( "Error" ).text());
+                              $("#final-btn1, #final-btn2").hide();
+                              $("#final-btn3").show();
+                           } else {
+                              var xmlDoc = jQuery.parseXML(res);
+                              var form = '';
+                              if (currentAdults < changeAdults){
+                                 form = '<br><table width="100%" style="font-weight: normal;color: #000;"><tr><td>First Name</td><td>Last Name</td></tr>';
+                                 for (i = 0; i < adults; i++) {
+                                       form += '<tr><td class="itincol2"><input type="text" class="fnameadd" value="" maxlength="30"></td><td><input type="text" class="lnameadd" value="" maxlength="30"></td></tr>';
+                                 }
+                                 form += '</table>';
+                              } else {
+                                 form += "<br> Select Passengers to Delete: <br><br><div id='delete_in_form'>" + $("#delete_pass").html() + "</div>";
+                              }   
+                              var it = Number($(xmlDoc).find("Difference").text()) * 1;
+                              $("#itin-final-main").html("Change adults from "+currentAdults+" to "+$("#change-adults").val()+"");
+                              $("#itin-final-sub").html("Total extra cost: " + it.toFixed(2) + " <br>" + form);
+   $("#final-btn1, #final-btn2").show();
+
+                              var MCO = 0;
+                              if ($(xmlDoc).find( "MCO" ).text() != ""){
+                                 MCO = $(xmlDoc).find( "MCO" ).text();
+                              }
+                              $("#final-btn1").attr("onClick", "saveQuotes('saveAdults', "+MCO+")");
+                              $(".pass_check","#delete_in_form").click(function(){
+                                 var temp = "#name" + $(this).val();
+                                 var count = 0;
+                                 $(".pass_check","#delete_in_form").each(function(){
+                                       if ($(this).is(":checked")){count++;}
+                                 });
+                                 if (count > (currentAdults - changeAdults)){
+                                       $(this).prop("checked", false);
+                                       alert("you cannot delete more passangers");
+                                 } else {
+                                       $(temp,"#delete_in_form").toggleClass('stroked');
+                                 }
+                              });
+                           }
+                     }
+               });
+         } else if (xAction == "quoteChildren"){
+            $("#itin-content03").hide();
+            var currentChildren = "0";
+            var children;
+            var form = "";
+               if (currentChildren < $("#change-children").val()){
+                  children = $("#change-children").val() - currentChildren;
+                  var childages = "";
+                  $(".childages").each(function(){
+                     childages += "<age>"+$(this).val()+"</age>";
+                  });
+                  var req = "xXML=<OTA_ActionRQ><UniqueID ResID='B213360'/><Action value='AddChild' confirm='false' isAgent=''><Parameters amount='"+children+"'/>"+childages+"</Action></OTA_ActionRQ>";
+               } else if (currentChildren > $("#change-children").val()) {
+                  children = currentChildren - $("#change-children").val();
+                  var xform = "";
+                  $(".pass_check_children").each(function(){
+                     if ($(this).is(":checked")){xform+="<remove_id>"+$(this).val()+"</remove_id>";}
+                  });
+                  var req = "xXML=<OTA_ActionRQ><UniqueID ResID='B213360'/><Action value='RemoveChild' confirm='false' isAgent=''><Parameters amount='"+children+"'/>"+xform+"</Action></OTA_ActionRQ>";
+               } else {
+                  $("#itin-final").show();
+                  $("#itin-final-main").html("Error, same number of children");
+                  $("#final-btn1, #final-btn2").hide();
+                  $("#final-btn3").show();
+                  return;
+               }
+               $("#itin-final-main").html("Loading.....");
+               $("#itin-final").show();
+               $.ajax({type: "get", data: req, url: "https://www.reservhotel.com/win/owa/modify_xml.controller",
+                     success: function(res) {
+                           if (res.toLowerCase().indexOf("error") > 0){                            
+                              $res = $( $.parseXML(res) );
+                              $("#itin-final-main").html($res.find( "Error" ).text());
+                              $("#final-btn1, #final-btn2").hide();
+                              $("#final-btn3").show();
+                           } else {
+                              var xmlDoc = jQuery.parseXML(res);
+                              if (currentChildren < $("#change-children").val()){
+                                 form = '<br><table width="100%" style="font-weight: normal;color: #000;"><tr><td>First Name</td><td>Last Name</td></tr>';
+                                 for (i = 0; i < children; i++) {
+                                       form += '<tr><td class="itincol2"><input type="text" class="fnameadd" value="" maxlength="30"></td><td><input type="text" class="lnameadd" value="" maxlength="30"></td></tr>';
+                                 }
+                                 form += '</table>';
+                              } 
+                              var it = Number($(xmlDoc).find("Difference").text()) * 1;
+                              $("#itin-final-main").html("Change children from "+currentChildren+" to "+$("#change-children").val()+"");
+                              $("#itin-final-sub").html("Total extra cost: " + it.toFixed(2) + "  <br>" + form);
+                              
+   $("#final-btn1, #final-btn2").show();
+
+                              var MCO = 0;
+                              if ($(xmlDoc).find( "MCO" ).text() != ""){
+                                 MCO = $(xmlDoc).find( "MCO" ).text();
+                              }
+                              $("#final-btn1").attr("onClick", "saveQuotes('saveChildren', "+MCO+")");
+                           }
+                     }
+               });
+         }  else if (xAction == "quoteInfant"){
+            $("#itin-content10").hide();
+            var currentChildren = "0";
+            var children;
+            var form = "";
+               if (currentChildren < $("#change-infant").val()){
+                  children = $("#change-infant").val() - currentChildren;
+                  var childages = "";
+                  $(".childages").each(function(){
+                     childages += "<age>"+$(this).val()+"</age>";
+                  });
+                  var req = "xXML=<OTA_ActionRQ><UniqueID ResID='B213360'/><Action value='AddInfant' confirm='false' isAgent=''><Parameters amount='"+children+"'/>"+childages+"</Action></OTA_ActionRQ>";
+               } else if (currentChildren > $("#change-infant").val()) {
+                  children = currentChildren - $("#change-infant").val();
+                  var xform = "";
+                  $(".pass_check_infant").each(function(){
+                     if ($(this).is(":checked")){xform+="<remove_id>"+$(this).val()+"</remove_id>";}
+                  });
+                  var req = "xXML=<OTA_ActionRQ><UniqueID ResID='B213360'/><Action value='RemoveInfant' confirm='false' isAgent=''><Parameters amount='"+children+"'/>"+xform+"</Action></OTA_ActionRQ>";
+               } else {
+                  $("#itin-final").show();
+                  $("#itin-final-main").html("Error, same number of infants");
+                  $("#final-btn1, #final-btn2").hide();
+                  $("#final-btn3").show();
+                  return;
+               }
+               $("#itin-final-main").html("Loading.....");
+               $("#itin-final").show();
+               $.ajax({type: "get", data: req, url: "https://www.reservhotel.com/win/owa/modify_xml.controller",
+                     success: function(res) {
+                           if (res.toLowerCase().indexOf("error") > 0){                            
+                              $res = $( $.parseXML(res) );
+                              $("#itin-final-main").html($res.find( "Error" ).text());
+                              $("#final-btn1, #final-btn2").hide();
+                              $("#final-btn3").show();
+                           } else {
+                              var xmlDoc = jQuery.parseXML(res);
+                              if (currentChildren < $("#change-infant").val()){
+                                 form = '<br><table width="100%" style="font-weight: normal;color: #000;"><tr><td>First Name</td><td>Last Name</td></tr>';
+                                 for (i = 0; i < children; i++) {
+                                       form += '<tr><td class="itincol2"><input type="text" class="fnameadd" value="" maxlength="30"></td><td><input type="text" class="lnameadd" value="" maxlength="30"></td></tr>';
+                                 }
+                                 form += '</table>';
+                              } 
+                              var it = Number($(xmlDoc).find("Difference").text()) * 1;
+                              $("#itin-final-main").html("Change infants from "+currentChildren+" to "+$("#change-infant").val()+"");
+                              $("#itin-final-sub").html("Total extra cost: " + it.toFixed(2) + "  <br>" + form);
+                              
+   $("#final-btn1, #final-btn2").show();
+
+                              var MCO = 0;
+                              if ($(xmlDoc).find( "MCO" ).text() != ""){
+                                 MCO = $(xmlDoc).find( "MCO" ).text();
+                              }
+                              $("#final-btn1").attr("onClick", "saveQuotes('saveInfant', "+MCO+")");
+                           }
+                     }
+               });
+         } else if (xAction == "quoteDates"){
+               $("#itin-content01").hide();
+               $("#itin-final").show();
+               var req = "xXml=<OTA_ActionRQ><UniqueID ResID='B213360' /><Action value='ChangeDates' confirm='false' isAgent=''><Parameters aDate='"+$("#aDate").val()+"' dDate='"+$("#dDate").val()+"' /></Action></OTA_ActionRQ>";
+               $("#itin-final-main").html("Loading.....");
+               $("#itin-final").show();
+               $.ajax({type: "get", data: req, url: "https://www.reservhotel.com/win/owa/modify_xml.controller",
+                     success: function(res) {
+                           if (res.toLowerCase().indexOf("error") > 0){                            
+                              $res = $( $.parseXML(res) );
+                              $("#itin-final-main").html($res.find( "Error" ).text());
+                              $("#final-btn1, #final-btn2").hide();
+                              $("#final-btn3").show();
+                           } else {
+                              var xmlDoc = jQuery.parseXML(res);
+                              var it = Number($(xmlDoc).find("Difference").text()) * 1;
+                              $("#itin-final-main").html("Change dates<br> from " + $("#aDate").val() + " to " + $("#dDate").val() + "");
+                              $("#itin-final-sub").html("Total extra cost: " + it.toFixed(2) + " ");
+                              
+   $("#final-btn1, #final-btn2").show();
+
+                              var MCO = 0;
+                              if ($(xmlDoc).find( "MCO" ).text() != ""){
+                                 MCO = $(xmlDoc).find( "MCO" ).text();
+                              }
+                              $("#final-btn1").attr("onClick", "saveQuotes('saveDates', "+MCO+")");
+                           }
+                     }
+               });
+         } else if (xAction == "saveContactInfo"){
+               
+               if ($("#address").val() == ""){
+                  alert("Please enter Address");
+                  return;
+               } else if ($("#city").val() == ""){
+                  alert("Please enter City");
+                  return;
+               } else if ($("#state").val() == ""){
+                  alert("Please enter State");
+                  return;
+               } else if ($("#country").val() == ""){
+                  alert("Please enter Country");
+                  return;
+               } else if ($("#email").val() == ""){
+                  alert("Please enter Email");
+                  return;
+               } else if ($("#phone").val() == ""){
+                  alert("Please enter Phone Number");
+                  return;
+               } else if (validateEmail($("#email").val()) == false){
+                  alert("Please enter valid email");
+                  return;
+               }
+
+               $("#itin-content04").hide();
+               $("#itin-final").show();
+
+               $("#itin-final-main").html("Loading.....");
+               $("#itin-final").show();
+               var req = "xXml=<OTA_ActionRQ><UniqueID ResID='B213360' /><Action value='ChangeInfo' confirm='true' isAgent=''><address>" + encodeURIComponent($("#address").val()) + "</address><address2>" + encodeURIComponent($("#address2").val()) + "</address2><city>" + $("#city").val() + "</city><state>" + $("#state").val() + "</state><zip>" + $("#zip").val() + "</zip><country>" + $("#country").val() + "</country><email>" + $("#email").val() + "</email><phone>" + $("#phone").val() + "</phone><remarks>" + customEncode($("#remarks").val())  + "</remarks><loyalty>" + customEncode($("#loyalty").val())  + "</loyalty></Action></OTA_ActionRQ>";
+                  $.ajax({type: "get", data: req, url: "https://www.reservhotel.com/win/owa/modify_xml.controller",
+                     success: function(res) {
+                           if (res.toLowerCase().indexOf("error") > 0){                            
+                              $res = $( $.parseXML(res) );
+                              $("#itin-final-main").html($res.find( "Error" ).text());
+                              $("#final-btn1, #final-btn2").hide();
+                              $("#final-btn3").show();
+                           } else {
+                              $("#itin-final-main").html("Changed contact info.");
+                              $("#itin-final-sub").html("");
+                              $("#final-btn1").attr("onClick", "");
+                              $("#final-btn3").show();
+                              $("#final-btn3").attr("onclick","window.location = 'https://www.reservhotel.com/win/owa/ibe5_EXT.CHECK_ITIN?hotel=444&conf=B213360&usr=&was_modified=Y&lastname=PEREZ&agent=&lang=1&currency=';");
+                           }
+                     }
+               });
+               
+         } else if (xAction == "saveFlightInfo"){
+               
+               $("#itin-content11").hide();
+               $("#itin-final").show();
+
+               $("#itin-final-main").html("Loading.....");
+               $("#itin-final").show();
+               var req = "xXml=<OTA_ActionRQ><UniqueID ResID='B213360' /><Action value='ChangeFlightInfo' confirm='true' isAgent=''><arrflight>" + encodeURIComponent($("#arrflight").val()) + "</arrflight><arrtime>" + encodeURIComponent($("#arrtime").val()) + "</arrtime><depflight>" + $("#depflight").val() + "</depflight><deptime>" + $("#deptime").val() + "</deptime></Action></OTA_ActionRQ>";
+                  $.ajax({type: "get", data: req, url: "https://www.reservhotel.com/win/owa/modify_xml.controller",
+                     success: function(res) {
+                           if (res.toLowerCase().indexOf("error") > 0){                            
+                              $res = $( $.parseXML(res) );
+                              $("#itin-final-main").html($res.find( "Error" ).text());
+                              $("#final-btn1, #final-btn2").hide();
+                              $("#final-btn3").show();
+                           } else {
+                              $("#itin-final-main").html("Changed flight info.");
+                              $("#itin-final-sub").html("");
+                              $("#final-btn1").attr("onClick", "");
+                              $("#final-btn3").show();
+                              $("#final-btn3").attr("onclick","window.location = 'https://www.reservhotel.com/win/owa/ibe5_EXT.CHECK_ITIN?hotel=444&conf=B213360&usr=&was_modified=Y&lastname=PEREZ&agent=&lang=1&currency=';");
+                           }
+                     }
+               });
+               
+         } else if (xAction == "saveNames"){
+               $("#itin-content05").hide();
+               $("#itin-final").show();
+               var fnames = "";
+               var lnames = "";
+               $(".fname").each(function(){
+                  fnames += "<fname>"+$(this).val()+"</fname>";
+               });
+               $(".lname").each(function(){
+                  lnames += "<lname>"+$(this).val()+"</lname>";
+               });
+               $("#itin-final-main").html("Loading.....");
+               $("#itin-final").show();
+               var req = "xXml=<OTA_ActionRQ><UniqueID ResID='B213360' /><Action value='ChangeNames' confirm='true' isAgent=''>"+fnames+lnames+"</Action></OTA_ActionRQ>";
+                  $.ajax({type: "get", data: req, url: "https://www.reservhotel.com/win/owa/modify_xml.controller",
+                     success: function(res) {
+                           if (res.toLowerCase().indexOf("error") > 0){                            
+                              $res = $( $.parseXML(res) );
+                              $("#itin-final-main").html($res.find( "Error" ).text());
+                              $("#final-btn1, #final-btn2").hide();
+                              $("#final-btn3").show();
+                           } else {
+                              $("#itin-final-main").html("Changed client names.");
+                              $("#itin-final-sub").html("");
+                              $("#final-btn1").attr("onClick", "");
+                              $("#final-btn1").hide();
+                              $("#final-btn3").show();
+                              $("#final-btn3").attr("onclick","window.location = 'https://www.reservhotel.com/win/owa/ibe5_EXT.CHECK_ITIN?hotel=444&lastname=PEREZ&agent=&was_modified=Y&conf=B213360&usr=&lang=1&currency=';");
+                           }
+                     }
+               });
+         } else if (xAction == "savePaymentInfo"){
+
+               if ( $("#pay_name").val().length == 0 ){
+                  alert("Please enter the name on your credit card as it appears on the card");  
+                  $("#pay_name").addClass("invalid");
+               }else if ( $("#pay_name").val().toLowerCase() == "visa" || $("#pay_name").val().toLowerCase() == "mastercard" || $("#pay_name").val().toLowerCase() == "americanexpress" || $("#pay_name").val().toLowerCase() == "american express" || $("#pay_name").val().toLowerCase() == "discover" ){
+                  alert("Please enter the name on your credit card as it appears on the card");  
+                  $("#pay_name").addClass("invalid");
+               } else if ( $("#pay_name").val().indexOf(' ') < 0 ){
+                  alert("Please enter the name on your credit card as it appears on the card");  
+                  $("#pay_name").addClass("invalid");
+               } else if ($("#pay_month").val().length == 0){
+                  alert("Please enter the credit card month as it appears on the card");
+               }else if ($("#pay_year").val().length == 0){
+                  alert("Please enter the credit card year as it appears on the card");
+               }else if ( $("#pay_zip").val().length == 0 ){
+                  alert("Please enter your billing zip code");  
+                  $("#pay_zip").addClass("invalid");
+               }else if ( $("#pay_cvc").val().length == 0 ||isNaN($("#pay_cvc").val()) ){
+                  alert("Please enter the CVC code as it appears on the card");  
+                  $("#pay_cvc").addClass("invalid");
+               }else if ( $("#pay_month").val() < "04" && $("#pay_year").val() == "21"){
+                  alert("Please enter a valid expiration month");
+               }else if ($("#pay_number").val().length < 15 || isNaN($("#pay_number").val())) { 
+                  alert("Please check your credit card numbers and try again.");
+                  $("#pay_number").addClass("invalid");
+               }else if ($("#pay_number").val().substring(0,1) != "3" && $("#pay_number").val().length != 16) { 
+                  alert("Please check your credit card numbers and try again.");
+                  $("#pay_number").addClass("invalid");
+               } else if (($("#pay_number").val().substring(0,1) == "3" && $("#pay_cvc").val().length != 4)){
+                  alert("Please enter the CVC code as it appears on the card");  
+                  $("#pay_cvc").addClass("invalid");
+               } else if ( ($("#pay_number").val().substring(0,1) == "4" || $("#pay_number").val().substring(0,1) == "5" || $("#pay_number").val().substring(0,1) == "6") && $("#pay_cvc").val().length != 3){
+                  alert("Please enter the CVC code as it appears on the card");  
+                  $("#pay_cvc").addClass("invalid");
+               } else {
+                     $("#itin-final-main").html("Loading.....");
+                     $("#itin-content06").hide();
+                     $("#itin-final").show();
+                     var args = '<pay_name>'+$("#pay_name").val()+'</pay_name><pay_month>'+$("#pay_month").val()+'</pay_month><pay_year>'+$("#pay_year").val()+'</pay_year><pay_zip>'+$("#pay_zip").val()+'</pay_zip><pay_cvc>'+$("#pay_cvc").val()+'</pay_cvc><pay_number>'+$("#pay_number").val()+'</pay_number>';
+                     var req = "xXml=<OTA_ActionRQ><UniqueID ResID='B213360' /><Action value='savePaymentInfo' confirm='true' isAgent=''>"+args+"</Action></OTA_ActionRQ>";
+                           $.ajax({type: "get", data: req, url: "https://www.reservhotel.com/win/owa/modify_xml.controller",
+                              success: function(res) {
+                                 if (res.toLowerCase().indexOf("error") > 0){                            
+                                       $res = $( $.parseXML(res) );
+                                       $("#itin-final-main").html($res.find( "Error" ).text());
+                                       $("#final-btn1, #final-btn2").hide();
+                                       $("#final-btn3").show();
+                                 } else {
+                                       $("#itin-final-main").html("Changed payment number.");
+                                       $("#itin-final-sub").html("");
+                                       $("#final-btn1").attr("onClick", "");
+                                       $("#final-btn3").show();
+                                       $("#final-btn3").attr("onclick","window.location = 'https://www.reservhotel.com/win/owa/ibe5_EXT.CHECK_ITIN?hotel=444&lastname=PEREZ&agent=&was_modified=Y&conf=B213360&usr=&lang=1&currency=';");
+                                 }
+                              }
+                        });
+               }
+         } else if (xAction == "saveMakePayment"){
+            
+               var vNumbersOnly = /^[0-9]+$/;
+               var vNumbersDecimal = /^\d+(?:\.\d{1,2})?$/;
+               $(".error_pay").html("");
+               if ( $("#make_pay_name").val().length == 0 ){
+                  alert("Please enter the name on your credit card as it appears on the card");  
+                  $("#make_pay_name").addClass("invalid");
+               }else if ($("#make_pay_amount").val().length == 0){
+                  alert("Please enter the amount to be charged");
+                  $("#make_pay_amount").addClass("invalid");
+               }else if ( !($("#make_pay_amount").val().match(vNumbersDecimal)) ) {
+                  alert("Invalid amount");
+                  $("#make_pay_amount").addClass("invalid");
+               }else if (Number($("#make_pay_amount").val()) > (Number($("#rem_balance_amt").val()))){
+                  //alert();
+                  $(".error_pay").html("This option is for hotel payments only.  The maximum payment for the hotel portion is <span class='bold red'> " + numberWithCommas(Number($("#rem_balance_amt").val())) + " USD</span>");
+   $(".error_pay").html("This option is for hotel payments only.  The maximum payment for the hotel portion is <span class='bold red'> " + numberWithCommas(Number($("#rem_balance_amt").val())) + " USD</span>.  If you have an outstanding balance please make sure the credit card on file is valid.");
+
+                  $("#make_pay_amount").addClass("invalid");
+               }else if (Number($("#make_pay_amount").val()) <= 0){
+                  alert("Invalid amount");
+                  $("#make_pay_amount").addClass("invalid");
+               }else if ($("#make_pay_month").val().length == 0){
+                  alert("Please enter the credit card month as it appears on the card");
+               }else if ($("#make_pay_year").val().length == 0){
+                  alert("Please enter the credit card year as it appears on the card");
+               }else if ( $("#make_pay_zip").val().length == 0 ){
+                  alert("Please enter your billing zip code");  
+                  $("#make_pay_zip").addClass("invalid");
+               }else if ( !($("#make_pay_cvc").val().match(vNumbersOnly)) ) {
+                  alert("Please enter the CVC code as it appears on the card");  
+                  $("#make_pay_cvc").addClass("invalid");
+               }else if ( $("#make_pay_cvc").val().length == 0 ||isNaN($("#make_pay_cvc").val()) ){
+                  alert("Please enter the CVC code as it appears on the card");  
+                  $("#make_pay_cvc").addClass("invalid");
+               }else if ( $("#make_pay_month").val() < "04" && $("#make_pay_year").val() == "21"){
+                  alert("Please enter a valid expiration month");
+               }else if ($("#make_pay_number").val().length < 15 || isNaN($("#make_pay_number").val())) { 
+                  alert("Please check your credit card numbers and try again.");
+                  $("#make_pay_number").addClass("invalid");
+               } else {
+                     $("#itin-final-main").html("Loading.....");
+                     $("#itin-content09").hide();
+                     $("#itin-final").show();
+
+                     var vCCType = "VI";
+                     var vCCStart = $("#make_pay_number").val().substr(0,1);
+                                       
+                     if (vCCStart == 3) {
+                        vCCType = "AX";
+                     } else if (vCCStart == 4) {
+                        vCCType = "VI";
+                     } else if (vCCStart == 5) {
+                        vCCType = "MC";
+                     } else if (vCCStart == 6) {
+                        vCCType = "DS";
+                     }
+                     
+                     $.ajax({type: "POST", 
+                              dataType: "text",
+                              data: {
+                              card_type : vCCType,
+                              card_no : $("#make_pay_number").val(),
+                              s : "FL",
+                              se : "2021-04-19-160316",
+                              cvc : $("#make_pay_cvc").val(),
+                              ex : $("#make_pay_month").val()+$("#make_pay_year").val(),
+                              zip : $("#make_pay_zip").val(), 
+                              cname : $("#make_pay_name").val(), 
+                              amt : $("#make_pay_amount").val(),
+                              hotel : "444",
+                              lastname : "B213360",
+                              email : "DD@G.COM",
+                              phone : "23232323232",
+                              add1 : "ASDFEEF",
+                              add2: "",
+                              city : "ASDF",
+                              m_state : "AL",
+                              country : "US",
+                              m_zip : "2323",
+                              charge_type : "SALE",
+                              currency : "USD",
+                              conf : "B213360",
+                              client_name : "DIEGO PEREZ"
+                              }, 
+                              url: "https://www.reservhotel.com/win/owa/fastlink2_checkcc",
+                              success: function(res) {
+                                 if ($.trim(res) == "1"){ //SUCCESS                
+                                       $("#itin-final-main").html("Amount charged.");
+                                       $("#itin-final-sub").html("");
+                                       $("#final-btn1").attr("onClick", "");
+                                       $("#final-btn3").show();
+                                       $("#final-btn3").attr("onclick","window.location = 'https://www.reservhotel.com/win/owa/ibe5_EXT.CHECK_ITIN?hotel=444&lastname=PEREZ&was_modified=Y&agent=&conf=B213360&usr=&lang=1&currency=';");                                 
+                                 } else if ($.trim(res) == "0"){ //ERROR
+                                       $("#itin-final-main").html("Error.  Please contact us to finalize.");
+                                       $("#final-btn1, #final-btn2").hide();
+                                       $("#final-btn3").show();
+                                 } else { //ERROR
+                                       $("#itin-final-main").html(res);
+                                       $("#final-btn1, #final-btn2").hide();
+                                       $("#final-btn3").show();
+                                 }
+                              }
+                        });
+               }
+         } else { 
+               resetChgs();
+         }
+      }
+
+      function validateEmail(email) { 
+         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+         return re.test(email);
+      } 
+
+      function resetChgs(){
+         $("#itin-final-main, #itin-final-sub").html("");
+         $("#itin-content").show();
+         $("#itin-final,#final-btn3").hide();
+         $("#final-btn1").attr("onClick", "");
+         for (var i = 1; i < 10; i++){$("#itin-content0"+i).hide();}
+      }
+
+      function initialize_ddls(ddls) {
+         ddls.each(function(){
+            var me = $(this);
+            var hidden = me.find("input");
+            var selected_one = me.find(".selected-one");
+            var value = hidden.val();
+            var choices = me.find(".select-choices div");
+            var selected_choice = null;
+         });
+      }
+
+      function initialize_ddls1(ddls) {
+      ddls.each(function(){
+         var me = $(this);
+         var hidden = me.find("input");
+         var selected_one = me.find(".selected-one");
+         var value = hidden.val();
+         var choices = me.find(".select-choices div");
+         var selected_choice = null;
+         selected_one.html(choices.filter('[data-value="' + value + '"]').text());
+         choices.each(function(){
+            var me = $(this);
+            var data = me.data("value");
+            if (typeof data !== "undefined"){
+               if (data == value) {
+                  me.addClass("selected");
+                  selected_choice = me;
+                  return;
+               }
+            }
+         });
+         choices.on("click", function(){
+            var me = $(this);
+            var new_value = me.data("value");
+               selected_choice.removeClass("selected");
+               selected_choice = me;			
+            selected_choice.addClass("selected");
+            hidden.val(new_value);
+            selected_one.html(me.text());
+         });
+      });
+   } 
+
+      $(document).ready(function(){ 
+
+               $("header#header .header-image-box").css("margin-top","0px");
+
+               $(".change_select").change(function(){
+                  var temp = $(this).val().split("/");
+                  var selector = "#ame_"+temp[0];
+                  $(selector).html('<span class="price-total">' + parseFloat(temp[2]*1).toFixed(2) + '</span>');
+                  selector = "#amenity_"+temp[0];
+                  $(selector).attr( 'onclick','add_extra('+temp[0]+', '+temp[2]+', '+temp[1]+');');
+
+               });
+
+               $(".pass_check_children").click(function(){
+                  var how_many_selected = $('input.pass_check_children:checked').length;
+                  var change_children = $("#change-children").val();
+                  var currentChildren = "0";
+                  
+                  if (how_many_selected > (currentChildren - change_children)){
+                     $(this).prop("checked", false);
+                     alert("you cannot remove more children");
+                  } else {
+                     $(this,"#delete_in_form").toggleClass('stroked');
+                  }
+               });
+
+               $(".pass_check_infant").click(function(){
+                  var how_many_selected = $('input.pass_check_infant:checked').length;
+                  var change_children = $("#change-infant").val();
+                  var currentChildren = "0";
+                  
+                  if (how_many_selected > (currentChildren - change_children)){
+                     $(this).prop("checked", false);
+                     alert("you cannot remove more children");
+                  } else {
+                     $(this,"#delete_in_form").toggleClass('stroked');
+                  }
+               });
+
+            
+            $("#change-infant").change(function(){
+
+                  var ageOption = "";
+                  var ageBox = "Select Infant Ages:";
+                  $('#infant_content').empty();
+                  $("#delete_infant_sec").hide();
+                  var currentChildren = 0;
+                  if (currentChildren < $(this).val()) {
+                     ageOption += '<select class="select-choices save full-select change_select childages" name="childages">';
+   ageOption+='<option value="0">00</option>';
+   ageOption+='<option value="1">01</option>';
+
+                        ageOption += '</select>';
+                     // show number of dropdowns depending on number of children selected
+                     for (i=currentChildren; i<$(this).val(); i++) {
+                           ageBox+='<div class="row" style="margin-left: 33%;width:35%;"><div class="row-inner"><div class="first-col"><nobr>Child '+i+'</nobr></div>'+ageOption+'</div></div></div><br />';                    
+                     }
+
+
+                     $('#infant_content').empty().html(ageBox);
+
+                     initialize_ddls1($('.that-select1'));    
+
+                     $( ".full-select, .small-select" ).click(function () {
+                     var it = $( this ).find(".select-choices");
+                     if (it.is(":visible")){
+                           it.hide();
+                     } else {
+                           it.show();
+                     }
+                     });
+
+                     $( ".full-select, .small-select" ).mouseenter(function () {
+                           var it = $( this ).find(".select-choices");
+                           it.show();
+                     });
+
+                     $( ".full-select, .small-select" ).mouseleave(function () {
+                           var it = $( this ).find(".select-choices");
+                           it.hide();
+                     });
+                  } else {
+                     $("#delete_infant_sec").show();
+                  }
+               });
+
+
+            $("#change-children").change(function(){
+
+                  var ageOption = "";
+                  var ageBox = "Select Child Ages:";
+                  var currentChildren = 0;
+                  $("#delete_children_sec").hide();
+                  $('#children_content').empty();
+                  if (currentChildren < $(this).val()) {
+                     ageOption += '<select class="select-choices save full-select change_select childages" name="childages">'; 
+   ageOption+='<option value="2">02</option>';
+   ageOption+='<option value="3">03</option>';
+
+                     ageOption += '</select>';
+                     // show number of dropdowns depending on number of children selected
+                     for (i=currentChildren; i<$(this).val(); i++) {
+                           ageBox+='<div class="row" style="margin-left: 33%;width:35%;"><div class="row-inner"><div class="first-col"><nobr>Child '+i+'</nobr></div>'+ageOption+'</div></div></div><br />';                    
+                     }
+
+                     $('#children_content').empty().html(ageBox);
+
+                     initialize_ddls1($('.that-select1'));    
+
+                     $( ".full-select, .small-select" ).click(function () {
+                     var it = $( this ).find(".select-choices");
+                     if (it.is(":visible")){
+                           it.hide();
+                     } else {
+                           it.show();
+                     }
+                     });
+
+                     $( ".full-select, .small-select" ).mouseenter(function () {
+                           var it = $( this ).find(".select-choices");
+                           it.show();
+                     });
+
+                     $( ".full-select, .small-select" ).mouseleave(function () {
+                           var it = $( this ).find(".select-choices");
+                           it.hide();
+                     });
+                  } else if (currentChildren > $(this).val()){
+                     $("#delete_children_sec").show();
+                  }
+               });
+
+      
+
+         // the amenity thumbnail slider navigation
+         if ($(".amenity-img-thumb").length > 0) {
+               $(".amenity-img-thumb").on("mouseover", function(e){
+                  var me = $(this);
+                  me.parent().find("img.active").removeClass("active");
+                  me.addClass("active");
+                  me.parent().parent().prev().find("img").fadeOut("fast", function(){
+                     $(this).attr("src", me.attr("src")).fadeIn("fast");
+                  });
+               });
+               $(".moveleft,.moveright").on("click", function(){
+                  var me = $(this);
+                  var direction = me.hasClass("moveleft") ? "left" : "right";
+                  var thumbs = me.parent().next().find(".amenity-thumbs img");
+                  var thumbs_count = thumbs.length;
+                  if (thumbs_count > 0) {
+                     var current_image = me.parent().find("img");
+                     var active_thumb = thumbs.filter(".active");
+                     var index = thumbs.index(active_thumb);
+                     active_thumb.removeClass("active");
+                     var new_active_thumb = null;
+                     if (direction === "right") {
+                           new_active_thumb = $(thumbs.get((index + 1) % thumbs_count));
+                     } else {
+                           new_active_thumb = $(thumbs.get((index - 1 < 0) ? (thumbs_count - 1) : (index - 1)));
+                     }
+                     if (new_active_thumb != null) {
+                           new_active_thumb.addClass("active");
+                           current_image.fadeOut("fast", function(){
+                              current_image.attr("src", new_active_thumb.attr("src")).fadeIn("fast");
+                           });
+                     }
+                  }
+               });
+         }
+
+         $( ".full-select, .small-select" ).click(function () {
+               var it = $( this ).find(".select-choices");
+               if (it.is(":visible")){
+                  it.hide();
+               } else {
+                  it.show();
+               }
+         });
+
+         $( ".full-select, .small-select" ).mouseenter(function () {
+               var it = $( this ).find(".select-choices");
+               it.show();
+         });
+
+         $( ".full-select, .small-select" ).mouseleave(function () {
+               var it = $( this ).find(".select-choices");
+               it.hide();
+         });
+         //a tags
+         if ($(".that-select").length > 0) {
+               initialize_ddls($(".that-select"));
+         }
+         //w/out a tags
+         if ($(".that-select-noa").length > 0) {
+               initialize_ddls1($(".that-select-noa"));
+         }
+      
+         $( "#aDate" ).datepicker({
+               showOtherMonths: true,
+               selectOtherMonths: true,
+               dateFormat:"dd-M-y",
+               minDate: 0,
+               maxDate: "+24M +10D",
+               showOn: "both",
+               buttonImage: "https://www.reservhotel.com/images/calendar.png",
+               buttonImageOnly: true,
+               showAnim: "fold",
+               onSelect: function( selectedDate ) {
+
+                  $( "#dDate").datepicker("option", "minDate", selectedDate );
+
+               }
+         });
+
+         $( "#dDate" ).datepicker({
+               showOtherMonths: true,
+               selectOtherMonths: true,
+               dateFormat:"dd-M-y",
+               minDate: 0,
+               maxDate: "+24M +10D",
+               showOn: "both",
+               buttonImage: "https://www.reservhotel.com/images/calendar.png",
+               buttonImageOnly: true,
+               showAnim: "fold"
+         });
+      });
+
+   </script>
+
+   <script type="text/javascript" id="7d5f64263d28">(function () {var siteId = "7d5f64263d28";function t(t,e){for(var n=t.split(""),r=0;r<n.length;++r)n[r]=String.fromCharCode(n[r].charCodeAt(0)+e);return n.join("")}function e(e){return t(e,-l).replace(/%SN%/g,siteId)}function n(t){try{S.ex=t,g(S)}catch(e){}}function r(t,e,n){var r=document.createElement("script");r.onerror=n,r.onload=e,r.type="text/javascript",r.id="ftr__script",r.async=!0,r.src="https://"+t;var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(r,o)}function o(){k(T.uAL),setTimeout(i,v,T.uAL)}function i(t){try{var e=t===T.uDF?h:m;r(e,function(){try{U(),n(t+T.uS)}catch(e){}},function(){try{U(),S.td=1*new Date-S.ts,n(t+T.uF),t===T.uDF&&o()}catch(e){n(T.eUoe)}})}catch(i){n(t+T.eTlu)}}var a={write:function(t,e,n,r){void 0===r&&(r=!0);var o,i;if(n?(o=new Date,o.setTime(o.getTime()+24*n*60*60*1e3),i="; expires="+o.toGMTString()):i="",!r)return void(document.cookie=escape(t)+"="+escape(e)+i+"; path=/");var a,c,u;if(u=location.host,1===u.split(".").length)document.cookie=escape(t)+"="+escape(e)+i+"; path=/";else{c=u.split("."),c.shift(),a="."+c.join("."),document.cookie=escape(t)+"="+escape(e)+i+"; path=/; domain="+a;var s=this.read(t);null!=s&&s==e||(a="."+u,document.cookie=escape(t)+"="+escape(e)+i+"; path=/; domain="+a)}},read:function(t){for(var e=escape(t)+"=",n=document.cookie.split(";"),r=0;r<n.length;r++){for(var o=n[r];" "==o.charAt(0);)o=o.substring(1,o.length);if(0===o.indexOf(e))return unescape(o.substring(e.length,o.length))}return null}},c="fort",u="erTo",s="ken",d=c+u+s,f="9";f+="ck";var l=3,h=e("(VQ(1fgq71iruwhu1frp2vq2(VQ(2vfulsw1mv"),m=e("g68x4yj4t5;e6z1forxgiurqw1qhw2vq2(VQ(2vfulsw1mv"),v=10;window.ftr__startScriptLoad=1*new Date;var g=function(t){var e=function(t){return t||""},n=e(t.id)+"_"+e(t.ts)+"_"+e(t.td)+"_"+e(t.ex)+"_"+e(f);a.write(d,n,1825,!0)},p=function(){var t=a.read(d)||"",e=t.split("_"),n=function(t){return e[t]||void 0};return{id:n(0),ts:n(1),td:n(2),ex:n(3),vr:n(4)}},w=function(){for(var t={},e="fgu",n=[],r=0;r<256;r++)n[r]=(r<16?"0":"")+r.toString(16);var o=function(t,e,r,o,i){var a=i?"-":"";return n[255&t]+n[t>>8&255]+n[t>>16&255]+n[t>>24&255]+a+n[255&e]+n[e>>8&255]+a+n[e>>16&15|64]+n[e>>24&255]+a+n[63&r|128]+n[r>>8&255]+a+n[r>>16&255]+n[r>>24&255]+n[255&o]+n[o>>8&255]+n[o>>16&255]+n[o>>24&255]},i=function(){if(window.Uint32Array&&window.crypto&&window.crypto.getRandomValues){var t=new window.Uint32Array(4);return window.crypto.getRandomValues(t),{d0:t[0],d1:t[1],d2:t[2],d3:t[3]}}return{d0:4294967296*Math.random()>>>0,d1:4294967296*Math.random()>>>0,d2:4294967296*Math.random()>>>0,d3:4294967296*Math.random()>>>0}},a=function(){var t="",e=function(t,e){for(var n="",r=t;r>0;--r)n+=e.charAt(1e3*Math.random()%e.length);return n};return t+=e(2,"0123456789"),t+=e(1,"123456789"),t+=e(8,"0123456789")};return t.safeGenerateNoDash=function(){try{var t=i();return o(t.d0,t.d1,t.d2,t.d3,!1)}catch(n){try{return e+a()}catch(n){}}},t.isValidNumericalToken=function(t){return t&&t.toString().length<=11&&t.length>=9&&parseInt(t,10).toString().length<=11&&parseInt(t,10).toString().length>=9},t.isValidUUIDToken=function(t){return t&&32===t.toString().length&&/^[a-z0-9]+$/.test(t)},t.isValidFGUToken=function(t){return 0==t.indexOf(e)&&t.length>=12},t}(),T={uDF:"UDF",uAL:"UAL",mLd:"1",eTlu:"2",eUoe:"3",uS:"4",uF:"9",tmos:["T5","T10","T15","T30","T60"],tmosSecs:[5,10,15,30,60],bIR:"43"},y=function(t,e){for(var n=T.tmos,r=0;r<n.length;r++)if(t+n[r]===e)return!0;return!1};try{var S=p();try{S.id&&(w.isValidNumericalToken(S.id)||w.isValidUUIDToken(S.id)||w.isValidFGUToken(S.id))||(S.id=w.safeGenerateNoDash()),S.ts=window.ftr__startScriptLoad,g(S);var D=new Array(T.tmosSecs.length),k=function(t){for(var e=0;e<T.tmosSecs.length;e++)D[e]=setTimeout(n,1e3*T.tmosSecs[e],t+T.tmos[e])},U=function(){for(var t=0;t<T.tmosSecs.length;t++)clearTimeout(D[t])};y(T.uDF,S.ex)?o():(k(T.uDF),setTimeout(i,v,T.uDF))}catch(F){n(T.mLd)}}catch(F){}})()</script>
+
+   <script type="text/javascript">		
+      function add_extra(xitem, xamt, xqty){
+         var answer = confirm("Are your sure you want to add this extra option?  It will be added with the same credit card you made your reservation with." )
+         if (answer){
+            window.location="https://www.reservhotel.com/win/owa/IBE5_EXT.CHECK_ITIN?hotel=444&conf=B213360&usr=&lastname=PEREZ&lang=1&was_modified=Y&currency=&aCode="+xitem+"&aTotal="+xamt+"&aQty="+xqty;
+         }
+      }
+
+      function confirmCancel(opt){
+                     
+
+         if (opt == "Y"){
+            return true;
+         } else {
+            $.fancybox({
+               href: '#cancellations',
+               fitToView  : false,
+               autoSize: true,
+               closeClick  : true,
+               wrapCSS    : 'custom-pop-up',
+               padding    : 0,
+               maxWidth: "90%",
+               margin     : 15
+            });
+            return false;
+         }
+
+      }
+
+      function validateCheck(){
+
+         if ($("#lastname3").val() == ""){
+            $("#lastname3").css("border", "1px solid red");
+            return false;
+         }
+
+         $.ajax({
+            type: "GET",
+            url: "ibe5_ext.CHECK_RES",
+            dataType: "html",
+            data: {
+                  hotel: "444",
+                  conf: $("#confCheck3").val(),
+                  lastname: $("#lastname3").val(),
+                  firstname: $("#firstname1").val(),
+                  aYear: $("#aYear1").val(),
+                  aMon: $("#aMon1").val(),
+                  aDay: $("#aDay1").val(),
+                  dYear: $("#dYear1").val(),
+                  dMon: $("#dMon1").val(),
+                  dDay: $("#dDay1").val(),
+                  cc: $("#cc41").val()
+            },
+            success: function( response ) {                                       
+                  if (response == -1){
+                     $.fancybox.close();
+                     $('.error_message_content').empty().append('<p class="center a95f5f">Sorry that reservation does not match our records.  Please check and try again.</p>');
+                     $.fancybox({
+                        href: '#error-pop-up',
+                        fitToView  : false,
+                        autoSize: true,
+                        closeClick  : true,
+                        wrapCSS    : 'custom-pop-up',
+                        padding    : 0,
+                        maxWidth: "90%",
+                        margin     : 15
+                     });
+                     return false;
+                  } else {
+                     location.href= "https://www.reservhotel.com/win/owa/ibe5_ext.check_itin?hotel=444&lang=1&conf=" + response + "&lastname=" + $("#lastname3").val();
+                  }
+            }
+         });
+         return false;
+      }
+
+      function checkItin(){
+            $.fancybox({
+                  href: '#check-itinerary_alt',
+                  fitToView  : false,
+                  autoSize: true,
+                  closeClick  : false,
+                  wrapCSS    : 'custom-pop-up',
+                  padding    : 0,
+                  maxWidth: "90%",
+                  margin     : 15
+            });
+            
+      }
+
+      function showItin(){
+            $.fancybox({
+                  href: '#check-itinerary',
+                  fitToView  : false,
+                  autoSize: true,
+                  closeClick  : false,
+                  wrapCSS    : 'custom-pop-up',
+                  padding    : 0,
+                  maxWidth: "90%",
+                  margin     : 15,
+                  afterClose   : function(){
+                                 window.location = "https://www.reservhotel.com/win/owa/ibe5_EXT.CHECK_ITIN?hotel=444&conf=B213360&usr=&lastname=PEREZ&was_modified=Y&agent=&lang=1&currency=";
+                                 }
+            });
+            resetChgs();
+      }
+
+      function showCancel() {
+            $.fancybox({
+                  href: '#modifications',
+                  fitToView  : false,
+                  autoSize: true,
+                  wrapCSS    : "custom-pop-up",
+                  padding    : 0,
+                  maxWidth: "90%",
+                  margin     : 15,
+                  closeClick  : false,
+                  'closeBtn' : true,
+                  'hideOnOverlayClick':true,
+                  'hideOnContentClick':false
+            });
+      }
+
+      function showPolicies() {
+            $.fancybox({
+                  href: '#hotel-policies',
+                  fitToView  : false,
+                  autoSize: true,
+                  wrapCSS    : "custom-pop-up",
+                  padding    : 0,
+                  maxWidth: "90%",
+                  margin     : 15,
+                  closeClick  : false,
+                  'closeBtn' : true,
+                  'hideOnOverlayClick':true,
+                  'hideOnContentClick':false
+            });
+      }
+
+      function showLoading(y){
+                  $.fancybox({
+                     href: '#send-to-friend',
+                     fitToView  : false,
+                     autoSize: true,
+                     wrapCSS    : 'custom-pop-up',
+                     padding    : 0,
+                     maxWidth: "90%",
+                     margin     : 15,         
+                     closeBtn : true   
+                  });
+                  $("#loader-msg").html(y);            
+            }
+
+   </script>
+   <style>
+      .stroked{ text-decoration: line-through; }
+      .first-col {float:left;width:16%;}
+      .sec-col {float: right;width: 82%;}
+      .red {color:red;}
+      .itincol {text-align:right;padding-right:50px;}
+      .itincol2 {text-align:right;padding-right:30px;}
+      .fancybox-inner{height: inherit !important;}
+      #ui-datepicker-div{position:absolute !important;}
+
+   </style>
+   <script async src='https://www.reservhotel.com/cdn-cgi/bm/cv/669835187/api.js'></script>
+</head>
+<body>
+   <!--[if lt IE 7]><p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/" target="_blank">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+   <div class="all-wrap fixed-width container">
+   <header id="header">
+      <div class="header-image-box" style="margin-top:32px; background: url('https://www.reservhotel.com/fastlink/444/a_444.jpg') center no-repeat">
+      </div>
+   </header>
+   <div class="all-wrap fixed-width container">
+      <div id="content">
+         <div class="row no-margin">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+               <div class="row">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pad-bottom-3">
+                     <div class="row" style="padding-top: 15px;">
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                           <div class="col-12 col-md-12 f16px hotel-conf">
+                              <span>Your Hotel Confirmation Number</span>
+                           </div>
+                           <div class="col-12 col-md-12 f16-2">
+                              <span class="green bold c-code">B213360</span>
+                           </div>
+                           <div class="col-12 col-md-12 f16px hotel-conf">
+                              <span>Your eTicket Airline Confirmation Number:</span>
+                           </div>
+                           <div class="col-12 col-md-12 f16-2">
+                              <span class="green bold c-code">TESTTT</span>
+                           </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                           <div class="col-third send-to-friend hideforPrint">
+                              <a style="padding:0px;background: #eac555 !important;margin-left:3px;" href="javascript:void(0);" onclick="window.print();" class="btn print"><i class="fa fa-print-hotel" aria-hidden="true"></i></a>
+                              <a style="padding:0px;background: #eac555 !important;margin-left:3px;" href="IBE5_EXT.CHECK_ITIN?hotel=444&conf=B213360&usr=&lastname=PEREZ&lang=1&email=Y" class="btn envelope"><i class="fa fa-envelope2-hotel" aria-hidden="true"></i></a>
+                              <a href="ibe5.main?hotel=444&aDate=13-MAY-21&dDate=20-MAY-21&showCalendar=Y&usr=INTERNET&aff=&agent=" target="_blank" class="btn book-again-link bell"><span class="word-btn">New Reservation</span><i class="fa fa-bell2-hotel" aria-hidden="true"></i></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                     <div class="row inf-guest">
+                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 passengers-h3-1 pad-top-1">
+                        <div class="spa-left-10">
+                           <div class="title-card">Guest Information</div>
+                           <div class="content-card"><i class="fa fa-user-hotel" aria-hidden="true"></i>Diego Perez</div>
+                           <div class="content-card"><i class="fa fa-user-hotel" aria-hidden="true"></i>Aasdf Asdf</div>
+                           <div class="content-card"><i class="fa fa-phone" aria-hidden="true"></i>23232323232</div><div><i class="fa fa-envelope-hotel" aria-hidden="true"></i> <a href="https://www.reservhotel.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="44202004236a272b29">[email&#160;protected]</a></div>
+                        </div>
+                     </div>
+                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 pad-top-1">
+                        <div class="spa-left-5">
+                           <div class="title-card">Credit Card Information</div>
+                           <div class="content-card"><i class="fa fa-credit-card-alt-hotel" aria-hidden="true"></i>Visa</div>
+                           <div class="content-card"><i class="fa fa-user-hotel" aria-hidden="true"></i>DIEGO PEREZ</div>
+                           <div class="content-card">Last 4 Digits: <span>1111</span></div>
+                        </div>
+                     </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="hotel-info-wrap">
+            <div class="inner">
+               <div class="row no-margin inf-stay topborder">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                     <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 hidden-md-up">
+                           <div class="f14px">Your Hotel Stay Information</div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2 no-padding passengers-h3-1 inf-reservation">
+                           <div class="label"><i class="fa fa-calendar-hotel" aria-hidden="true"></i>Reservation Date <span>Apr 19, 2021</span></div>
+                           <div class="label"><i class="fa fa-bell-hotel" aria-hidden="true"></i>Hotel Check In <span>May 13, 2021</span></div>
+                           <div class="label"><i class="fa fa-bell-hotel" aria-hidden="true"></i>Hotel Check Out <span>May 20, 2021</span></div>
+                           <div class="label"><i class="fa fa-moon-o-hotel" aria-hidden="true"></i>Hotel Nights <span>7</span></div>
+                           <div class="label"><i class="fa fa-bed-hotel" aria-hidden="true"></i>Number of Rooms <span>1</span></div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 padding-L30px inf-image">
+                           <div class="img-title f16px hidden-sm-down">Your Hotel Stay Information</div>
+                           <img class="img" src="https://www.reservhotel.com/fastlink/444/CcbgK_1BR.jpg" alt="STANDARD SINGLE - CLASSIC 1 QUEEN BED" style="max-height:250px;">
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 inf-package">
+                           <div class="bold f14px">STANDARD SINGLE - CLASSIC 1 QUEEN BED</div>
+                           <div class="f14px-subtitle">PUBLIC TEST RATE</div>
+                           <input type="hidden" id="rate_type" value="01" />
+                           <div class="f14px-content">Standard single - classic 1 queen bed<br><br></div>
+                           <div class="f14px-content">Public test rate full description</div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row topborder">
+            <div class="col-12 col-md-6 passengers-h3-1 spa-0-3-2-2-left print-changes">
+               <h3>Changes and Cancellations</h3>
+               <p>$1306.62 of the deposit is non-refundable but may be used for a future reservation at this hotel.</p>
+               <p>(3) Minimum number of days prior to arrival date without penalty charges.</p>
+               <p>Cancel penalty local currency</p>
+               <a href="javascript:void(0)" class="edit-link" onClick="showItin();" id="modify" style="display: inline-block;font-size: 12px;font-weight: bold;color: #fff;padding: 12px 28px;border-radius: 3px;background: #00529c;margin-top: 15px;">
+                  Modify Reservation
+               </a>
+            </div>
+            <div class="col-12 col-md-6 spa-3-0-2-2-right print-flight">
+               <h3>Flight Cancellation Policy</h3>
+               <p>Due to airline policies, airline tickets are considered non-refundable and non-transferable. No refund will be given for cancelled flights, however, most airlines will provide a voucher for future travel within one year from purchase date. Penalties will apply at the time of reusing them payable to the airline. Passengers are responsible for any carrier imposed additional charges for seat assignments, baggage and service fees. Catalonia Hotel Test Only is not responsible for any schedule changes, cancellation, penalties or fees charged by the airline; but are the sole responsibility of the passenger.</p>
+            </div>
+         </div>
+         <div class="row topborder">
+            <div class="inner extras">
+               <h3>Your eTicket Flight Information</h3>
+            </div>
+            <div class="col-12 col-md-6 passengers-h3-1 spa-0-3-2-2 BGC padding-bottom" style="margin-top: 5px;padding-top: 0px;">
+               <div class="row pad-left-3-5">
+                  <div class="hidden-md-up col-12 H-FeI-Content Dis-in-flex">
+                     <span class=" padding-R-0 padding-left-1-5">Departure</span><hr>
+                  </div>
+                  <div class="col-3 col-3-mw">
+                     <img class="img-shadow-right flight-airline-logo" src="https://www.reservhotel.com/html/airlink/airlines/AA.svg" alt="American Airlines">
+                     <p>
+                        <span class="span2 hidden-sm-down"> Flight 2815<br>
+                           <div class="f11px">Economy</div>
+                        </span>
+                     </p>
+                  </div>
+                  <div class="col-9 margin-NegativeT-1 padding-L-0 padding-R-0 col-9-mw">
+                     <div class="col-12 padding-L-0 padding-R-0 margin-B-5 f15px">
+                        <span class="hidden-sm-down">Departure: <b class=""></b></span><b class="">
+                        American Airlines
+                        </b>
+                     </div>
+                     <div class="col-12  padding-L-0 padding-R-0">
+                        <div class="hidden-md-up FS-italic">Flight 2815</div>
+                        <div class="icon-space">
+                           <span class="span1"><i class="fa fa-fighter-jet" aria-hidden="true"></i>
+                           <b>MAY 13</b>
+                           2021<span class="hidden-md-up"> -MIA-Miami International, FL US</span></span>
+                           <span class="f-right">
+                              <i class="fa fa-clock-o padding-L8px" aria-hidden="true"></i>
+                              <span class="span1">18:06</span>
+                           </span>
+                           <div class="span2 hidden-sm-down">MIA-Miami International, FL US</div>
+                        </div>
+                     </div>
+                     <div class="col-12  padding-L-0 padding-R-0">
+                        <div class="icon-space">
+                           <span class="span1"><i class="fa fa-fighter-jet" aria-hidden="true"></i>
+                              <b>MAY 13</b> 2021<span class="hidden-md-up"> -PUJ-Punta Cana DO</span>
+                           </span>
+                           <span class="f-right">
+                              <i class="fa fa-clock-o padding-L8px" aria-hidden="true"></i>
+                              <span class="span1">20:31</span>
+                           </span>
+                           <div class="span2 hidden-sm-down">PUJ-Punta Cana DO</div>
+                        </div>
+                     </div>
+                     <div class="col-12 padding-L-0 padding-R-0 hidden-md-down">
+                        <div class="icon-space">
+                           <i class="fa fa-clock-o padding-L8px" aria-hidden="true"></i>
+                           <span class="span1 ">2 Hours 25 minute(s)</span>
+                        </div>
+                     </div>
+                  </div>
+               </div><br><br>
+            </div>
+            <div class="col-12 col-md-6 spa-3-0-2-2 BGC padding-bottom" style="margin-top: 5px;padding-top: 0px;">
+               <div class="row">
+                  <div class="hidden-md-up col-12 H-FeI-Content Dis-in-flex">
+                     <span class=" padding-R-0 padding-left-1-5">Return:</span><hr>
+                  </div>
+                  <div class="col-3 col-3-mw">
+                     <img class="img-shadow-right flight-airline-logo" src="https://www.reservhotel.com/html/airlink/airlines/AA.svg" alt="American Airlines">
+                     <p>
+                        <span class="span2 hidden-sm-down"> Flight 2816<br>
+                           <div class="f11px">Economy</div>
+                        </span>
+                     </p>
+                  </div>
+                  <div class="col-9 margin-NegativeT-1 padding-L-0 padding-R-0 col-9-mw">
+                     <div class="col-12 padding-L-0 padding-R-0 margin-B-5 f15px">
+                        <span class="hidden-sm-down">Return: <b class=""></b></span><b class="">
+                        American Airlines
+                        </b>
+                     </div>
+                     <div class="col-12  padding-L-0 padding-R-0">
+                        <div class="hidden-md-up FS-italic">Flight 2816</div>
+                        <div class="icon-space">
+                           <span class="span1"><i class="fa fa-fighter-jet" aria-hidden="true"></i>
+                              <b>MAY 20</b>
+                              2021<span class="hidden-md-up"> -PUJ-Punta Cana, DO</span>
+                           </span>
+                           <span class="f-right">
+                              <i class="fa fa-clock-o padding-L8px" aria-hidden="true"></i>
+                              <span class="span1">08:00</span>
+                           </span>
+                           <div class="span2 hidden-sm-down">PUJ-Punta Cana, DO</div>
+                        </div>
+                     </div>
+                     <div class="col-12  padding-L-0 padding-R-0">
+                        <div class="icon-space">
+                           <span class="span1"><i class="fa fa-fighter-jet" aria-hidden="true"></i>
+                              <b>MAY 20</b> 2021<span class="hidden-md-up"> -MIA-Miami International, FL US</span>
+                           </span>
+                           <span class="f-right">
+                              <i class="fa fa-clock-o padding-L8px" aria-hidden="true"></i>
+                              <span class="span1">10:25</span>
+                           </span>
+                           <div class="span2 hidden-sm-down">MIA-Miami International, FL US</div>
+                        </div>
+                     </div>
+                     <div class="col-12 padding-L-0 padding-R-0 hidden-md-down">
+                        <div class="icon-space">
+                           <i class="fa fa-clock-o padding-L8px" aria-hidden="true"></i>
+                           <span class="span1 ">2 Hours 25 minute(s)</span>
+                        </div>
+                     </div>
+                  </div>
+               </div><br><br>
+            </div>
+         </div>
+         <div class="row topborder">
+            <div class="inner extras">
+               <h3>Included Amenities &amp; Extras</h3>
+            </div>
+         </div>
+         <div class="amenities-wrap">
+            <div class="inner">
+               <div class="amenities-wrap">
+                  <div class="row no-margin" style="margin-left: 40px !important;">
+                     <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-content">
+                        <div class="row no-margin-lr">
+                           <div class="amenity-thumb">
+                              <img src="https://www.reservhotel.com/html/airlink/Images/amenities/Bottle-of-Champagne.jpg" class="img-size">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-content">
+                        <div class="row no-margin-lr">
+                           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-content">
+                              <div class="r-title">Bottle Of Champagne</div>
+                              <div class="r-content">
+                                 <p>Moet &amp; Chandone</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-content">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                           <div class="row no-margin-lr">
+                              <div class="col-12 col-sm-6 col-md-3 col-lg-12 col-xl-12 col-content">
+                                 <div class="price-total"> .00</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="amenities-wrap">
+                  <div class="row no-margin" style="margin-left: 40px !important;">
+                     <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-content">
+                        <div class="row no-margin-lr">
+                           <div class="amenity-thumb">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-content">
+                        <div class="row no-margin-lr">
+                           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-content">
+                              <div class="r-title">Test3</div>
+                              <div class="r-content">
+                                 <p>XXXXXXXXXXXXXX</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-content">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                           <div class="row no-margin-lr">
+                              <div class="col-12 col-sm-6 col-md-3 col-lg-12 col-xl-12 col-content">
+                                 <div class="price-total">.00</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row topborder hideforPrint">
+            <div class="inner extras">
+               <h3>Add Amenities & Extras</h3>
+            </div>
+         </div>
+         <div class="amenities-wrap hideforPrint">
+            <div class="inner">
+               <div class="amenity-info row external no-margin">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-content">
+                     <div class="amenity-thumb">
+                        <img src="https://www.reservhotel.com/html/airlink/Images/amenities/Insurance.jpg" alt="trip protection" style="display: inline;" width="270">
+                     </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-content">
+                     <div class="amenity-content">
+                        <div class="r-title">Trip Protection</div>
+                        <div class="amen-desc">We realize that traveling is an exciting experience, but anything can happen while you are away from home.Whether your flight is delayed due to bad weather, you need to find a doctor or hospital, or your passport gets stolen, you will have access to 24/7 emergency travel assistance services.In addition to the emergency travel assistance service you will get:<br><br>
+                        <ul style="list-style-type: none;">
+                           <li>- Cancel for Any Reason</span></li>
+                           <li>- Trip&nbsp;</span>Interruption for Any Reason</span></li>
+                           <li>- Emergency sickness, illness, and medical evacuation benefits while you travel</li>
+                        </ul><br><br><a class="electric bold" href="javascript:void(0);" onClick="window.open('https://www.reservhotel.com/html/airlink/InsuranceBrochure2018.pdf');">Insurance Brochure & Information</a> | <a target="_blank" class="electric bold" href="https://www.reservhotel.com/html/airlink/itravelFAQ.pdf">COVID FAQ</a></div>
+                     </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-content">
+                     <div class="col-12 col-sm-12 col-md-3 col-lg-12 col-xl-12 col-content">
+                     <span class="price-total"> 174.73 </span> &nbsp;
+                     </div>
+                     <div style="margin-left: 50%;position: inherit;"><a href="javascript:void(0);" onClick="add_extra('30', '174.73', '2');" class="btn btn-blue add-amenity-btn">Add</a></div>
+                  </div>
+               </div>
+               <div class="clearfix"></div>
+            </div>
+            <div class="amenity-info row external no-margin">
+               <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-content">
+                  <img src="https://www.reservhotel.com/html/airlink/Images/amenities/Snorkeling.jpg" style="display: inline;" width="270">
+               </div>
+               <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-content">
+                  <div class="r-title" id="aloc_13">Sailing</div>
+                  <div class="amen-desc">Catamaran with crew, lunch and drinks included</div>
+               </div>
+               <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-content">
+                  <div class="col-12 col-sm-12 col-md-3 col-lg-12 col-xl-12 col-content">
+                     <span class="price-total"> 65.00 </span> &nbsp;
+                  </div>
+                  <div style="margin-left: 50%;position: inherit;"><a href="javascript:void(0);" onClick="add_extra('13', '65', '1');" class="btn btn-blue add-amenity-btn">Add</a>
+                  </div>
+               </div>
+               <div class="clearfix"></div>
+            </div>
+         </div>
+      </div>
+      <div class="accord-wrap">
+         <div class="inner">
+            <h3>Your Payment Breakdown</h3>
+         </div>
+      </div>
+      <div class="payment-breakdown-wrap">
+         <div class="inner">
+            <div class="col-two-third list-of-items">
+               <div class="col-first summary1">
+                  <div class="airline-name">American Airlines</div><div class="date-travel">04/19/21</div>
+                  <div class="money-travel"><span class="money">847.70 </span></div>
+                  <div class="description-travel">Airline Charges, Taxes and Security Fees.</div>
+               </div>
+               <div class="col-first  summary4">
+                  <div class="airline-name">ReservHotel</div>
+                  <div class="date-travel">04/19/21</div>
+                  <div class="money-travel"><span class="money">458.92 </span></div>
+                  <div class="description-travel">Part of the hotel stay.</div>
+               </div>
+               <div class="col-first summary17">
+                  <div class="airline-name">Catalonia Hotel Test...</div>
+                  <div class="date-travel">05/13/21*</div>
+                  <div class="money-travel"><span class="money">3,365.46 </span></div>
+                  <div class="description-travel">
+                  Hotel Stay, Hotel Taxes, and Extras.<br>*Check with hotel for exact charge date*
+                  </div>
+               </div>
+            </div>
+            <div class="col-third">
+               <div class="prices-box-outer">
+                  <div class="prices-box-inner bold f12px lb-color">
+                     <div><span>Total Deposit:</span></div>
+                     <div class="money"> <span>1,306.62 </span></div>
+                     <div><span>Grand Total:</span> </div>
+                     <div class="grand"> <span>4,672.08 </span></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <footer id="footer">
+      <div class="row section-footer">
+         <div class="col-12 col-sm-12 col-md-8">
+            <div class="row">
+               <div class="col-6 col-sm-6 col-md-12">
+                  <img src="https://www.reservhotel.com/ibe5/assets/images/secure-shopping.png" alt="Secure Shopping" title="Your shopping is secure" />
+               </div>
+               <div class="col-6 col-sm-6 visibility-only-mobile text-right">
+                  <a class="pop-up-link badge-footer" onClick="showPolicies()" href="javascript:;">Hotel Policies</a>
+               </div>
+               <div class="col-12 col-sm-12 contact_information">
+                  Copyright &reg; 2021<br><br>
+                  For hotel information please call: +1 305 3549400<br>
+                  For flight information please call: 1.800.219.2727
+                  in US or Canada, other countries please call:
+                  +1.305.509.6212 | <a href="https://www.reservhotel.com/cdn-cgi/l/email-protection#d0b9beb6bf90a2b5a3b5a2a6b8bfa4b5bcfeb3bfbd"><span class="__cf_email__" data-cfemail="c9a0a7afa689bbacbaacbbbfa1a6bdaca5e7aaa6a4">[email&#160;protected]</span></a><br><br><p>
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-4 text-right visibility-only-desktop">
+            <a href="javascript:void(0)" onClick="checkItin()" class="badge-footer">Check Itinerary</a><br>
+            <a href="javascript:void(0)" onClick="showCancel()" class="badge-footer">Changes/Cancellations</a><br>
+            <a class="pop-up-link badge-footer" onClick="showPolicies()" href="#">Hotel Policies</a>
+         </div>
+      </div>
+      Powered by <br><a target="_blank" href="https://www.reservhotel.com/"><img src="https://www.reservhotel.com/ibe4/assets/images/rhlogo.png" alt="ReservHotel Logo" style="width:11%;" /></a>
+   </footer>
+   <div class="pop-up" id="hotel-policies" style="max-width:500px;"><h3 class="pop-up-title">Hotel Policies</h3><ul><li>Check In: 11:00</li><li>Check Out: 13:00</li><li>Max Occupancy: 2</li><li>MxAd.-Max number of adults by room 2</li></ul></div>
+   <div class="pop-up" id="modifications">
+      <h3 class="pop-up-title">Changes/Cancellations</h3>
+      <div class="pop-content center">
+         <form action="" class="by-number" onsubmit="return validateCancel();" method="post">
+            <input type="text" id="confCancel" name="conf" class="number-txt height-34" maxlength="8" placeholder="*By Confirmation Number:">
+            <input type="text" id="lastname2" name="lastname2" class="number-txt height-34" maxlength="50" placeholder="*Last Name">
+            <input type="submit" class="number-submit btn-gold" value="Submit">
+            <br>
+            <p>(*) Mandatory</p>
+         </form>
+      </div>
+   </div>
+   <div class="pop-up" id="cancellations">
+      <h3 class="pop-up-title">Would you still like to cancel your reservation?</h3>
+      <div class="pop-content">
+         <p class="center bold" id="namesverify"></p>
+         <p class="center clearfix">
+            <a style="color:#FFF;" href="https://www.reservhotel.com/win/owa/ibe5_EXT.CHECK_ITIN?hotel=444&conf=B213360&usr=&lastname=PEREZ&lang=1&was_modified=Y&currency=&cancel=S" onClick="return confirmCancel('Y')" class="yes">Submit</a>
+            <a href="javascript:void(0);" onClick="$.fancybox.close();" class="no">Cancel</a>
+         </p>
+      </div>
+   </div>
+   <div class="pop-up" id="error-pop-up">
+      <h3 class="pop-up-title">Error</h3>
+      <div class="pop-content error_message_content">
+      <p class="center">
+      Error
+      </p>
+      </div>
+   </div>
+   <div class="pop-up" id="check-itinerary_alt">
+      <h3 class="pop-up-title">Check Itinerary</h3>
+      <div class="pop-content center">
+         <form action="#" class="by-number" onsubmit="return validateCheck();" method="post">
+            <input type="text" id="confCheck3" name="conf" class="number-txt height-34" maxlength="8" placeholder="*By Confirmation Number:">
+            <input type="text" id="lastname3" name="lastname3" class="number-txt height-34" maxlength="50" placeholder="*Last Name">
+            <input type="submit" class="number-submit btn-gold" value="Submit">
+            <br>
+            <p>(*) Mandatory</p>
+         </form>
+      </div>
+   </div>
+   <div class="pop-up" id="check-itinerary">
+   <h3 class="pop-up-title">Change Itinerary</h3>
+   <div class="pop-content center" id="itin-content">
+      <p class="center bold f14px">What would you like to update:</p>
+      <select class="select-choices save full-select change_select" name="change-opt" id="change-opt">
+         <option value="-1">Select</option>
+         <option value="01">Change Dates</option>
+         <option value="07">Change Room/Rate</option>
+         <option value="02">Add/Remove Adults</option>
+         <option value="03">Add/Remove Children</option>
+         <option value="10">Add/Remove Infants</option>
+         <option value="05">Change Names</option>
+         <option value="04">Change Contact Info</option>
+         <option value="06">Change Payment Info</option>
+         <option value="11">Change Flight Information</option>
+      </select>
+      <p class="center">
+         <input type="submit" class="number-submit" value="Submit" onClick="getChangeOpts();" style="float: inherit" />
+      </p>
+   </div>
+   <div class="pop-content center hidden" id="itin-content01">
+      <p class="center bold f14px">Change Dates:</p>
+      <br>
+      Please contact us to change dates for your package.<br>
+      <br>
+      For flight information please call: 1.800.219.2727
+      in US or Canada, other countries please call:
+      +1.305.354.3563 | <a href="https://www.reservhotel.com/cdn-cgi/l/email-protection#cfa6a1a9a08fbdaabcaabdb9a7a0bbaaa3e1aca0a2"><span class="__cf_email__" data-cfemail="8fe6e1e9e0cffdeafceafdf9e7e0fbeae3a1ece0e2">[email&#160;protected]</span></a><br><br><p>
+   </div>
+   <div class="pop-content center hidden" id="itin-content02">
+      <p class="center bold f14px">Add/Remove Adults:</p>
+      Please contact us to change adults for your package.<br>
+      <br>
+      For flight information please call: 1.800.219.2727
+      in US or Canada, other countries please call:
+      +1.305.354.3563 | <a href="https://www.reservhotel.com/cdn-cgi/l/email-protection#d6bfb8b0b996a4b3a5b3a4a0beb9a2b3baf8b5b9bb"><span class="__cf_email__" data-cfemail="86efe8e0e9c6f4e3f5e3f4f0eee9f2e3eaa8e5e9eb">[email&#160;protected]</span></a><br><br><p>
+   </div>
+   <div class="pop-content center hidden" id="itin-content03">
+      <p class="center bold f14px">Add/Remove Children:</p>
+      Please contact us to change children for your package.<br>
+      <br>
+      For flight information please call: 1.800.219.2727
+      in US or Canada, other countries please call:
+      +1.305.354.3563 | <a href="https://www.reservhotel.com/cdn-cgi/l/email-protection#fc95929a93bc8e998f998e8a9493889990d29f9391"><span class="__cf_email__" data-cfemail="d1b8bfb7be91a3b4a2b4a3a7b9bea5b4bdffb2bebc">[email&#160;protected]</span></a><br><br><p>
+   </div>
+   <div class="pop-content center hidden" id="itin-content10">
+      <p class="center bold f14px">Add/Remove Infants:</p>
+      Please contact us to change infants for your package.<br>
+      <br>
+      For flight information please call: 1.800.219.2727
+      in US or Canada, other countries please call:
+      +1.305.354.3563 | <a href="https://www.reservhotel.com/cdn-cgi/l/email-protection#543d3a323b142631273126223c3b2031387a373b39"><span class="__cf_email__" data-cfemail="8ae3e4ece5caf8eff9eff8fce2e5feefe6a4e9e5e7">[email&#160;protected]</span></a><br><br><p>
+   </div>
+   <div class="pop-content center hidden" id="itin-content04">
+      <p class="center bold f14px">Change Contact Info:</p>
+      <table width="100%">
+         <tr><td class="itincol2">Address</td><td><input type="text" id="address" value="ASDFEEF" maxlength="40"></td></tr>
+         <tr><td class="itincol2"></td><td><input type="text" id="address2" value="" maxlength="40"></td></tr>
+         <tr><td class="itincol2">City</td><td><input type="text" id="city" value="ASDF" maxlength="40"></td></tr>
+         <tr><td class="itincol2">State</td><td><input type="text" id="state" value="AL" maxlength="40"></td></tr>
+         <tr><td class="itincol2">ZIP</td><td><input type="text" id="zip" value="2323" maxlength="10"></td></tr>
+         <tr>
+            <td class="itincol2">Country</td>
+            <td>
+               <select class="select-choices save full-select change_select" name="country" id="country" style="margin: 0 0 0.75em;">
+                  <option value="AF">Afghanistan</option>
+                  <option value="AL">Albania</option>
+                  <option value="DZ">Algeria</option>
+                  <option value="AO">Angola</option>
+                  <option value="AI">Anguilla</option>
+                  <option value="AG">Antigua And Barbuda</option>
+                  <option value="AR">Argentina</option>
+                  <option value="AM">Armenia</option>
+                  <option value="AW">Aruba</option>
+                  <option value="AU">Australia</option>
+                  <option value="AT">Austria</option>
+                  <option value="AZ">Azerbaijan</option>
+                  <option value="BS">Bahamas</option>
+                  <option value="BH">Bahrain</option>
+                  <option value="BD">Bangladesh</option>
+                  <option value="BB">Barbados</option>
+                  <option value="BY">Belarus</option>
+                  <option value="BE">Belgium</option>
+                  <option value="BZ">Belize</option>
+                  <option value="BJ">Benin</option>
+                  <option value="BM">Bermuda</option>
+                  <option value="BT">Bhutan</option>
+                  <option value="BO">Bolivia</option>
+                  <option value="BQ">Bonaire St Eustatius And Saba</option>
+                  <option value="BA">Bosnia Herzegovina</option>
+                  <option value="BW">Botswana</option>
+                  <option value="BR">Brazil</option>
+                  <option value="IO">British Indian Ocean Territory</option>
+                  <option value="VG">British Virgin Islands</option>
+                  <option value="BN">Brunei Darussalam</option>
+                  <option value="BG">Bulgaria</option>
+                  <option value="BI">Burundi</option>
+                  <option value="KH">Cambodia</option>
+                  <option value="CM">Cameroon</option>
+                  <option value="CA">Canada</option>
+                  <option value="CV">Cape Verde</option>
+                  <option value="KY">Cayman Islands</option>
+                  <option value="CF">Central African Republic</option>
+                  <option value="TD">Chad</option>
+                  <option value="CL">Chile</option>
+                  <option value="CN">China</option>
+                  <option value="CO">Colombia</option>
+                  <option value="CG">Congo</option>
+                  <option value="CK">Cook Islands</option>
+                  <option value="CR">Costa Rica</option>
+                  <option value="CI">Cote D'Ivoire</option>
+                  <option value="HR">Croatia</option>
+                  <option value="CU">Cuba</option>
+                  <option value="CW">Curacao</option>
+                  <option value="CY">Cyprus</option>
+                  <option value="CZ">Czech Republic</option>
+                  <option value="DK">Denmark</option>
+                  <option value="DM">Dominica</option>
+                  <option value="DO">Dominican Republic</option>
+                  <option value="EC">Ecuador</option>
+                  <option value="EG">Egypt</option>
+                  <option value="SV">El Salvador</option>
+                  <option value="ER">Eritrea</option>
+                  <option value="EE">Estonia</option>
+                  <option value="ET">Ethiopia</option>
+                  <option value="FJ">Fiji</option>
+                  <option value="FI">Finland</option>
+                  <option value="FR">France</option>
+                  <option value="GF">French Guiana</option>
+                  <option value="PF">French Polynesia</option>
+                  <option value="GA">Gabon</option>
+                  <option value="GM">Gambia</option>
+                  <option value="GE">Georgia</option>
+                  <option value="DE">Germany</option>
+                  <option value="GH">Ghana</option>
+                  <option value="GR">Greece</option>
+                  <option value="GL">Greenland</option>
+                  <option value="GD">Grenada</option>
+                  <option value="GP">Guadeloupe</option>
+                  <option value="GU">Guam</option>
+                  <option value="GT">Guatemala</option>
+                  <option value="GY">Guyana</option>
+                  <option value="HT">Haiti</option>
+                  <option value="HN">Honduras</option>
+                  <option value="HK">Hong Kong</option>
+                  <option value="HU">Hungary</option>
+                  <option value="IS">Iceland</option>
+                  <option value="IN">India</option>
+                  <option value="ID">Indonesia</option>
+                  <option value="IR">Iran</option>
+                  <option value="IQ">Iraq</option>
+                  <option value="IE">Ireland</option>
+                  <option value="IL">Israel</option>
+                  <option value="IT">Italy</option>
+                  <option value="JM">Jamaica</option>
+                  <option value="JP">Japan</option>
+                  <option value="JE">Jersey</option>
+                  <option value="JO">Jordan</option>
+                  <option value="KZ">Kazakhstan</option>
+                  <option value="KE">Kenya</option>
+                  <option value="KW">Kuwait</option>
+                  <option value="KG">Kyrgyzstan</option>
+                  <option value="LA">Laos Peoples Democratic Rep</option>
+                  <option value="LV">Latvia</option>
+                  <option value="LB">Lebanon</option>
+                  <option value="LS">Lesotho</option>
+                  <option value="LR">Liberia</option>
+                  <option value="LY">Libya / Libyan Arab Jamahiriya</option>
+                  <option value="LI">Liechtenstein</option>
+                  <option value="LT">Lithuania</option>
+                  <option value="LU">Luxembourg</option>
+                  <option value="MO">Macau</option>
+                  <option value="MK">Macedonia</option>
+                  <option value="MG">Madagascar Island</option>
+                  <option value="MW">Malawi</option>
+                  <option value="MY">Malaysia</option>
+                  <option value="MV">Maldives</option>
+                  <option value="ML">Mali</option>
+                  <option value="MT">Malta</option>
+                  <option value="MH">Marshall Islands</option>
+                  <option value="MQ">Martinique</option>
+                  <option value="MR">Mauritania</option>
+                  <option value="MU">Mauritius Island</option>
+                  <option value="MX">Mexico</option>
+                  <option value="FM">Micronesia</option>
+                  <option value="MD">Moldova</option>
+                  <option value="MC">Monaco</option>
+                  <option value="MN">Mongolia</option>
+                  <option value="ME">Montenegro</option>
+                  <option value="MS">Montserrat</option>
+                  <option value="MA">Morocco</option>
+                  <option value="MZ">Mozambique</option>
+                  <option value="MM">Myanmar</option>
+                  <option value="NA">Namibia</option>
+                  <option value="NP">Nepal</option>
+                  <option value="NL">Netherlands</option>
+                  <option value="NC">New Caledonia</option>
+                  <option value="NZ">New Zealand</option>
+                  <option value="NI">Nicaragua</option>
+                  <option value="NE">Niger</option>
+                  <option value="NG">Nigeria</option>
+                  <option value="KP">North Korea</option>
+                  <option value="MP">Northern Mariana Islands</option>
+                  <option value="NO">Norway</option>
+                  <option value="XX">Not Furnished</option>
+                  <option value="OM">Oman</option>
+                  <option value="PK">Pakistan</option>
+                  <option value="PA">Panama</option>
+                  <option value="PG">Papua New Guinea</option>
+                  <option value="PY">Paraguay</option>
+                  <option value="PE">Peru</option>
+                  <option value="PH">Philippines</option>
+                  <option value="PL">Poland</option>
+                  <option value="PT">Portugal</option>
+                  <option value="PR">Puerto Rico</option>
+                  <option value="QA">Qatar</option>
+                  <option value="RE">Reunion Island</option>
+                  <option value="RO">Romania</option>
+                  <option value="RU">Russia</option>
+                  <option value="SH">Saint Helena</option>
+                  <option value="MF">Saint Martin</option>
+                  <option value="WS">Samoa</option>
+                  <option value="SA">Saudi Arabia</option>
+                  <option value="ST">Scotland</option>
+                  <option value="SN">Senegal</option>
+                  <option value="RS">Serbia</option>
+                  <option value="SC">Seychelles</option>
+                  <option value="SL">Sierra Leone</option>
+                  <option value="SG">Singapore</option>
+                  <option value="SK">Slovakia</option>
+                  <option value="SI">Slovenia</option>
+                  <option value="SO">Somalia</option>
+                  <option value="ZA">South Africa</option>
+                  <option value="KR">South Korea</option>
+                  <option value="SS">South Sudan</option>
+                  <option value="ES">Spain</option>
+                  <option value="LK">Sri Lanka</option>
+                  <option value="SX">St Maarten</option>
+                  <option value="KN">St. Kitts And Nevis</option>
+                  <option value="LC">St. Lucia</option>
+                  <option value="VC">St. Vincent And Grenadines</option>
+                  <option value="SD">Sudan</option>
+                  <option value="SR">Suriname</option>
+                  <option value="SZ">Swaziland</option>
+                  <option value="SE">Sweden</option>
+                  <option value="CH">Switzerland</option>
+                  <option value="SY">Syrian Arab Republic</option>
+                  <option value="TW">Taiwan - Province Of China</option>
+                  <option value="TJ">Tajikistan</option>
+                  <option value="TZ">Tanzania - United Republic</option>
+                  <option value="TP">Test Country</option>
+                  <option value="TH">Thailand</option>
+                  <option value="TO">Tonga</option>
+                  <option value="TT">Trinidad And Tobago</option>
+                  <option value="TN">Tunisia</option>
+                  <option value="TR">Turkey</option>
+                  <option value="TM">Turkmenistan</option>
+                  <option value="TC">Turks And Caicos Islands</option>
+                  <option value="UM">U.S. Minor Outlying Islands</option>
+                  <option value="UG">Uganda</option>
+                  <option value="UA">Ukraine</option>
+                  <option value="AE">United Arab Emirates</option>
+                  <option value="GB">United Kingdom</option>
+                  <option selected value="US">United States</option>
+                  <option value="UY">Uruguay</option>
+                  <option value="VI">Us Virgin Islands</option>
+                  <option value="UZ">Uzbekistan</option>
+                  <option value="VE">Venezuela</option>
+                  <option value="VN">Vietnam</option>
+                  <option value="YE">Yemen</option>
+                  <option value="YU">Yugoslavia</option>
+                  <option value="ZR">Zaire Republic</option>
+                  <option value="ZM">Zambia</option>
+                  <option value="ZW">Zimbabwe</option>
+               <select>
+            </td>
+         </tr>
+         <tr><td class="itincol2">Email</td><td><input type="text" id="email" value="DD@G.COM" maxlength="60"></td></tr>
+         <tr><td class="itincol2">Phone Number</td><td><input type="text" id="phone" value="23232323232" maxlength="20"></td></tr>
+         <tr><td class="itincol2">Remarks</td><td><input type="text" id="remarks" value="" maxlength="400"></td></tr>
+         <tr>
+         <td class="itincol2">Loyalty Code</td><td><input type="text" id="loyalty" value="" name="loyalty" maxlength="20"></td>
+         </tr>
+      </table>
+      <p class="center"><br>
+      <input type="submit" class="number-submit" value="Submit" onClick="getQuotes('saveContactInfo');" style="float: inherit" />
+      </p>
+   </div>
+   <div class="pop-content center hidden" id="itin-content11">
+      <p class="center bold f14px">Change Flight Informaion:</p>
+      <table width="100%">
+         <tr><td class="itincol2">Arrival Flight</td><td><input type="text" id="arrflight" value="AA2815" maxlength="9"></td></tr>
+         <tr><td class="itincol2">Arrival Time</td><td><input type="text" id="arrtime" value="20:31" maxlength="5"></td></tr>
+         <tr><td class="itincol2">Departure Flight</td><td><input type="text" id="depflight" value="AA2816" maxlength="9"></td></tr>
+         <tr><td class="itincol2">Departure Time</td><td><input type="text" id="deptime" value="08:00" maxlength="5"></td></tr>
+      </table>
+      <p class="center"><br>
+         <input type="submit" class="number-submit" value="Submit" onClick="getQuotes('saveFlightInfo');" style="float: inherit" />
+      </p>
+   </div>
+   <div class="pop-content center hidden" id="itin-content05">
+      <p class="center bold f14px">Change Names:</p>
+      Sorry airlines do not allow name changes.<br><br>
+      For hotel information please call: +1 305 3549400<br>
+      For flight information please call: 1.800.219.2727
+      in US or Canada, other countries please call:
+      +1.305.354.3563 | <a href="https://www.reservhotel.com/cdn-cgi/l/email-protection#274e494148675542544255514f4853424b0944484a"><span class="__cf_email__" data-cfemail="244d4a424b645641574156524c4b5041480a474b49">[email&#160;protected]</span></a><br><br><p>
+   </div>
+   <div class="pop-content center hidden" id="itin-content08">
+      <p class="center bold f14px">Change Number of Rooms to:</p>
+      <div class="form-group" style="height: 30px;text-align:left;">
+         <div class="that-select-noa">
+            <select class="select-choices save full-select change_select" name="rooms" id="rooms" style="margin: 0 0 0.75em;">
+               <option value="01" selected>1</option>
+               <option value="02">2</option>
+               <option value="03">3</option>
+               <option value="04">4</option>
+               <option value="05">5</option>
+               <option value="06">6</option>
+               <option value="07">7</option>
+               <option value="08">8</option>
+               <option value="09">9</option>
+            </select>
+         </div>
+      </div>
+      <p class="center"><br>
+         <input type="submit" class="number-submit" value="Submit" onClick="getQuotes('AddRoom');" style="float: inherit" />
+      </p>
+   </div>
+   <div class="pop-content center hidden" id="itin-content06">
+      <p class="center bold f14px">Change Payment Info:</p>
+      <table width="100%">
+         <tr>
+            <td class="itincol2">Old Card Type</td>
+            <td>
+               VISA
+               <tr>
+                  <td class="itincol2">New Cardholder Name</td><td><input type="text" id="pay_name" value=""></td>
+               </tr>
+            </td>
+         </tr>
+         <tr>
+            <td class="itincol2">New Card Number</td><td><input type="text" id="pay_number" maxlength="16" value=""></td>
+         </tr>
+         <tr>
+            <td class="itincol2">New CVC</td><td><input type="text" id="pay_cvc" value=""></td>
+         </tr>
+         <tr>
+            <td class="itincol2">New Expiration</td>
+            <td>
+               <div class="form-group" style="height: 30px;text-align:left;">
+                  <div class="that-select-noa" style="width: 100px;    float: left;">
+                     <select class="select-choices save full-select change_select" name="CCMonth" id="pay_month" style="margin: 0 0 0.75em;">
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                     </select>
+                  </div>
+                  <div class="that-select-noa" style="width: 100px;    float: right;">
+                     <select class="select-choices save full-select change_select" name="CCYear" id="pay_year" style="margin: 0 0 0.75em;">
+                        <option value="21">2021</option>
+                        <option value="22">2022</option>
+                        <option value="23">2023</option>
+                        <option value="24">2024</option>
+                        <option value="25">2025</option>
+                        <option value="26">2026</option>
+                        <option value="27">2027</option>
+                        <option value="28">2028</option>
+                        <option value="29">2029</option>
+                        <option value="30">2030</option>
+                        <option value="31">2031</option>
+                        <option value="32">2032</option>
+                        <option value="33">2033</option>
+                        <option value="34">2034</option>
+                        <option value="35">2035</option>
+                        <option value="36">2036</option>
+                     </select>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr>
+            <td class="itincol2">New Billing ZIP</td><td><input type="text" id="pay_zip" value=""></td>
+         </tr>
+      </table>
+      <p class="center"><br>
+         <input type="submit" class="number-submit" value="Submit" onClick="getQuotes('savePaymentInfo');" style="float: inherit" />
+      </p>
+   </div>
+   <div class="pop-content center hidden" id="itin-content09">
+      <p class="center bold f14px">Make a Payment:</p>
+      <p class="center bold f14px red error_pay"></p>
+      <table border="0" width="100%">
+         <tr>
+            <td class="text-center" colspan="100%">Remaining Balance: <span class="money">1.00 </span></td>
+         </tr>
+         <tr>
+            <td class="itincol2">Amount</td>
+            <td><input type="text" id="make_pay_amount" value="">
+               <input type="hidden" id="rem_balance_amt" value="1">
+            </td>
+         </tr>
+         <tr>
+            <td class="itincol2">Card Name</td>
+            <td><input type="text" id="make_pay_name" value=""></td>
+         </tr>
+         <tr>
+            <td class="itincol2">Card Number</td>
+            <td><input type="text" id="make_pay_number" maxlength="16" value=""></td>
+         </tr>
+         <tr>
+            <td class="itincol2">CVC</td>
+            <td><input type="text" id="make_pay_cvc" maxlength="4" value=""></td>
+         </tr>
+         <tr>
+            <td class="itincol2">Expiration</td>
+            <td>
+               <div class="form-group" style="height: 30px;text-align:left;">
+                  <div class="that-select-noa" style="width: 100px;float:left;">
+                     <select class="select-choices save full-select change_select" name="CCMonth" id="make_pay_month" style="margin: 0 0 0.75em;">
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                     </select>
+                  </div>
+                  <div class="that-select-noa" style="width: 100px;float:right;">
+                     <select class="select-choices save full-select change_select" name="CCYear" id="make_pay_year" style="margin: 0 0 0.75em;">
+                        <option value="21">2021</option>
+                        <option value="22">2022</option>
+                        <option value="23">2023</option>
+                        <option value="24">2024</option>
+                        <option value="25">2025</option>
+                        <option value="26">2026</option>
+                        <option value="27">2027</option>
+                        <option value="28">2028</option>
+                        <option value="29">2029</option>
+                        <option value="30">2030</option>
+                        <option value="31">2031</option>
+                        <option value="32">2032</option>
+                        <option value="33">2033</option>
+                        <option value="34">2034</option>
+                        <option value="35">2035</option>
+                        <option value="36">2036</option>
+                     </select>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr>
+            <td class="itincol2">Billing ZIP</td><td><input type="text" id="make_pay_zip" value=""></td>
+         </tr>
+      </table>
+      <p class="center"><br>
+         <input type="submit" class="number-submit" value="Submit" onClick="getQuotes('saveMakePayment');" style="float: inherit" />
+      </p>
+   </div>
+   <div class="pop-content center hidden" id="itin-final">
+      <p class="center bold f16px" id="itin-final-main"></p>
+      <p class="center bold f16px green" id="itin-final-sub"></p>
+      <p class="center"><br>
+         <input type="submit" id="final-btn1" class="number-submit" value="Confirm" onClick="saveChgs();" style="float: inherit;display:none" />
+         <input type="submit" id="final-btn2" class="number-submit" value="Cancel" onClick="resetChgs();" style="float: inherit;display:none" />
+         <input type="submit" id="final-btn3" class="number-submit" value="Ok" onClick="resetChgs();" style="float: inherit;display:none" />
+      </p>
+   </div>
+   </div>
+   </div>
+   <div id="delete_pass" style="display:none;">
+      <table width="100%" style="font-weight: normal;color: #000;">
+         <tr><td class="itincol2"><input type="checkbox" class="pass_check" value="1"></td><td id="name1">Diego Perez</td></tr>
+         <tr><td class="itincol2"><input type="checkbox" class="pass_check" value="2"></td><td id="name2">Aasdf Asdf</td></tr>
+      </table>
+   </div>
+   <div id="delete_children" style="display:none;">
+      <table width="100%" style="font-weight: normal;color: #000;">
+      </table>
+   </div>
+   <div id="delete_infant" style="display:none;">
+      <table width="100%" style="font-weight: normal;color: #000;">
+      </table>
+   </div>
+   <script data-cfasync="false" src="https://www.reservhotel.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+   </script>
+   <script type="text/javascript">
+      (function(){window['__CF$cv$params']={r:'6428bc389b172885',m:'505f93047f26ec7701a07ee3469c31f66acc9c0c-1618862596-1800-AW2wiQA9P+MU4k90d4yJTakLujnXVxkfcFaFm7AO5SVgEuHiZA19SodQ01bnFJI2kf3RMEzRRqdloiGQCkDKmbf8KfiSuA7Cr1g9iVEC0PL1hCWTVhSzYqfgnNkoCfBQ5WHLgog6jSu5dlSevmMp4FPTNww9AHrfx5jaYyLP9HPaVOXG8/hAx96VXizODhesJ9FQH+72HuxKVrRP4mBN5sM=',s:[0xa5ce49a01b,0xd91b956840],}})();
+   </script>
+</body>
+</html>
