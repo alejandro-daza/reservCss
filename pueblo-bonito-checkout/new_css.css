@@ -70,6 +70,9 @@
    .cc_top_row{
       margin-bottom: 0 !important;
    }
+   .passeng-sets li{
+      margin-bottom: 0em !important;
+   }
 }
 
 @media screen and (max-width: 368px){
