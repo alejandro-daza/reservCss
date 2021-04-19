@@ -1,0 +1,89 @@
+#next-step{
+   margin-right: 0;
+   width: 90%;
+}
+
+#rh_footer{
+   padding: 10px 0px;
+}
+
+#rh_footer .rh_footer_logo{
+   width: 11%;
+}
+
+.powered_by_br{
+   display: inline-block;
+}
+
+@media screen and (max-width: 767px) {
+   .room-detail-text{
+      padding: 0;
+   }
+
+   .prices-box-outer .prices-box-inner .group{
+      padding: 5px 0px;
+   }
+
+   .prices-box-outer .prices-box-inner .group:last-child{
+      padding: 5px 0px;
+   }
+   
+   .powered_by_br{
+      display: none;
+   }
+
+}
+
+@media screen and (max-width: 576px) {
+   .secure_shopping_div{
+      text-align: center;
+   }
+
+   footer .section-footer img{
+      margin-bottom: 10px;
+   }
+   .footer-btn{
+      text-align: center;
+      display: inline-block;
+   }
+   .footer-btn.footer-btn-itinerary{
+      width: 29%;
+   }
+   .footer-btn.footer-btn-changes{
+      width: 41%;
+   }
+   .footer-btn.footer-btn-policies{
+      width: 27%;
+   }
+   .rh_footer_logo{
+      width: 19% !important;
+   }
+}
+
+@media screen and (max-width: 427px) {
+   header#header>div.top-nav ul>li .sub-menu{
+      left: 45px;
+   }
+   .flag-container .country-list .country{
+      width: 200px;
+   }
+   .cc_top_row{
+      margin-bottom: 0 !important;
+   }
+}
+
+@media screen and (max-width: 368px){
+   .footer-btn{
+      font-size: 9px;
+   }
+   .rh_footer_logo{
+      width: 30% !important;
+   }
+}
+
+@media (max-width: 320px){
+   .img-cre {
+    height: 18px!important;
+    border-radius: 1px!important;
+   }
+}
