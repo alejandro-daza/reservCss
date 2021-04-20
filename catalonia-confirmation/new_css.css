@@ -1,0 +1,8 @@
+.send-to-friend a{
+   float: none;
+   display: inline-flex;
+}
+
+.header-image-box{
+   background-size: contain !important;
+}
