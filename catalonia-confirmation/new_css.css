@@ -6,3 +6,33 @@
 .header-image-box{
    background-size: contain !important;
 }
+
+#confirm-numbers .row{
+   margin-bottom: 1em;
+}
+
+@media screen and (max-width: 767px){
+   .f16px{
+      margin-bottom: 2% !important;
+   }
+}
+
+@media screen and (max-width: 560px){
+   .f16px{
+      margin-bottom: 3.5% !important;
+   }
+}
+
+@media screen and (max-width: 450px){
+   #hotel_info{
+      padding-left: 15px;
+      padding-right: 15px;
+   }
+}
+
+@media screen and (max-width: 340px){
+   #hotel_info .label{
+      font-size: 11px !important;
+   }
+}
+
