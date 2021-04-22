@@ -10,3 +10,107 @@
    margin-left: 0 !important;
    width: 100%;
 }
+
+.payment-options-btn{
+   width: 100%;
+   height: 50px;
+   padding: .375rem 0;
+}
+
+.paym-input-control{
+   height: 100%;
+   width: calc(100% - 120px);
+   display: inline-block;
+   border: 1px solid #ced4da;
+   border-radius: .25rem 0 0 .25rem;
+}
+
+.payment-options-btn .paym-input{
+   display: none;
+   opacity: 0;
+   /* width: 30px; */
+}
+
+.payment-options-btn .paym-input-control .paym-label::before{
+   border-radius: 50%;
+   transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.paym-label::before{
+   position: absolute;
+   top: 2%;
+   left: -1.5rem;
+   display: block;
+   width: 1rem;
+   height: 1rem;
+   pointer-events: none;
+   content: "";
+   background-color: #fff;
+   border: #adb5bd solid 1px;
+}
+
+.paym-input:checked~.paym-input-control>.paym-label::before{
+   color: #fff;
+   border-color: #33c5ff;
+   background-color: #33c5ff;
+}
+
+.paym-input:checked~.paym-input-control>.paym-label::after{
+   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+.paym-input:checked~.paym-input-control{
+   border-color: #33c5ff!important;
+}
+.paym-input:checked~.paym-append{
+   background-color: #33c5ff!important;
+   color:#fff;
+   /* border: 1px solid #33c5ff!important; */
+}
+
+.paym-input:checked .paym-input-control{
+   border-color: #33c5ff!important;
+}
+
+.paym-label{
+   display: inline-block;
+   position: relative;
+   margin-bottom: 0px!important;
+   vertical-align: top;
+   font-size: 0.75rem;
+   line-height: 1.5;
+   transform: translateY(50%);
+   margin-left: 2.5em;
+}
+
+.paym-label::after{
+   position: absolute;
+   top: 2%;
+   left: -1.5rem;
+   display: block;
+   width: 1rem;
+   height: 1rem;
+   content: "";
+   background: no-repeat 50%/50% 50%;
+}
+
+.paym-append{
+   display: inline-block;
+   position: relative;
+   background-color: #d8d8d8;
+   border-radius: 0 .25rem .25rem 0;
+   height: 100%;
+   width: 120px;
+   margin-left: -4px;
+}
+
+.paym-append-text{
+   width: 100%;
+   font-size: .85rem;
+   font-weight: 600;
+   text-align: center;
+   margin: 0;
+   top: 50%;
+   -ms-transform: translateY(50%);
+   transform: translateY(50%);
+}

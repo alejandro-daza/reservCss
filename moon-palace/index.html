@@ -3901,14 +3901,65 @@
       </div>
    </div>
    <div class="row form-field">
-      <ul class="payment-options-list">
-         <li class="depp_input">
+      <ul class="payment-options-list" style="width: 100%;">
+         <li>
+            <div class="payment-options-btn">
+               <input class="paym-input" type="radio" name="pplan" id="pplan-1">
+               <div class="paym-input-control">
+                  <label class="paym-label" for="pplan-1">Regular Deposit Due Today</label>
+               </div>
+               <div class="paym-append">
+                  <div class="paym-append-text">
+                     <span id="normal_dep" class="custom-price" value="895.7">895.70</span>
+                  </div>
+               </div>
+            </div>
+         </li>
+         <li>
+            <div class="payment-options-btn">
+               <input class="paym-input" type="radio" name="pplan" id="pplan-2">
+               <div class="paym-input-control">
+                  <label class="paym-label" for="pplan-2">Pay in Full Today</label>
+               </div>
+               <div class="paym-append">
+                  <div class="paym-append-text">
+                     <span id="full_dep" class="custom-price"> 6,505.70 </span>
+                  </div>
+               </div>
+            </div>
+         </li>
+         <li>
+            <div class="payment-options-btn">
+               <input class="paym-input" type="radio" name="pplan" id="pplan-3">
+               <div class="paym-input-control">
+                  <label class="paym-label" for="pplan-3">Pay over Time:</label>
+               </div>
+               <div class="paym-append">
+                  <div class="paym-append-text">
+                     <span id="uplift_dep" class="custom-price"> 579 </span>
+                  </div>
+               </div>
+            </div>
+         </li>
+         <!-- <li class="depp_input">
             <input type="radio" value="5" name="pplan" data-method="cc" checked id="depplan1" onClick="updateDep(895.7,895.7);"><label class="depp_label" for="depplan1">&nbsp;&nbsp;Regular Deposit Due Today: &nbsp; <span id="normal_dep" class="custom-price" value="895.7">895.70 </span> &nbsp;</label>
          </li>
          <li class = "depp_input">
             <input type="radio" value="6" name="pplan" data-method="cc" id="depplan2" onClick="updateDep(6505.7,6505.7);"><label class="depp_label" for="depplan2">&nbsp;&nbsp;Pay in Full Today: <span id="full_dep" class="custom-price"> 6,505.70 </span>&nbsp; &nbsp; </label><br>
          </li>
          <li>
+            <input type="radio" value="0" name="pplan" data-method="up" id="depplan3"><label class="depp_label" for="depplan3"><span>&nbsp;&nbsp;Pay Over Time: </span> 
+            <span id="up-from-pricing-available">
+               <span class="up-as-low-as-caps">as low as </span>
+               <span class="up-blue">
+                  <span class="up-price">$<strong id="uplift-from-price">579</strong></span>
+                  <span>/month</span>
+               </span>
+            </span>
+            </label>
+            <span id="up-from-pricing-not-available" style="display:none">NOT AVAILABLE</span> 
+         </li> -->
+         <!-- <li>
             <div class="up-payment-switch-container">
                <label class="switch">
                  <input style="margin-left: 5%" type="checkbox" id="upCheckbox" />
@@ -3932,18 +3983,6 @@
                   </label>
                </span>
              </div>
-         </li>
-         <!-- <li>
-            <input type="radio" value="0" name="pplan" data-method="up" id="depplan3"><label class="depp_label" for="depplan3"><span>&nbsp;&nbsp;Pay Over Time: </span> 
-            <span id="up-from-pricing-available">
-               <span class="up-as-low-as-caps">as low as </span>
-               <span class="up-blue">
-                  <span class="up-price">$<strong id="uplift-from-price">579</strong></span>
-                  <span>/month</span>
-               </span>
-            </span>
-            </label>
-            <span id="up-from-pricing-not-available" style="display:none">NOT AVAILABLE</span> 
          </li> -->
       </ul>
    </div>
