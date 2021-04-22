@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReservhOTEL</title>
+</head>
+<body>
+
+  <div data-up-marketing='{ "orientation": "vertical", "showLogo": true, "imagePlacement": "left"}'></div>
+
+  <div id="up-pay-monthly-container"></div>
+  <script>
+    window.upReady = function(){
+      console.log('up Ready');
+      window.Uplift.Agent.init(getInitConfig());
+
+      // Retrieve trip information
+      const tripInfo = getTripInfo();
+
+      window.Uplift.Agent.createTrip(tripInfo);
+
+      // const tripId = null;
+      // if (tripId) {
+      //   window.Uplift.Agent.updateTrip(tripId, tripInfo);
+      // } else {
+      //   const tripId = getTripId();
+      //   window.Uplift.Agent.createTrip(tripInfo);
+      // }
+    }
+
+    function getInitConfig(){
+      const config = {
+        agent:{
+          id: 'alejandro.daza@fulltimeforce.com',        //required
+          agencyId: '',       //optional
+          email: '',          //optional but recommended
+          firstName: '',      //optional
+          familyName: '',     //optional
+          phoneNumber: ''     //optional
+        },
+        locale: 'en-US',
+        currency: 'USD',
+        onChange: function(tripId){
+          console.log('On Change: ', tripId);
+          return;
+        },
+        sessionTokenCallback: function(token){
+          console.log("token:"+token);
+          return 'asdf';
+        },
+        payMonthlyContainer: '#up-pay-monthly-container',
+        checkout: true
+      }
+      return config;
+    }
+
+    function getTripInfo(){
+      const tripInfo = {
+        order_amount: 99900,
+        travelers: [{
+          id: 0,
+          first_name: "Arthur",
+          last_name: "Davis",
+          date_of_birth: "04/07/1963"
+        }],
+        air_reservations: [{
+          trip_type: "oneway",
+          itinerary: [{
+            arrival_apc: "LAX",
+            departure_apc: "HNL",
+            departure_time: "20210930",
+          }]
+        }],
+        hotel_reservations: [{
+          hotel_name: "Grand Resort Spa & Hotel",
+          check_in: "20211001",
+          check_out: "20211004"
+        }],
+        cruise_reservations: [{
+          cruise_line: "Apollo Cruises",
+          disembark_date: "20211105",
+          embark_date: "20211029",
+          itinerary: [{
+            departure_port: "Miami",
+            arrival_port: "Nassau",
+            departure_date: "20211029",
+            arrival_date: "20211105"
+          }]
+        }]
+      };
+      return tripInfo;
+    }
+
+    function getTripId(){
+      return 12341234;
+    }
+
+    (function (u, p, l, i, f, t, b, j) { u['UpLiftPlatformObject'] = f; u[f] = u[f] || function () { (u[f].q = u[f].q || []).push(arguments) }, u[f].l = 1 * new Date(); b = p.createElement(l), j = p.getElementsByTagName(l)[0]; b.async = 1; b.src = i + '?id=' + t; j.parentNode.insertBefore(b, j); var o = window.location.host.match(/[\w-]+\.\w{2,3}(:\d+)?$/); if (o) o = o[0]; u[f]('create', t, o) })(window, document, 'script', 'https://cdn.uplift-platform.com/a/up.js', 'up', 'UP-94385876-98');
+  </script>
+</body>
+</html>

@@ -52,13 +52,6 @@
   <script type="text/javascript" src="https://www.reservhotel.com/ibe5/assets/js/fancy.js"></script>
   <script type="text/javascript" src="https://www.reservhotel.com/ibe5/assets/js/cookie.js"></script>
   <script type="text/javascript" src="https://www.reservhotel.com/ibe5/assets/js/track.js"></script>
-  <script>
-    const marketingBannerConfiguration = {
-      orientation: 'horizontal',
-      showLogo: true,
-      imagePlacement: 'left'
-    };
-  </script>
   <style type="text/css">.row:before, .row:after {display: none !important;}.all-wrap{left:0px !important}.invalid{border: 1px solid red;}.insurancewrap{padding: 10px;}.form-field input[type="text"].invalid{border: 1px solid red !important;}
   .w100{width:100%;}
   .edit-link{color:#fff;    font-family: 'FiraSans-Medium' !important;}
@@ -3502,10 +3495,10 @@
             <p class="f14px bold black">Guest Information 1</p>
             <div class="row">
             <div class="form-field col-sm-12 ">
-            <input type="text" class="forminput fnamec" name="fname" id="fname1" value="" placeholder="Guest 1 First &amp; Middle Name *" maxlength="30" onblur="savedata('68827093','fname1',2,1)" />
+            <input type="text" class="forminput fnamec" name="fname" id="fname1" value="Sergio" placeholder="Guest 1 First &amp; Middle Name *" maxlength="30" onblur="savedata('68827093','fname1',2,1)" />
             </div>
             <div class="form-field col-sm-12">
-            <input type="text" class="forminput" name="lname" id="lname1" value="" placeholder="Guest 1 Last Name *" maxlength="30" onblur="savedata('68827093','lname1',2,2)" />
+            <input type="text" class="forminput" name="lname" id="lname1" value="Valera" placeholder="Guest 1 Last Name *" maxlength="30" onblur="savedata('68827093','lname1',2,2)" />
             </div>
             </div>
             <div class="form-field" style="display:none;">
@@ -3520,10 +3513,10 @@
             <p class="f14px bold black">Guest Information 2</p>
             <div class="row">
             <div class="form-field col-sm-12 ">
-            <input type="text" class="forminput fnamec" name="fname" id="fname2" value="" placeholder="Guest 2 First &amp; Middle Name *" maxlength="30" onblur="savedata('68827093','fname2',2,1)" />
+            <input type="text" class="forminput fnamec" name="fname" id="fname2" value="Isabella" placeholder="Guest 2 First &amp; Middle Name *" maxlength="30" onblur="savedata('68827093','fname2',2,1)" />
             </div>
             <div class="form-field col-sm-12">
-            <input type="text" class="forminput" name="lname" id="lname2" value="" placeholder="Guest 2 Last Name *" maxlength="30" onblur="savedata('68827093','lname2',2,2)" />
+            <input type="text" class="forminput" name="lname" id="lname2" value="Armas" placeholder="Guest 2 Last Name *" maxlength="30" onblur="savedata('68827093','lname2',2,2)" />
             </div>
             </div>
             <div class="form-field" style="display:none;">
@@ -3901,11 +3894,11 @@
                 <!-- prepare a hidden container for the Uplift application iframe -->
                 <div id="up-pay-monthly-container" src="" style="display:none">
                 </div>
-                <div data-up-marketing={JSON.stringify(marketingBannerConfiguration)}></div>
+                <div style='display: block;' data-up-marketing='{"orientation": "horizontal","showLogo": true,"imagePlacement": "right"}'></div>
                 <!-- attach the Uplift iframe here ^ if Pay Monthly is available -->
               </div>
-              <div class="row form-field hide_for_agency flight_fields flight_upsell">
-              </div>
+                <div class="row form-field hide_for_agency flight_fields flight_upsell">
+                </div>
               </div>
               <div class="accord-wrap cc_info">
                 <div class="credit-card-info-head">
@@ -4948,43 +4941,56 @@
   <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=535813836575044&ev=PageView&noscript=1"/>
 </noscript>
 <script>
+  $("#upCheckbox").on('change',function(ev){
+    $("#up-pay-monthly-container").toggle();
+  });
+</script>
+<script>
   window.upReady = function(){
     console.log('up Ready');
     window.Uplift.Agent.init(getInitConfig());
 
     // Retrieve trip information
-    const tripInfo = getTripInfo(); 
+    const tripInfo = getTripInfo();
 
-    window.Uplift.Agent.createTrip(tripInfo);
-    
-    // const tripId = null;
-    // if (tripId) {
-    //   window.Uplift.Agent.updateTrip(tripId, tripInfo); 
-    // } else {
-    //   const tripId = getTripId();
-    //   window.Uplift.Agent.createTrip(tripInfo); 
-    // }
+    console.log(tripInfo);
+
+    const tripId = null;
+    if (tripId) {
+      window.Uplift.Agent.updateTrip(tripId, tripInfo); 
+    } else {
+      const tripId = getTripId();
+      window.Uplift.Agent.createTrip(tripInfo); 
+    }
+  }
+
+  function formatDate(date){
+    var newDate = new Date(date);
+    newDate = newDate.getFullYear().toString()
+              + newDate.getMonth().toString()
+              + newDate.getDate().toString();
+    return newDate;
   }
 
   function getInitConfig(){
     const config = {
       agent:{
-        id: 'alejandro.daza@fulltimeforce.com',        //required
-        agencyId: '', //optional
-        email: '',          //optional but recommended
-        firstName: '',      //optional
-        familyName: '',     //optional
-        phoneNumber: ''     //optional
+        id: $("#email2").val(), //'alejandro.daza@fulltimeforce.com',        //required
+        //agencyId: '', //optional
+        //email: '',          //optional but recommended
+        //firstName: '',      //optional
+        //familyName: '',     //optional
+        //phoneNumber: ''     //optional
       },
       locale: 'en-US',
       currency: 'USD',
       onChange: function(tripId){
         console.log('On Change: '+tripId.status);
+        console.log(tripId);
         return;
       },
       sessionTokenCallback: function(token){
-        console.log("token:"+token);
-        return;
+        return 'asdf';
       },
       payMonthlyContainer: '#up-pay-monthly-container',
       checkout: true
@@ -4993,38 +4999,40 @@
   }
 
   function getTripInfo(){
-    const tripInfo = {
-      order_amount: 99900,
-      travelers: [{
+    var total = parseFloat($("#TotalDue").val()).toFixed(2);
+    total = parseInt(total.replace('.',''));
+    var travelers = [
+      {
         id: 0,
-        first_name: "Arthur",
-        last_name: "Davis",
-        date_of_birth: "04/07/1963"
-      }],
-      air_reservations: [{
-        trip_type: "oneway",
-        itinerary: [{
-          arrival_apc: "LAX",
-          departure_apc: "HNL",
-          departure_time: "20210930",
-        }]
-      }],
-      hotel_reservations: [{
-        hotel_name: "Grand Resort Spa & Hotel",
-        check_in: "20211001",
-        check_out: "20211004"
-      }],
-      cruise_reservations: [{
-        cruise_line: "Apollo Cruises",
-        disembark_date: "20211105",
-        embark_date: "20211029",
-        itinerary: [{
-          departure_port: "Miami",
-          arrival_port: "Nassau",
-          departure_date: "20211029",
-          arrival_date: "20211105"
-        }]
-      }]
+        first_name: $("#fname1").val(),
+        last_name: $("#lname1").val()
+      },
+      {
+        id: 1,
+        first_name: $("#fname2").val(),
+        last_name: $("#fname2").val()
+      },
+    ];
+    var billing_contact = {
+      first_name: $("#fname1").val(),
+      last_name: $("#lname1").val()
+    };
+
+    var arrival = formatDate($("#aDate").val());
+    var departure = formatDate($("#dDate").val());
+
+    var hotel_reservations = [
+      {
+        hotel_name: "Pueblo Bonito Sunset Beach",
+        check_in: arrival,
+        check_out: departure
+      }
+    ];
+    const tripInfo = {
+      order_amount: total,
+      billing_contact: billing_contact,
+      travelers: travelers,
+      hotel_reservations: hotel_reservations
     };
     return tripInfo;
   }
