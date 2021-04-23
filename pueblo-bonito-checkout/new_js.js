@@ -45,6 +45,7 @@ function getInitConfig(isCheckout = true){
     sessionTokenCallback: function(token){
       console.log("Token Called:");
       console.log(token);
+      setCookie('trip_token',token);
       return 'asdf';
     },
     payMonthlyContainer: '#up-pay-monthly-container',
@@ -70,13 +71,11 @@ function onChange(tripOffer){
       break;
 
     case "TOKEN_AVAILABLE":
-      var token = window.Uplift.Agent.getToken();
-      console.log("token:");
-      console.log(token);
-      setCookie('trip_token',token);
+      // CHECKOUT BUTTON SHOWS
       break;
 
     case "TOKEN_RETRIEVED":
+      // TOKEN HAS BEEN RETRIEVED
       break;
 
     case "SERVICE_UNAVAILABLE":

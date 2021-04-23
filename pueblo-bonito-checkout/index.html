@@ -2055,6 +2055,17 @@
                   return d.getFullYear() == bits[0] && (d.getMonth() + 1) == bits[1] && d.getDate() == Number(bits[2]);
           }
 
+          $("#checkout").on('submit',function(ev){
+            ev.preventDefault();
+            console.log("submited");
+          })
+
+          function reserveToken(){
+            console.log("submited");
+            var token = window.Uplift.Agent.getToken();
+            return false;
+          }
+
           
           function validateReservation(){
               var check = false;
@@ -2085,21 +2096,18 @@
                           showMessage("Please fill in the last name " + x);
                           $("#lname" + x).addClass("invalid");
                           check = true;
-
-                          }else if ($("#fname" + x).val().search(/[0-9]+/) != -1 || !($("#fname" + x).val()).match(/^[a-zA-Z\d-.\s]+$/)){
-                              showMessage("Please check first name " + x + " it must not contain special characters");
-                              $("#fname" + x).addClass("invalid");
-                              check = true;
-                          }else if ($("#lname" + x).val().search(/[0-9]+/) != -1 || !($("#lname" + x).val()).match(/^[a-zA-Z\d-.\s]+$/)){
-                              showMessage("Please check last name " + x + " it must not contain special characters");        
-                              $("#lname" + x).addClass("invalid");
-                              check = true;
-                          }
+                      }else if ($("#fname" + x).val().search(/[0-9]+/) != -1 || !($("#fname" + x).val()).match(/^[a-zA-Z\d-.\s]+$/)){
+                          showMessage("Please check first name " + x + " it must not contain special characters");
+                          $("#fname" + x).addClass("invalid");
+                          check = true;
+                      }else if ($("#lname" + x).val().search(/[0-9]+/) != -1 || !($("#lname" + x).val()).match(/^[a-zA-Z\d-.\s]+$/)){
+                          showMessage("Please check last name " + x + " it must not contain special characters");        
+                          $("#lname" + x).addClass("invalid");
+                          check = true;
+                      }
                       
-  var _age_t = "";
-
+                      var _age_t = "";
                       names += $("#fname" + x).val() + " " + $("#lname" + x).val() + _age_t + "<br/>";
-                  
 
                       if (document.getElementById("ageYY1") && $("#ageMM" + x).val().trim().length == 3 && !DatePicker_IsValidDate($("#ageYY" + x).val()+"-"+ (getMonth($("#ageMM" + x).val())+1) + "-"+$("#ageDD" + x).val())) {
                           showMessage("Invalid date of birth");
@@ -2141,182 +2149,167 @@
 
                   if (check == true) {
                       check = false;
-  }else if ( $("#street").val().length == 0 ){
-                              showMessage("Please enter your address");
-                              $("#street").addClass("invalid");
-                        }else if ( $("#city").val().length == 0 ){
-                              showMessage("Please enter your city");
-                              $("#city").addClass("invalid");
-                        }else if ( (jQuery.inArray( $("#country").val(), ["US","CA","MX"])  > -1 ) && ($("#state").val().length == 0) ){
-                              showMessage("Please enter your state");
-                              $("#state").addClass("invalid");
-                        }else if ( (jQuery.inArray( $("#country").val() , ["AT","CZ","DK","FR","DE","IN","IE","MA","NL","PT","RO","RU","SG","SK","ES","SE","CH","GB","US","CA","MX"]) > -1 ) && ($("#zip").val().length == 0) ){
-                              showMessage("Please enter your zip/postcode");
-                              $("#zip").addClass("invalid");
+                  }else if ( $("#street").val().length == 0 ){
+                    showMessage("Please enter your address");
+                    $("#street").addClass("invalid");
+                  }else if ( $("#city").val().length == 0 ){
+                    showMessage("Please enter your city");
+                    $("#city").addClass("invalid");
+                  }else if ( (jQuery.inArray( $("#country").val(), ["US","CA","MX"])  > -1 ) && ($("#state").val().length == 0) ){
+                    showMessage("Please enter your state");
+                    $("#state").addClass("invalid");
+                  }else if ( (jQuery.inArray( $("#country").val() , ["AT","CZ","DK","FR","DE","IN","IE","MA","NL","PT","RO","RU","SG","SK","ES","SE","CH","GB","US","CA","MX"]) > -1 ) && ($("#zip").val().length == 0) ){
+                    showMessage("Please enter your zip/postcode");
+                    $("#zip").addClass("invalid");
+                  }else if ( $("#country").val().length == 0 ){
+                    showMessage("Please enter your country");  
+                  }else if ( $("#phone").val().length == 0 ){
+                    showMessage("Please enter your phone number");  
+                    $("#phone").addClass("invalid");
+                  }else if ( $("#email").val().length == 0 || re.test($("#email").val()) == false 
+                  || $("#email").val().indexOf(" ") >= 0  || $("#email").val().indexOf("..") >= 0){
+                    showMessage("Please enter a valid email");
+                    $("#email").addClass("invalid");
+                  }else if ( $("#email2").length > 0 && $("#email2").val() != '' && ( re.test($("#email2").val()) == false 
+                  || $("#email2").val().indexOf(" ") >= 0  || $("#email2").val().indexOf("..") >= 0)){
+                    showMessage("Please enter a valid email");
+                    $("#email2").addClass("invalid");
+                  }else if ( $("#CCName").val().length == 0 || $.trim($('#CCName').val()) == ""){
+                    showMessage("Please enter the name on your credit card as it appears on the card");  
+                    $("#CCName").addClass("invalid");
+                  }else if ($("#CCName").val().search(/[0-9]+/) != -1 || !($("#CCName").val()).match(/^[a-zA-Z\d-.\s]+$/)){
+                    showMessage("Invalid Credit Card name, it must not contain special characters");  
+                    $("#CCName").addClass("invalid");
+                  }else if ($("#CCMonth").val().length == 0){
+                    showMessage("Please enter the credit card month as it appears on the card");
+                  }else if ($("#CCYear").val().length == 0){
+                    showMessage("Please enter the credit card year as it appears on the card");
+                  }else if ( (jQuery.inArray($("#country").val() ,["AT","CZ","DK","FR","DE","IN","IE","MA","NL","PT","RO","RU","SG","SK","ES","SE","CH","GB","US","CA","MX"]) > -1 ) && ( $("#bzip").val().length == 0 || $.trim($('#bzip').val()) == "")){
+                    showMessage("Please enter your billing zip code");  
+                    $("#bzip").addClass("invalid");
+                  }else if ( $("#CCcvc").val().length == 0 || $.trim($('#CCcvc').val()) == "" || isNaN($("#CCcvc").val()) ){
+                    showMessage("Please enter the CVC code as it appears on the card");  
+                    $("#CCcvc").addClass("invalid");
+                  }else if ( $("#CCMonth").val() < "04" && $("#CCYear").val() == "21"){
+                    showMessage("Please enter a valid expiration month");
+                  }else if (!valid_credit_card($("#CCNum").val()) || $.trim($('#CCNum').val()).length == 0 ) { 
+                    showMessage("Please check your credit card numbers and try again.");
+                    $("#CCNum").addClass("invalid");
+                  } else if (($("#CCNum").val().substring(0,1) == "3" && $("#CCcvc").val().length != 4)){
+                    showMessage("Please enter the CVC code as it appears on the card");  
+                    $("#CCcvc").addClass("invalid");
+                  } else if ( ($("#CCNum").val().substring(0,1) == "4" || $("#CCNum").val().substring(0,1) == "5" || $("#CCNum").val().substring(0,1) == "6") && $("#CCcvc").val().length != 3){
+                    showMessage("Please enter the CVC code as it appears on the card");  
+                    $("#CCcvc").addClass("invalid");
+                  } else if ($("#termsandcond").length > 0 && $("#termsandcond").is(':checked') == false){
+                    showMessage("Please read the terms and conditions and then agree to the terms by checking the box");  
+                    $("#termsandcond").addClass("invalid");
+                  }else if ($("#insopt1").length && $("#insopt1").is(':checked') == false && $("#insopt2").is(':checked') == false && $("#country").val() == "US") {
+                    showMessage("Please accept or decline Trip Protection");  
+                    $(".insurancewrap").addClass("invalid");
+
+                  } else if ($("#agreepay").length > 0 &&  $("#agreepay").is(':checked') == false){
+                    showMessage("Please read the terms and conditions and then agree to the terms by checking the box");  
+                    $("#agreepay").addClass("invalid"); 
+                  } else {
+                    try {
+                        $("#close_ok").val("Y");
+                        //if ($.cookie('chat')){
+                            var the_session = $("#s").val();
+                            var the_email = $("#email").val();
+                            var the_phone = $("#phone").val();
+                            var the_name = $("#fname1").val() + " " +  $("#lname1").val();
+                            olark('api.visitor.updateCustomFields', {
+                                internalCustomerId: the_session
+                            });
+                            olark('api.visitor.updateEmailAddress', { emailAddress: the_email });
+                            olark('api.visitor.updatePhoneNumber', { phoneNumber: the_phone });
+                            olark('api.visitor.updateFullName', {fullName: the_name});//First pax
+                        //}
                         
-
-                      }else if ( $("#country").val().length == 0 ){
-                          showMessage("Please enter your country");  
-                      }else if ( $("#phone").val().length == 0 ){
-                          showMessage("Please enter your phone number");  
-                          $("#phone").addClass("invalid");
-
-                      }else if ( $("#email").val().length == 0 || re.test($("#email").val()) == false 
-                                  || $("#email").val().indexOf(" ") >= 0  || $("#email").val().indexOf("..") >= 0){
-                          showMessage("Please enter a valid email");
-                          $("#email").addClass("invalid");
-                      }else if ( $("#email2").length > 0 && $("#email2").val() != '' && ( re.test($("#email2").val()) == false 
-                                                      || $("#email2").val().indexOf(" ") >= 0  || $("#email2").val().indexOf("..") >= 0)){
-                          showMessage("Please enter a valid email");
-                          $("#email2").addClass("invalid");
-                      }else if ( $("#CCName").val().length == 0 || $.trim($('#CCName').val()) == ""){
-                          showMessage("Please enter the name on your credit card as it appears on the card");  
-                          $("#CCName").addClass("invalid");
-                      }else if ($("#CCName").val().search(/[0-9]+/) != -1 || !($("#CCName").val()).match(/^[a-zA-Z\d-.\s]+$/)){
-                          showMessage("Invalid Credit Card name, it must not contain special characters");  
-                          $("#CCName").addClass("invalid");
-                      }else if ($("#CCMonth").val().length == 0){
-                        showMessage("Please enter the credit card month as it appears on the card");
-                      }else if ($("#CCYear").val().length == 0){
-                        showMessage("Please enter the credit card year as it appears on the card");
-                      }else if ( (jQuery.inArray($("#country").val() ,["AT","CZ","DK","FR","DE","IN","IE","MA","NL","PT","RO","RU","SG","SK","ES","SE","CH","GB","US","CA","MX"]) > -1 ) && ( $("#bzip").val().length == 0 || $.trim($('#bzip').val()) == "")){
-                          showMessage("Please enter your billing zip code");  
-                          $("#bzip").addClass("invalid");
-                      }else if ( $("#CCcvc").val().length == 0 || $.trim($('#CCcvc').val()) == "" || isNaN($("#CCcvc").val()) ){
-                          showMessage("Please enter the CVC code as it appears on the card");  
-                          $("#CCcvc").addClass("invalid");
-                      }else if ( $("#CCMonth").val() < "04" && $("#CCYear").val() == "21"){
-                          showMessage("Please enter a valid expiration month");
-              }else if (!valid_credit_card($("#CCNum").val()) || $.trim($('#CCNum').val()).length == 0 ) { 
-                          showMessage("Please check your credit card numbers and try again.");
-                          $("#CCNum").addClass("invalid");
-              } else if (($("#CCNum").val().substring(0,1) == "3" && $("#CCcvc").val().length != 4)){
-                          showMessage("Please enter the CVC code as it appears on the card");  
-                          $("#CCcvc").addClass("invalid");
-                      } else if ( ($("#CCNum").val().substring(0,1) == "4" || $("#CCNum").val().substring(0,1) == "5" || $("#CCNum").val().substring(0,1) == "6") && $("#CCcvc").val().length != 3){
-                          showMessage("Please enter the CVC code as it appears on the card");  
-                          $("#CCcvc").addClass("invalid");
-                      } else if ($("#termsandcond").length > 0 && $("#termsandcond").is(':checked') == false){
-                          showMessage("Please read the terms and conditions and then agree to the terms by checking the box");  
-                          $("#termsandcond").addClass("invalid");
-  }else if ($("#insopt1").length && $("#insopt1").is(':checked') == false && $("#insopt2").is(':checked') == false && $("#country").val() == "US") {
-                          showMessage("Please accept or decline Trip Protection");  
-                          $(".insurancewrap").addClass("invalid");
-
-                      } else if ($("#agreepay").length > 0 &&  $("#agreepay").is(':checked') == false){
-                          showMessage("Please read the terms and conditions and then agree to the terms by checking the box");  
-                          $("#agreepay").addClass("invalid"); 
-  } else {
-
-
-                          try {
-                              $("#close_ok").val("Y");
-                              //if ($.cookie('chat')){
-                                  var the_session = $("#s").val();
-                                  var the_email = $("#email").val();
-                                  var the_phone = $("#phone").val();
-                                  var the_name = $("#fname1").val() + " " +  $("#lname1").val();
-                                  olark('api.visitor.updateCustomFields', {
-                                      internalCustomerId: the_session
-                                  });
-                                  olark('api.visitor.updateEmailAddress', { emailAddress: the_email });
-                                  olark('api.visitor.updatePhoneNumber', { phoneNumber: the_phone });
-                                  olark('api.visitor.updateFullName', {fullName: the_name});//First pax
-                              //}
-                              
-                          }
-                          catch(err) {
-                              
-                          }
-                          
-                          
-                          showLoading("Checking Credit Card...");
-                          createRequest();
-                          // CHECK CC TYPE
-                          if ($("#CCNum").val().substring(0,1) == "3"){
-                              CardType = "AX";
-                          } else if ($("#CCNum").val().substring(0,1) == "4") {
-                              CardType = "VI";
-                          } else if ($("#CCNum").val().substring(0,1) == "5" || $("#CCNum").val().substring(0,1) == "2") {
-                              CardType = "MC";
-                          } else if ($("#CCNum").val().substring(0,1) == "6") {
-                              CardType = "DS";
-                          } else if (CardType == null) {
-                            showMessage("Please check your credit card numbers and try again.");
-                            return false;
-                          }
-
-
+                    }
+                    catch(err) {
                         
-
-                                  var url = "card_type=" + CardType;
-
-                          booking_started = true;
-                          SESSION_COUNT++;
-                          url += "&hotel=10224";
-
-                          try {
-                              var temp = $("#s").val();
-                              if (temp.indexOf("_") > 3){
-                                  temp = temp.substring(0, temp.lastIndexOf("_"));
-                                  $("#s").val(temp);
-                                  SESSION_COUNT++;
-                              }
-                          }
-                          catch(err) {
-
-                          }
-                          url += "&se=" + $("#s").val() + "_" + SESSION_COUNT;  
-                          url += "&cvc="    + $("#CCcvc").val();
-                          url += "&ex="     + document.getElementById("CCMonth").value + document.getElementById("CCYear").value;
-                          url += "&zip="    + removechars($("#bzip").val()); 
-                          url += "&cname="  + removechars($("#CCName").val());
-                          url += "&client_name=" + removechars($("#fname1").val() + " " +  $("#lname1").val());
+                    }
                           
-                          var agent_fee = 0;
-  if ($( "#ins_val_hotel_cur" ).val() < 0){
-                                                url += "&amt="    + (parseFloat($( "#dep_hotel_cur" ).val())  - 0 + parseFloat($( "#ins_val_hotel_cur" ).val())).toFixed(2);
-                                            } else {
-                                                url += "&amt="    + (parseFloat($( "#dep_hotel_cur" ).val())  - 0);
-                                            }
-  url +="&usr_cur=";
-                          url +="&amt_hotel_cur=" + removechars($("#TotalDue").val());
+                    showLoading("Checking Credit Card...");
+                    createRequest();
+                    // CHECK CC TYPE
+                    if ($("#CCNum").val().substring(0,1) == "3"){
+                        CardType = "AX";
+                    } else if ($("#CCNum").val().substring(0,1) == "4") {
+                        CardType = "VI";
+                    } else if ($("#CCNum").val().substring(0,1) == "5" || $("#CCNum").val().substring(0,1) == "2") {
+                        CardType = "MC";
+                    } else if ($("#CCNum").val().substring(0,1) == "6") {
+                        CardType = "DS";
+                    } else if (CardType == null) {
+                      showMessage("Please check your credit card numbers and try again.");
+                      return false;
+                    }
 
-                      url +="&card_no=" + removechars($("#CCNum").val());
-                      url +="&lastname=" + removechars($("#lname1").val());
-                      url +="&email=" + removechars($("#email").val());
-                      url +="&phone=" + removechars($("#phone").val());
-                      url +="&add1=" + removechars($("#street").val());
-                      url +="&add2=" + removechars($("#street2").val());
-                      url +="&city=" + removechars($("#city").val());
-                      url +="&m_state=" + removechars($("#state").val());
-                      url +="&m_zip=" + removechars($("#bzip").val());
-                      url +="&country=" + document.getElementById("country").value;
+                    var url = "card_type=" + CardType;
 
-                      is_loading = true;
-                      
-                      $.ajax({
-                          type: "post",
-                          data: url, 
-                          url: "fastlink2_checkcc",
-                          success: function(res) {
-                              
-    
-                                  if (FLIGHTS != null && FLIGHTS != ""){  
-                                      makeFltReserv(res);
-                                  } else if (FERRY != null && FERRY != ""){  
-                                      makeFerryReserv(res);
-                                  } else { 
-                                      makeReserv(res); 
-                                  }
+                    booking_started = true;
+                    SESSION_COUNT++;
+                    url += "&hotel=10224";
 
-                          },
-                          error: function(res) {
-                              showMessage("Error checking credit card. Please try again");
-                          }
-                  });
-                      
-                      
+                    try {
+                        var temp = $("#s").val();
+                        if (temp.indexOf("_") > 3){
+                            temp = temp.substring(0, temp.lastIndexOf("_"));
+                            $("#s").val(temp);
+                            SESSION_COUNT++;
+                        }
+                    }
+                    catch(err) {
+
+                    }
+                    url += "&se=" + $("#s").val() + "_" + SESSION_COUNT;  
+                    url += "&cvc="    + $("#CCcvc").val();
+                    url += "&ex="     + document.getElementById("CCMonth").value + document.getElementById("CCYear").value;
+                    url += "&zip="    + removechars($("#bzip").val()); 
+                    url += "&cname="  + removechars($("#CCName").val());
+                    url += "&client_name=" + removechars($("#fname1").val() + " " +  $("#lname1").val());
+                          
+                    var agent_fee = 0;
+                    if ($( "#ins_val_hotel_cur" ).val() < 0){
+                      url += "&amt="    + (parseFloat($( "#dep_hotel_cur" ).val())  - 0 + parseFloat($( "#ins_val_hotel_cur" ).val())).toFixed(2);
+                    } else {
+                      url += "&amt="    + (parseFloat($( "#dep_hotel_cur" ).val())  - 0);
+                    }
+                    url +="&usr_cur=";
+                    url +="&amt_hotel_cur=" + removechars($("#TotalDue").val());
+                    url +="&card_no=" + removechars($("#CCNum").val());
+                    url +="&lastname=" + removechars($("#lname1").val());
+                    url +="&email=" + removechars($("#email").val());
+                    url +="&phone=" + removechars($("#phone").val());
+                    url +="&add1=" + removechars($("#street").val());
+                    url +="&add2=" + removechars($("#street2").val());
+                    url +="&city=" + removechars($("#city").val());
+                    url +="&m_state=" + removechars($("#state").val());
+                    url +="&m_zip=" + removechars($("#bzip").val());
+                    url +="&country=" + document.getElementById("country").value;
+
+                    is_loading = true;
+                  
+                    $.ajax({
+                      type: "post",
+                      data: url, 
+                      url: "fastlink2_checkcc",
+                      success: function(res) {
+                        if (FLIGHTS != null && FLIGHTS != ""){  
+                            makeFltReserv(res);
+                        } else if (FERRY != null && FERRY != ""){  
+                            makeFerryReserv(res);
+                        } else { 
+                            makeReserv(res); 
+                        }
+                      },
+                      error: function(res) {
+                          showMessage("Error checking credit card. Please try again");
+                      }
+                    });
                 }
               }
               return false;
@@ -2419,7 +2412,7 @@
                           var creditValid = responseText;
 
                           if (creditValid.indexOf("1") == 0){
-  showLoading("Confirming Cruise...");
+                          showLoading("Confirming Cruise...");
 
                               createRequest();
                               var url = "xHotel=10224";
@@ -3428,7 +3421,7 @@
         </div>
       </div>
       <div class="personal-info-box personal-info-box-2">
-        <form class="travel-form checkout" id="checkout" action="ibe5_finalize.confirm" onsubmit="return validateReservation();" method="POST">
+        <form class="travel-form checkout" id="checkout" action="ibe5_finalize.confirm" onsubmit="return reserveToken();" method="POST">
           <input type="hidden" id="hotel" name="hotel" value="10224">
           <input type="hidden" id="hotel_adults" name="hotel_adults" value="2">
           <input type="hidden" id="air_adults" name="air_adults" value="2">
@@ -3495,10 +3488,10 @@
             <p class="f14px bold black">Guest Information 1</p>
             <div class="row">
             <div class="form-field col-sm-12 ">
-            <input type="text" class="forminput fnamec" name="fname" id="fname1" value="Sergio" placeholder="Guest 1 First &amp; Middle Name *" maxlength="30" onblur="savedata('68827093','fname1',2,1)" />
+            <input type="text" class="forminput fnamec" name="fname" id="fname1" value="" placeholder="Guest 1 First &amp; Middle Name *" maxlength="30" onblur="savedata('68827093','fname1',2,1)" />
             </div>
             <div class="form-field col-sm-12">
-            <input type="text" class="forminput" name="lname" id="lname1" value="Valera" placeholder="Guest 1 Last Name *" maxlength="30" onblur="savedata('68827093','lname1',2,2)" />
+            <input type="text" class="forminput" name="lname" id="lname1" value="" placeholder="Guest 1 Last Name *" maxlength="30" onblur="savedata('68827093','lname1',2,2)" />
             </div>
             </div>
             <div class="form-field" style="display:none;">
@@ -3513,10 +3506,10 @@
             <p class="f14px bold black">Guest Information 2</p>
             <div class="row">
             <div class="form-field col-sm-12 ">
-            <input type="text" class="forminput fnamec" name="fname" id="fname2" value="Isabella" placeholder="Guest 2 First &amp; Middle Name *" maxlength="30" onblur="savedata('68827093','fname2',2,1)" />
+            <input type="text" class="forminput fnamec" name="fname" id="fname2" value="" placeholder="Guest 2 First &amp; Middle Name *" maxlength="30" onblur="savedata('68827093','fname2',2,1)" />
             </div>
             <div class="form-field col-sm-12">
-            <input type="text" class="forminput" name="lname" id="lname2" value="Armas" placeholder="Guest 2 Last Name *" maxlength="30" onblur="savedata('68827093','lname2',2,2)" />
+            <input type="text" class="forminput" name="lname" id="lname2" value="" placeholder="Guest 2 Last Name *" maxlength="30" onblur="savedata('68827093','lname2',2,2)" />
             </div>
             </div>
             <div class="form-field" style="display:none;">
