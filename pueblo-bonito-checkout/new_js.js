@@ -9,69 +9,82 @@ $("#upCheckbox").on('change',function(ev){
       // $(".uplift-banner").hide();
       $(".cc_info").show();
    }
-   
-   
 });
 
  // --------- UPLIFT INTEGRATION --------------------------
 
 window.upReady = function(){
-   console.log('up Ready');
    window.Uplift.Agent.init(getInitConfig());
 
    // Retrieve trip information
    const tripInfo = getTripInfo();
+   const tripId = getTripId();
 
-   console.log(tripInfo);
-
-   const tripId = null;
    if (tripId) {
      window.Uplift.Agent.updateTrip(tripId, tripInfo); 
    } else {
-     const tripId = getTripId();
      window.Uplift.Agent.createTrip(tripInfo); 
    }
 }
 
-function getInitConfig(){
-   const config = {
-     agent:{
-       id: $("#email2").val(),   //required
-       //agencyId: '',           //optional
-       //email: '',              //optional but recommended
-       //firstName: '',          //optional
-       //familyName: '',         //optional
-       //phoneNumber: ''         //optional
-     },
-     locale: 'en-US',
-     currency: 'USD',
-     onChange: function(tripOffer){
-       console.log('On Change: '+tripOffer.status);
-       if(tripOffer.status == "OFFER_AVAILABLE"){
-         $(".upsell_div").show();
-         if(tripOffer.tripId != null){
-            console.log("saving id: "+tripOffer.tripId);
-            setCookie('tripId', tripOffer.tripId, 60);
-         }else{
-            console.log("No TripId");
-         }
-       }
-       if(tripOffer.status == "SERVICE_UNAVAILABLE"){
-         $(".upsell_div").hide();
-       }
-       if(tripOffer.status == "OFFER_UNAVAILABLE"){
-         console.log("saving id: "+ null);
-         setCookie('tripId', null, 60);
-       }
-       return;
-     },
-     sessionTokenCallback: function(token){
-       return 'asdf';
-     },
-     payMonthlyContainer: '#up-pay-monthly-container',
-     checkout: true
-   }
-   return config;
+function getInitConfig(isCheckout = true){
+  const config = {
+    agent:{
+      id: $("#email2").val(),   //required
+      //agencyId: '',           //optional
+      //email: '',              //optional but recommended
+      //firstName: '',          //optional
+      //familyName: '',         //optional
+      //phoneNumber: ''         //optional
+    },
+    locale: 'en-US',
+    currency: 'USD',
+    onChange: function(tripOffer){ 
+      onChange(tripOffer) 
+    },
+    sessionTokenCallback: function(token){
+      console.log("Token Called:");
+      console.log(token);
+      return 'asdf';
+    },
+    payMonthlyContainer: '#up-pay-monthly-container',
+    checkout: isCheckout
+  }
+  return config;
+}
+
+function onChange(tripOffer){
+  console.log('On Change: '+tripOffer.status);
+  switch(tripOffer.status){
+    case "OFFER_AVAILABLE":
+      $(".upsell_div").show();
+      if(tripOffer.tripId != null){
+        console.log("saving id: "+tripOffer.tripId);
+        setCookie('tripId', tripOffer.tripId, 60);
+      }
+      break;
+
+    case "OFFER_UNAVAILABLE":
+      console.log("saving id: "+ null);
+      setCookie('tripId', null, 60);
+      break;
+
+    case "TOKEN_AVAILABLE":
+      var token = window.Uplift.Agent.getToken();
+      console.log("token:");
+      console.log(token);
+      setCookie('trip_token',token);
+      break;
+
+    case "TOKEN_RETRIEVED":
+      break;
+
+    case "SERVICE_UNAVAILABLE":
+      $(".upsell_div").hide();
+      break;
+
+    default: break;
+  }
 }
 
 function getTripInfo(){
@@ -114,7 +127,28 @@ function getTripInfo(){
 }
 
 function getTripId(){
-   return 12341234;
+  return getCookie('tripId');
+}
+
+function upConfirmTrip(){
+  const id = getCookie('tripId');
+  window.Uplift.Agent.confirmTrip(id,['']);
+}
+
+function upCancelTrip(){
+  const id = getCookie('tripId');
+  window.Uplift.Agent.cancelTrip(id);
+  setCookie('tripId',null,-1);
+}
+
+function upReportError(type, message){
+  if(getCookie('tripId')){
+    window.Uplift.Agent.error(
+      getCookie('tripId'),
+      type, // 'Missing Data', 'payment', 'inventory', 'fatal'
+      message // Message shown to the user
+    );
+  }
 }
 
 // ---- UTILS ---------------
@@ -126,7 +160,6 @@ function formatDate(date){
              + newDate.getDate().toString();
    return newDate;
 }
-
  
 function setCookie(cname, cvalue, exdays) {
    var d = new Date();
