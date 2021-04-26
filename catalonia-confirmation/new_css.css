@@ -11,6 +11,30 @@
    margin-bottom: 1em;
 }
 
+.inf-stay .label-text span{
+   margin-left: 0!important;
+}
+.inf-stay .label-text{
+   display: inline-block;
+}
+
+@media screen and (max-width: 768px){
+   .icon-space i{
+      padding-bottom: 0px !important;
+      width: initial!important;
+   }
+   .icon-space>span{
+      padding-bottom: 3%;
+   }
+   .icon-space .span-time{
+      padding-bottom: 3%;
+   }
+   .padding-L-0{
+      padding-left: 7.5px !important;
+      padding-right: 7.5px !important;
+   }
+}
+
 @media screen and (max-width: 767px){
    .f16px{
       margin-bottom: 2% !important;
