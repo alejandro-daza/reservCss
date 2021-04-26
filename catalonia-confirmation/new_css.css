@@ -17,6 +17,16 @@
 .inf-stay .label-text{
    display: inline-block;
 }
+@media screen and (max-width: 800px){
+   #itin-final .green{
+      padding: 10px 10px;
+      font-size: 12px;
+   }
+
+   #itin-final .itin-final-sub h3{
+      font-size: 1em;
+   }
+}
 
 @media screen and (max-width: 768px){
    .icon-space i{
@@ -32,6 +42,15 @@
    .padding-L-0{
       padding-left: 7.5px !important;
       padding-right: 7.5px !important;
+   }
+
+   #itin-final .green{
+      padding: 10px 10px;
+      font-size: 12px;
+   }
+
+   #itin-final #itin-final-sub h3{
+      font-size: 1.25em;
    }
 }
 

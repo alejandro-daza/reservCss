@@ -698,8 +698,22 @@
                            } else {
                               var xmlDoc = jQuery.parseXML(res);
                               var form = '';
-                              $(".fancybox-wrap").width(900);
-                              $(".fancybox-inner").width(900);
+                              if (window.matchMedia('(max-width: 480px)').matches) {
+                                 console.log("mobil");
+
+                                 $(".fancybox-wrap").width(350);
+                                 $(".fancybox-inner").width(350);
+                              } else if (window.matchMedia('(max-width: 800px)').matches) {
+                                 console.log("tablet");
+
+                                 $(".fancybox-wrap").width(550);
+                                 $(".fancybox-inner").width(550);
+                              }else{
+                                 console.log("desktop");
+                                 $(".fancybox-wrap").width(900);
+                                 $(".fancybox-inner").width(900);
+                              }
+                              
                               $.fancybox.reposition();
                               $("#check-itinerary .pop-content").css("width","100%");
                               $("#itin-final-main").html("Change room rate<br>*Prices display total extra cost");
@@ -714,13 +728,20 @@
                                  }).each(function () {
                                        var elem = $(this);
                                        elem.remove();
-                                       temp += "<li>" + $(elem).html().replace("<!--[CDATA[", "").replace("]]-->", "").replace("]]>", "").replace("]]&gt;", "") + "</li>";
+                                       temp += "<li>" + $(elem).html().replace("<!--[CDATA[", "").replace("]]-->", "").replace("]]>", "").replace("]]&gt;", "").replace("</span>","</span><div style='clear:both;'></div>") + "</li>";
                                  });
                                  temp += "</ul>";
                               });
 
                               $("#itin-final-sub").html(temp);
                               $("#final-btn1, #final-btn2").show();
+
+                              $(".fancybox-wrap").css('top','10%');
+
+                              // const popHeight = $(".fancybox-wrap").height() / 2;
+                              // $(".fancybox-wrap").css('top','50%');
+                              // $(".fancybox-wrap").css('margin-top', "-"+(popHeight)+"px");
+
                               $("#final-btn1").attr("onClick", "saveQuotes('ChangeRoomRates', 0)");
                               
                            }
