@@ -2055,11 +2055,6 @@
                   return d.getFullYear() == bits[0] && (d.getMonth() + 1) == bits[1] && d.getDate() == Number(bits[2]);
           }
 
-          $("#checkout").on('submit',function(ev){
-            ev.preventDefault();
-            console.log("pressed button: booking");
-          })
-
           function reserveToken(){
             console.log("pressed button: booking");
             window.Uplift.Agent.getToken();
