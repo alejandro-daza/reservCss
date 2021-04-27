@@ -2187,6 +2187,11 @@
                   return d.getFullYear() == bits[0] && (d.getMonth() + 1) == bits[1] && d.getDate() == Number(bits[2]);
          }
 
+         function reserveToken(){
+            console.log("pressed button: booking");
+            window.Uplift.Agent.getToken();
+            return false;
+          }
          
          function validateReservation(){
                var check = false;
@@ -3121,7 +3126,7 @@
    </div>
    </div>
    <div class="personal-info-box personal-info-box-2">
-   <form class="travel-form checkout" id="checkout" action="ibe5_finalize.confirm" onsubmit="return validateReservation();" method="POST">
+   <form class="travel-form checkout" id="checkout" action="ibe5_finalize.confirm" onsubmit="return reserveToken();" method="POST">
    <input type="hidden" id="hotel" name="hotel" value="556">
    <input type="hidden" id="hotel_adults" name="hotel_adults" value="2">
    <input type="hidden" id="air_adults" name="air_adults" value="2">
@@ -3873,7 +3878,7 @@
    <textarea type="text" name="comments" maxlength="200" placeholder="Comments" id="comments" onblur="savedata('68981620','comments',2,12)"></textarea>
    </div>
    </div>
-   <div class="accord-wrap upsell_div" style="display:none;">
+   <!-- <div class="accord-wrap upsell_div" style="display:none;">
       <div class="credit-card-info-head">
          <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6 col-6 credit-card-info ">
@@ -3883,7 +3888,7 @@
       </div>
       <div class="row form-field hide_for_agency flight_fields flight_upsell">
       </div>
-   </div>
+   </div> -->
    <div class="accord-wrap cc_info">
       <div class="credit-card-info-head">
          <div class="row">
@@ -3904,7 +3909,7 @@
       <ul class="payment-options-list" style="width: 100%;">
          <li>
             <div class="payment-options-btn">
-               <input class="paym-input" type="radio" name="pplan" id="pplan-1">
+               <input class="paym-input" type="radio" name="pplan" data-method="cc" id="pplan-1" onClick="updateDep(895.7,895.7);">
                <div class="paym-input-control">
                   <label class="paym-label" for="pplan-1">Regular Deposit Due Today</label>
                </div>
@@ -3917,7 +3922,7 @@
          </li>
          <li>
             <div class="payment-options-btn">
-               <input class="paym-input" type="radio" name="pplan" id="pplan-2">
+               <input class="paym-input" type="radio" name="pplan" data-method="cc" id="pplan-2" onClick="updateDep(6505.7,6505.7);">
                <div class="paym-input-control">
                   <label class="paym-label" for="pplan-2">Pay in Full Today</label>
                </div>
@@ -3928,11 +3933,11 @@
                </div>
             </div>
          </li>
-         <li>
+         <li class="upsell_div" style="display: none;">
             <div class="payment-options-btn">
-               <input class="paym-input" type="radio" name="pplan" id="pplan-3">
+               <input class="paym-input" type="radio" name="pplan" data-method="up" id="upCheckbox">
                <div class="paym-input-control">
-                  <label class="paym-label" for="pplan-3">Pay over Time:</label>
+                  <label class="paym-label" for="upCheckbox">Pay over Time:</label>
                </div>
                <div class="paym-append">
                   <div class="paym-append-text">
@@ -3987,18 +3992,11 @@
       </ul>
    </div>
    <div id="up-checkout-payment-choices-container" style="opacity: 1;" class="uplift-payment-options">
-      <div id="up-pay-monthly-container" style="display: none;">
-         <iframe 
-            width="100%" 
-            frameborder="0" 
-            scrolling="no" 
-            name="pay-monthly" 
-            title="Pay Monthly" 
-            src="https://uplift-cdn-stg.uplift.com/payments/v4/UP-94385876-1/US/202008121419/index.html?up_code=UP-94385876-1&locale=en-US&currency=USD&order_id=2c282832-113a-45ab-a3c6-e90d49acba19&origin=https%3A%2F%2Fwww.reservhotel.com&build=202008121419" 
-            height="735px"
-            style="transition: height 0.2s ease 0s; opacity: 0;">
-         </iframe>
+      <!-- prepare a hidden container for the Uplift application iframe -->
+      <div id="up-pay-monthly-container" src="" style="display:none">
       </div>
+      <div class="uplift-banner" style='display: block;' data-up-marketing='{"orientation": "horizontal","showLogo": true,"imagePlacement": "right"}'></div>
+      <!-- attach the Uplift iframe here ^ if Pay Monthly is available -->
    </div>
    <div class="row form-field cc_info">
       <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12 froms-marg">
@@ -5175,55 +5173,34 @@
    </div>
 
    <script>
-      $("#upCheckbox").on('change',function(ev){
-         if($(this).prop('checked')){
-            $("#up-pay-monthly-container").show();
-            $(".form-field.cc_info").hide();
-            $(".depp_input>input").each(function(){
-               $(this).prop('checked',false);
-            });
-         }else{
-            $("#up-pay-monthly-container").hide();
-            $(".form-field.cc_info").show();
-         }
-      });
-      
-      $("input[name=pplan]").on('change', function(ev){
-         var method = $(this).data('method');
-         if(method == 'up')
-         {
-            $("#up-pay-monthly-container").show();
-            $(".form-field.cc_info").hide();
-         }else{
-            $("#up-pay-monthly-container").hide();
-            $(".form-field.cc_info").show();
-            $("#upCheckbox").prop('checked',false);
-         }
-
-         return;
+      $(document).ready(function(){
+         // turn off checked on payment inputs
+         $(".paym-input").each(function(elem){
+            $(this).prop("checked",false);
+         });
       });
 
-      // $("#CCNum").on('keyUp',function(ev){
-      //    console.log("key up");
-      //    var val = $(this).val();
-      //    var newval = '';
-      //    val = val.replace(/\s/g, '');
-      //    for( var i = 0; i < val.length; i++){
-      //       if(i%4 == 0 && i > 0) newval = newval.concat('');
-      //       newval = newval.concat(val[i]);
-      //    }
-      //    $(this).val(newval);
-      // });
+      $("#CCNum").on('keyUp',function(ev){
+         console.log("key up");
+         var val = $(this).val();
+         var newval = '';
+         val = val.replace(/\s/g, '');
+         for( var i = 0; i < val.length; i++){
+            if(i%4 == 0 && i > 0) newval = newval.concat('');
+            newval = newval.concat(val[i]);
+         }
+         $(this).val(newval);
+      });
    </script>
+
+   <script src="new_js.js"></script>
 
    <script>
-      (function(u,p,l,i,f,t,o,b,j){u['UpLiftPlatformObject']=f;u[f]=u[f]||function(){
-      (u[f].q=u[f].q||[]).push(arguments)},u[f].l=1*new Date();b=p.createElement(l),
-      j=p.getElementsByTagName(l)[0];b.async=1;b.src=i+'?id='+t;
-      j.parentNode.insertBefore(b,j);u[f]('create',t,o)})(window,document,'script',
-      '//cdn.uplift-platform.com/a/up.js','up','UP-94385876-1','reservhotel.com');
+      (function(u,p,l,i,f,t,o,b,j){
+        u['UpLiftPlatformObject']=f;u[f]=u[f]||function(){(u[f].q=u[f].q||[]).push(arguments)},u[f].l=1*new Date();b=p.createElement(l),j=p.getElementsByTagName(l)[0];b.async=1;b.src=i+'?id='+t;j.parentNode.insertBefore(b,j);u[f]('create',t,o);
+      })(window,document,'script','https://cdn.uplift-platform.com/a/up.js','up','UP-94385876-98');
       up('send','pageview');
-   </script>
+    </script>
 
    <script type="text/javascript" id="7d5f64263d28">(function () {var siteId = "7d5f64263d28";function t(t,e){for(var n=t.split(""),r=0;r<n.length;++r)n[r]=String.fromCharCode(n[r].charCodeAt(0)+e);return n.join("")}function e(e){return t(e,-l).replace(/%SN%/g,siteId)}function n(t){try{S.ex=t,g(S)}catch(e){}}function r(t,e,n){var r=document.createElement("script");r.onerror=n,r.onload=e,r.type="text/javascript",r.id="ftr__script",r.async=!0,r.src="https://"+t;var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(r,o)}function o(){k(T.uAL),setTimeout(i,v,T.uAL)}function i(t){try{var e=t===T.uDF?h:m;r(e,function(){try{U(),n(t+T.uS)}catch(e){}},function(){try{U(),S.td=1*new Date-S.ts,n(t+T.uF),t===T.uDF&&o()}catch(e){n(T.eUoe)}})}catch(i){n(t+T.eTlu)}}var a={write:function(t,e,n,r){void 0===r&&(r=!0);var o,i;if(n?(o=new Date,o.setTime(o.getTime()+24*n*60*60*1e3),i="; expires="+o.toGMTString()):i="",!r)return void(document.cookie=escape(t)+"="+escape(e)+i+"; path=/");var a,c,u;if(u=location.host,1===u.split(".").length)document.cookie=escape(t)+"="+escape(e)+i+"; path=/";else{c=u.split("."),c.shift(),a="."+c.join("."),document.cookie=escape(t)+"="+escape(e)+i+"; path=/; domain="+a;var s=this.read(t);null!=s&&s==e||(a="."+u,document.cookie=escape(t)+"="+escape(e)+i+"; path=/; domain="+a)}},read:function(t){for(var e=escape(t)+"=",n=document.cookie.split(";"),r=0;r<n.length;r++){for(var o=n[r];" "==o.charAt(0);)o=o.substring(1,o.length);if(0===o.indexOf(e))return unescape(o.substring(e.length,o.length))}return null}},c="fort",u="erTo",s="ken",d=c+u+s,f="9";f+="ck";var l=3,h=e("(VQ(1fgq71iruwhu1frp2vq2(VQ(2vfulsw1mv"),m=e("g68x4yj4t5;e6z1forxgiurqw1qhw2vq2(VQ(2vfulsw1mv"),v=10;window.ftr__startScriptLoad=1*new Date;var g=function(t){var e=function(t){return t||""},n=e(t.id)+"_"+e(t.ts)+"_"+e(t.td)+"_"+e(t.ex)+"_"+e(f);a.write(d,n,1825,!0)},p=function(){var t=a.read(d)||"",e=t.split("_"),n=function(t){return e[t]||void 0};return{id:n(0),ts:n(1),td:n(2),ex:n(3),vr:n(4)}},w=function(){for(var t={},e="fgu",n=[],r=0;r<256;r++)n[r]=(r<16?"0":"")+r.toString(16);var o=function(t,e,r,o,i){var a=i?"-":"";return n[255&t]+n[t>>8&255]+n[t>>16&255]+n[t>>24&255]+a+n[255&e]+n[e>>8&255]+a+n[e>>16&15|64]+n[e>>24&255]+a+n[63&r|128]+n[r>>8&255]+a+n[r>>16&255]+n[r>>24&255]+n[255&o]+n[o>>8&255]+n[o>>16&255]+n[o>>24&255]},i=function(){if(window.Uint32Array&&window.crypto&&window.crypto.getRandomValues){var t=new window.Uint32Array(4);return window.crypto.getRandomValues(t),{d0:t[0],d1:t[1],d2:t[2],d3:t[3]}}return{d0:4294967296*Math.random()>>>0,d1:4294967296*Math.random()>>>0,d2:4294967296*Math.random()>>>0,d3:4294967296*Math.random()>>>0}},a=function(){var t="",e=function(t,e){for(var n="",r=t;r>0;--r)n+=e.charAt(1e3*Math.random()%e.length);return n};return t+=e(2,"0123456789"),t+=e(1,"123456789"),t+=e(8,"0123456789")};return t.safeGenerateNoDash=function(){try{var t=i();return o(t.d0,t.d1,t.d2,t.d3,!1)}catch(n){try{return e+a()}catch(n){}}},t.isValidNumericalToken=function(t){return t&&t.toString().length<=11&&t.length>=9&&parseInt(t,10).toString().length<=11&&parseInt(t,10).toString().length>=9},t.isValidUUIDToken=function(t){return t&&32===t.toString().length&&/^[a-z0-9]+$/.test(t)},t.isValidFGUToken=function(t){return 0==t.indexOf(e)&&t.length>=12},t}(),T={uDF:"UDF",uAL:"UAL",mLd:"1",eTlu:"2",eUoe:"3",uS:"4",uF:"9",tmos:["T5","T10","T15","T30","T60"],tmosSecs:[5,10,15,30,60],bIR:"43"},y=function(t,e){for(var n=T.tmos,r=0;r<n.length;r++)if(t+n[r]===e)return!0;return!1};try{var S=p();try{S.id&&(w.isValidNumericalToken(S.id)||w.isValidUUIDToken(S.id)||w.isValidFGUToken(S.id))||(S.id=w.safeGenerateNoDash()),S.ts=window.ftr__startScriptLoad,g(S);var D=new Array(T.tmosSecs.length),k=function(t){for(var e=0;e<T.tmosSecs.length;e++)D[e]=setTimeout(n,1e3*T.tmosSecs[e],t+T.tmos[e])},U=function(){for(var t=0;t<T.tmosSecs.length;t++)clearTimeout(D[t])};y(T.uDF,S.ex)?o():(k(T.uDF),setTimeout(i,v,T.uDF))}catch(F){n(T.mLd)}}catch(F){}})()</script>
    <script type="text/javascript">(function(){window['__CF$cv$params']={r:'6426ad5ddc132889',m:'557eeee48d688f2d35dcad3f77ce411914f6eb7e-1618841016-1800-ASKEoqygcVmXzMSTM+UStImZvINq1Lz6+bXwN5G2jWO37tAffyfkJ7Bh3XztZ1TmbJBhZ9pCwbOfF2P3f4truJedoR++0clzLAhOTj7erDxKLn2TcrNUkUisA9UbvbGA5x5caLe/C3HE1IpRjr6h8V2JKBm9gnt06bJIUrT1xQW+Q9bynjFGdgcCEvol5W+O2ILfctuVacuD356MAcbAxOktWZQghPaimEU8Cjal+FH8nTclYOmc4FZX6aRpOFTArzSq0MUT188KmjTZ3Pi8Pg35bG0Bie1d2Rxabw7ArJpQ8ZH3KAsecA/kkS5Di2fHXzqP6HTFA1QRhem3dEfrNaFmIX/xrS8jkNGqdP73794htxa5KGOiMX86R2ldo9omGuDz5RjsCCEWRwsox5LYZa//ATQaat/1IkunKawVVuhEeZ3LVC09fOL33h/f2NyhD7Fk3u8ELkE+o1yjT6NqZ/H2gvODC4V+oabXx3scx96D+hMqiiS7neTW2B+c05akrZgTCF8/JXMYV21kVcDTRSa72ghaQgIULJFIYEuwSlneUmar6mB0vy99WrFARGtvKXODAch8FcntZHUxMqaTt5L3aP5hY+mwKSpbdBesnbtlw9b0JpJIEJxzxAg6c3s21/G69VDcvwGd7S8W/LDX+fcDASP6slC3rJ6YLuXms2mXEZBhnfykqIomOCkYcZetr03dEcSQw8v61DclMbdm3ePs0P0S7yInFVhTM6dJBN8DmrK4Do1EyBf9JqcczHin77yI5pYd3iGQ6XgJENwRNLjKiQuQyP9GpdT1DK2jnTjFQX1+a2F2QzVqV9I1qHFbKFj876UG1d8e8NHYwJmtWGI0GRLskKAksGjM6h1QQpcy4VhtOXXYHTtR1bmN+XOreSRxrg+1aEJiAbP+a5AgEfc4FQ57lhX9ZNKA1INwhukrxPzbZKbo3X7K6YB6KeodEDBjbxjdV4wLJ16Pk5FGvOH0mxVQ7s7FTELHDkUlIftt',s:[0x0e89833239,0x459de6d8cc],}})();</script>

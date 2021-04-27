@@ -114,3 +114,13 @@
    -ms-transform: translateY(50%);
    transform: translateY(50%);
 }
+
+.cTOQrL{
+   margin: auto !important;
+}
+
+.uplift-banner>iframe{
+   display: block;
+   width: initial;
+   margin: 10px auto;
+}
