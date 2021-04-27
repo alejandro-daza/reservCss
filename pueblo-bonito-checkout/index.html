@@ -2057,15 +2057,14 @@
 
           $("#checkout").on('submit',function(ev){
             ev.preventDefault();
-            console.log("submited");
+            console.log("pressed button: booking");
           })
 
           function reserveToken(){
-            console.log("submited");
-            var token = window.Uplift.Agent.getToken();
+            console.log("pressed button: booking");
+            window.Uplift.Agent.getToken();
             return false;
           }
-
           
           function validateReservation(){
               var check = false;
@@ -2081,9 +2080,6 @@
               var AM_TOTAL = parseFloat($("#amenities_total").val());
 
               $(".forminput").removeClass("invalid");
-
-              
-
 
               for (var x = 1; x <= 2; x++){   
                   var selector = "#lname" + x;
@@ -2226,7 +2222,6 @@
                             olark('api.visitor.updatePhoneNumber', { phoneNumber: the_phone });
                             olark('api.visitor.updateFullName', {fullName: the_name});//First pax
                         //}
-                        
                     }
                     catch(err) {
                         

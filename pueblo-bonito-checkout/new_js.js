@@ -4,10 +4,12 @@ $("#upCheckbox").on('change',function(ev){
       $("#up-pay-monthly-container").show();
       // $(".uplift-banner").show();
       $(".cc_info").hide();
+      window.Uplift.Agent.select();
    }else{
       $("#up-pay-monthly-container").hide();
       // $(".uplift-banner").hide();
       $(".cc_info").show();
+      window.Uplift.Agent.deselect();
    }
 });
 
@@ -20,7 +22,7 @@ window.upReady = function(){
    const tripInfo = getTripInfo();
    const tripId = getTripId();
 
-   if (tripId) {
+   if (tripId !== null && tripId != 'null') {
      window.Uplift.Agent.updateTrip(tripId, tripInfo); 
    } else {
      window.Uplift.Agent.createTrip(tripInfo); 
@@ -43,9 +45,9 @@ function getInitConfig(isCheckout = true){
       onChange(tripOffer) 
     },
     sessionTokenCallback: function(token){
-      console.log("Token Called:");
-      console.log(token);
-      setCookie('trip_token',token);
+      if(typeof token !== "undefined"){
+        setCookie('trip_token',token);
+      }
       return 'asdf';
     },
     payMonthlyContainer: '#up-pay-monthly-container',
@@ -69,13 +71,16 @@ function onChange(tripOffer){
       console.log("saving id: "+ null);
       setCookie('tripId', null, 60);
       break;
-
+      
     case "TOKEN_AVAILABLE":
       // CHECKOUT BUTTON SHOWS
+      $(".checkout_btn").show();
       break;
 
     case "TOKEN_RETRIEVED":
       // TOKEN HAS BEEN RETRIEVED
+      console.log('Token retrieved', tripOffer)
+      setCookie('token',JSON.stringify(tripOffer.token));
       break;
 
     case "SERVICE_UNAVAILABLE":
