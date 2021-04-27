@@ -17,6 +17,40 @@
 .inf-stay .label-text{
    display: inline-block;
 }
+.amenities-wrap .amenities-descr{
+   padding: 0 10px;
+}
+.amenities-wrap .img-size{
+   padding: 0 0 15px 0;
+}
+
+.amenities-descr .amen-desc-cont{
+   padding: 0px;
+}
+
+.send-to-friend{
+   padding: 0px;
+}
+
+.payment-breakdown-wrap {
+   padding-right: 0px;
+}
+
+.col-two-third{
+   padding: 0px;
+}
+@media screen and (max-width: 992px){
+   .payment-breakdown-wrap .inner .col-third {
+      flex: 0 0 95%;
+   }
+}
+
+@media screen and (max-width: 991px){
+   .amenities-wrap .amenities-descr{
+      padding: 10px 0 0 0;
+   }
+}
+
 @media screen and (max-width: 800px){
    #itin-final .green{
       padding: 10px 10px;
@@ -57,6 +91,12 @@
 @media screen and (max-width: 767px){
    .f16px{
       margin-bottom: 2% !important;
+   }
+}
+
+@media screen and (max-width: 629px){
+   .amenities-wrap .amenity-info{
+      width: initial !important;
    }
 }
 
