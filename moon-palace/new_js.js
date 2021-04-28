@@ -37,7 +37,7 @@ window.upReady = function(){
    window.Uplift.Agent.init(getInitConfig());
 
    // Retrieve trip information
-   const tripInfo = getTripInfo();
+   const tripInfo = getTripInfoDemo(); //getTripInfo();
    const tripId = getTripId();
 
    if (tripId !== null && tripId != 'null') {
@@ -113,28 +113,48 @@ function onChange(tripOffer){
   }
 }
 
+function getTripInfoDemo(){
+  return {
+    order_amount: 259830,
+    billing_contact: {
+      first_name: "Arthur",
+      last_name: "Davis"
+    },
+    travelers:[{
+      id:0,
+      first_name:"Arthur",
+      last_name:"Davis"
+    }],
+    hotel_reservations:[{
+      hotel_name:"Moon Palace",
+      check_in: "2021810",
+      check_in: "2021817",
+    }]
+  };
+}
+
 function getTripInfo(){
    var total = parseFloat($("#TotalDue").val()).toFixed(2);
    total = parseInt(total.replace('.',''));
    var travelers = [
       {
         id: 0,
-        first_name: 'Arthur',//$("#fname1").val(),
-        last_name: 'Davis',//$("#lname1").val()
+        first_name: $("#fname1").val(),
+        last_name: $("#lname1").val()
       },
-   //   {
-   //     id: 1,
-   //     first_name: $("#fname2").val(),
-   //     last_name: $("#fname2").val()
-   //   },
+     {
+       id: 1,
+       first_name: $("#fname2").val(),
+       last_name: $("#fname2").val()
+     },
    ];
    var billing_contact = {
-     first_name: 'Arthur',//$("#fname1").val(),
-     last_name: 'Davis',//$("#lname1").val()
+     first_name: $("#fname1").val(),
+     last_name: $("#lname1").val()
    };
 
-   var arrival = "2021510";//formatDate($("#aDate").val());
-   var departure = "2021517";//formatDate($("#dDate").val());
+   var arrival = formatDate($("#aDate").val());
+   var departure = formatDate($("#dDate").val());
 
    var hotel_reservations = [
      {
