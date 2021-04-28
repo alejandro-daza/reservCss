@@ -83,6 +83,10 @@ function onChange(tripOffer){
         console.log("saving id: "+tripOffer.tripId);
         setCookie('tripId', tripOffer.tripId, 60);
       }
+      if(tripOffer.offer != null){
+        const paym = parseFloat(stringInsert(tripOffer.offer.monthlyPaymentAmount.toString(), -2,".")).toFixed(0);
+        $(".upsell_div .custom-price").html(" "+paym+" ");
+      }
       break;
 
     case "OFFER_UNAVAILABLE":
@@ -204,4 +208,13 @@ function getCookie(cname) {
      }
    }
    return "";
+}
+
+function stringInsert(str1, pos, str2){
+  if(pos < 0){
+    return str1.slice(0, str1.length + pos) + str2 + str1.slice(str1.length + pos, str1.length);
+  }
+  if(pos >= 0){
+    return str1.slice(0, pos) + str2 + str1.slice(pos, str1.length);
+  }
 }
