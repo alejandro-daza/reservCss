@@ -39,6 +39,107 @@
 .col-two-third{
    padding: 0px;
 }
+
+#itin-final-main{
+   font-size: 12px;
+}
+
+.options-area h5{
+   text-align: start;
+}
+.reserv-input-control{
+   padding: .375rem 0;
+}
+
+.reserv-input-control.reserv-radio{
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+}
+.reserv-radio input[type="radio"]{
+   display: none;
+   opacity: 0;
+}
+.reserv-input-control .input-append{
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   background-color: #ced4da;
+   /* border: 1px solid #ced4da; */
+   border-radius: 0 .25rem .25rem 0;
+   padding-right: 1.25rem;
+   width: 125px;
+}
+.reserv-input-control .input-append .append-text{
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+   font-size: .85rem;
+   font-weight: 600;
+}
+.append-text span{
+   font-size: 1.2rem;
+}
+.append-text span:last-of-type{
+   font-weight: normal;
+   font-size: .75rem;
+}
+.reserv-input-control .input-content{
+   border: 1px solid #ced4da;
+   border-radius: .25rem 0 0 .25rem;
+   flex: 1;
+}
+.reserv-input-control .input-content label{
+   display: inline-block;
+   position: relative;
+   margin: 10px 5px 10px 2.5em!important;
+   font-size: 0.8rem;
+   line-height: 1.5;
+}
+.reserv-input-control .input-content label::after{
+   position: absolute;
+   top: 2%;
+   left: -1.5rem;
+   display: block;
+   width: 1rem;
+   height: 1rem;
+   content: "";
+   background: no-repeat 50%/50% 50%;
+}
+.reserv-input-control .input-content label::before{
+   position: absolute;
+   top: 2%;
+   left: -1.5rem;
+   display: block;
+   width: 1rem;
+   height: 1rem;
+   pointer-events: none;
+   content: "";
+   background-color: #fff;
+   border: #adb5bd solid 1px;
+   border-radius: 50%;
+   transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.reserv-radio input[type="radio"]:checked~.input-content>label::before{
+   color: #fff;
+   border-color: #33c5ff;
+   background-color: #33c5ff;
+}
+.reserv-radio input[type="radio"]:checked~.input-content>label::after{
+   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+.reserv-radio input[type="radio"]:checked~.input-content{
+   border-color: #33c5ff!important;
+}
+.reserv-radio input[type="radio"]:checked~.input-append{
+   background-color: #33c5ff!important;
+   color:#fff;
+   /* border: 1px solid #33c5ff!important; */
+}
+.reserv-radio input[type="radio"]:checked .input-content{
+   border-color: #33c5ff!important;
+}
+
 @media screen and (max-width: 992px){
    .payment-breakdown-wrap .inner .col-third {
       flex: 0 0 95%;
@@ -103,6 +204,28 @@
 @media screen and (max-width: 560px){
    .f16px{
       margin-bottom: 3.5% !important;
+   }
+}
+
+@media screen and (max-width: 480px){
+   .reserv-input-control .input-append{
+      border-radius: 0 .25rem .25rem 0;
+      padding-right: .75rem;
+      width: 100px;
+   }
+   .reserv-input-control .input-append .append-text{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      font-size: .85rem;
+      font-weight: 600;
+   }
+   .append-text span{
+      font-size: 1rem;
+   }
+   .append-text span:last-of-type{
+      font-weight: normal;
+      font-size: .6rem;
    }
 }
 

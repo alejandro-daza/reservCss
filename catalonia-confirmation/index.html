@@ -679,8 +679,6 @@
       }
 
       function getQuotes(xAction){
-         
-
          if (xAction == "ChangeRoomRate"){
                $("#itin-content07").hide();
                var req = "xXML=<OTA_ActionRQ><UniqueID ResID='B213360'/><Action value='ChangeRoomRate' confirm='false' usr='' isAgent=''></Action></OTA_ActionRQ>";
@@ -699,19 +697,15 @@
                               var xmlDoc = jQuery.parseXML(res);
                               var form = '';
                               if (window.matchMedia('(max-width: 480px)').matches) {
-                                 console.log("mobil");
-
-                                 $(".fancybox-wrap").width(350);
-                                 $(".fancybox-inner").width(350);
+                                 var docWidth = $(document).width();
+                                 $(".fancybox-wrap").width(docWidth * 0.85);
+                                 $(".fancybox-inner").width(docWidth * 0.85);
                               } else if (window.matchMedia('(max-width: 800px)').matches) {
-                                 console.log("tablet");
-
-                                 $(".fancybox-wrap").width(550);
-                                 $(".fancybox-inner").width(550);
+                                 $(".fancybox-wrap").width(500);
+                                 $(".fancybox-inner").width(500);
                               }else{
-                                 console.log("desktop");
-                                 $(".fancybox-wrap").width(900);
-                                 $(".fancybox-inner").width(900);
+                                 $(".fancybox-wrap").width(600);
+                                 $(".fancybox-inner").width(600);
                               }
                               
                               $.fancybox.reposition();
@@ -719,31 +713,47 @@
                               $("#itin-final-main").html("Change room rate<br>*Prices display total extra cost");
                               
                               var temp = "";
+                              var ind = 0;
 
                               $(res).find("ul").each(function(){
-                                 temp += "<h3>" + $(this).attr("name") + "</h3>";
-                                 temp += "<ul class='ul-modify' style='text-align: left;list-style-type: none;padding-left: 0px;'>";
+                                 temp += "<h5>" + $(this).attr("name") + "</h5>";
+                                 temp += "<ul class='ul-modify' style='text-align: left;list-style-type: none;padding-left: 0px;margin-bottom:.25em'>";
                                  $(this).find("li").sort(function (a, b) {
                                        return parseInt(a.id) > parseInt(b.id);
                                  }).each(function () {
-                                       var elem = $(this);
-                                       elem.remove();
-                                       temp += "<li>" + $(elem).html().replace("<!--[CDATA[", "").replace("]]-->", "").replace("]]>", "").replace("]]&gt;", "").replace("</span>","</span><div style='clear:both;'></div>") + "</li>";
+                                    var elem = $(this);
+                                    elem.remove();
+
+                                    var input = $(this).find("input");
+                                    var optName = $(this).contents().get(1).data.replace("[CDATA[ ","").replace(" ]]","");
+                                    var infobtn = $(this).find("a").first();
+                                    var money = $(this).find("span").first().html();
+                                    money = money.trim().split(" ");                                    
+                                    var infodiv = $(this).find("div").first();
+
+                                    temp += "<li>";
+                                       temp += "<div class='reserv-input-control reserv-radio'>";
+                                          temp += "<input id='rate-"+ind+"' type='radio' class='room-rate' name='"+input.attr("name")+"' value='"+input.attr("value")+"' room='"+input.attr("room")+"' mco='"+input.attr("mco")+"' rate='"+input.attr("rate")+"' diff='"+input.attr("diff")+"'>";
+                                          temp += "<div class='input-content'>"
+                                             temp += "<label for='rate-"+ind+"'>"+optName+" ";
+                                             temp += '<a href="'+infobtn.attr("href")+'" onClick="'+infobtn.attr("onClick")+'">'+infobtn.html()+"</a></label>";
+                                             console.log('<a href="'+infobtn.attr("href")+'" onClick="'+infobtn.attr("onClick")+'">'+infobtn.html()+"</a></label>");
+                                          temp += "</div>"
+                                          temp += "<div class='input-append'><div class='append-text'>"
+                                             temp += "<span>"+money[0]+"</span><span>"+money[1]+" "+money[2]+"</span>";
+                                          temp += "</div></div>"
+                                       temp += "</div>";
+                                       temp += "<div id='"+infodiv.attr("id")+"' style='"+infodiv.attr("style")+"'>"+infodiv.html()+"</div>";
+                                    temp += "</li>";
+                                    ind += 1;
                                  });
                                  temp += "</ul>";
                               });
-
                               $("#itin-final-sub").html(temp);
                               $("#final-btn1, #final-btn2").show();
-
                               $(".fancybox-wrap").css('top','10%');
-
                               // const popHeight = $(".fancybox-wrap").height() / 2;
-                              // $(".fancybox-wrap").css('top','50%');
-                              // $(".fancybox-wrap").css('margin-top', "-"+(popHeight)+"px");
-
                               $("#final-btn1").attr("onClick", "saveQuotes('ChangeRoomRates', 0)");
-                              
                            }
                      }
                });
@@ -2708,13 +2718,13 @@
    </div>
    <div class="pop-content center hidden" id="itin-final">
       <p class="center bold f16px" id="itin-final-main"></p>
-      <p class="center bold f16px green" id="itin-final-sub"></p>
+      <div class="center bold f16px options-area" id="itin-final-sub"></p>
+      </div>
       <p class="center"><br>
          <input type="submit" id="final-btn1" class="number-submit" value="Confirm" onClick="saveChgs();" style="float: inherit;display:none" />
          <input type="submit" id="final-btn2" class="number-submit" value="Cancel" onClick="resetChgs();" style="float: inherit;display:none" />
          <input type="submit" id="final-btn3" class="number-submit" value="Ok" onClick="resetChgs();" style="float: inherit;display:none" />
       </p>
-   </div>
    </div>
    </div>
    <div id="delete_pass" style="display:none;">
