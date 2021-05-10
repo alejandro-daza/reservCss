@@ -33,12 +33,12 @@
     function getInitConfig(){
       const config = {
         agent:{
-          id: 'alejandro.daza@fulltimeforce.com',        //required
-          agencyId: '',       //optional
-          email: '',          //optional but recommended
-          firstName: '',      //optional
-          familyName: '',     //optional
-          phoneNumber: ''     //optional
+          id: "testAgent@travels.com",   //required
+          //agencyId: '',           //optional
+          //email: '',              //optional but recommended
+          //firstName: '',          //optional
+          //familyName: '',         //optional
+          //phoneNumber: ''         //optional
         },
         locale: 'en-US',
         currency: 'USD',
@@ -47,7 +47,9 @@
           return;
         },
         sessionTokenCallback: function(token){
-          console.log("token:"+token);
+          if(typeof token !== "undefined"){
+            setCookie('trip_token',token);
+          }
           return 'asdf';
         },
         payMonthlyContainer: '#up-pay-monthly-container',
