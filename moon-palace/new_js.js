@@ -1,34 +1,36 @@
-$("#upCheckbox").on('change',function(ev){
-   var checked = $(this).prop('checked');
-   if(checked){
-      $("#up-pay-monthly-container").show();
-      // $(".uplift-banner").show();
-      $(".form-field.cc_info").hide();
-      $(".depp_input>input").each(function(){
-          $(this).prop('checked',false);
-      });
-      window.Uplift.Agent.select();
-   }else{
-      $("#up-pay-monthly-container").hide();
-      // $(".uplift-banner").hide();
-      $(".form-field.cc_info").show();
-      window.Uplift.Agent.deselect();
-   }
-});
-
-$("input[name=pplan]").on('change', function(ev){
-  var method = $(this).data('method');
-  if(method == 'up')
-  {
-     $("#up-pay-monthly-container").show();
-     $(".form-field.cc_info").hide();
-  }else{
-     $("#up-pay-monthly-container").hide();
-     $(".form-field.cc_info").show();
-     // $("#upCheckbox").prop('checked',false);
-  }
-
-  return;
+$(document).ready(function(){
+  $("#upCheckbox").on('change',function(ev){
+     var checked = $(this).prop('checked');
+     if(checked){
+        $("#up-pay-monthly-container").show();
+        // $(".uplift-banner").show();
+        $(".form-field.cc_info").hide();
+        $(".depp_input>input").each(function(){
+            $(this).prop('checked',false);
+        });
+        window.Uplift.Agent.select();
+     }else{
+        $("#up-pay-monthly-container").hide();
+        // $(".uplift-banner").hide();
+        $(".form-field.cc_info").show();
+        window.Uplift.Agent.deselect();
+     }
+  });
+  
+  $("input[name=pplan]").on('change', function(ev){
+    var method = $(this).data('method');
+    if(method == 'up')
+    {
+       $("#up-pay-monthly-container").show();
+       $(".form-field.cc_info").hide();
+    }else{
+       $("#up-pay-monthly-container").hide();
+       $(".form-field.cc_info").show();
+       // $("#upCheckbox").prop('checked',false);
+    }
+  
+    return;
+  });
 });
 
  // --------- UPLIFT INTEGRATION --------------------------
@@ -86,6 +88,7 @@ function onChange(tripOffer){
       if(tripOffer.offer != null){
         const paym = parseFloat(stringInsert(tripOffer.offer.monthlyPaymentAmount.toString(), -2,".")).toFixed(0);
         $(".upsell_div .custom-price").html(" "+paym+" ");
+        $(".upsell_div .price-description").html(tripOffer.offer.disclaimerText);
       }
       break;
 
@@ -126,9 +129,9 @@ function getTripInfoDemo(){
       last_name:"Davis"
     }],
     hotel_reservations:[{
-      hotel_name:"Moon Palace",
+      hotel_name:"Grand Resort Spa & Hotel",
       check_in: "2021810",
-      check_in: "2021817",
+      check_out: "2021817",
     }]
   };
 }
@@ -136,18 +139,18 @@ function getTripInfoDemo(){
 function getTripInfo(){
    var total = parseFloat($("#TotalDue").val()).toFixed(2);
    total = parseInt(total.replace('.',''));
-   var travelers = [
-      {
-        id: 0,
-        first_name: $("#fname1").val(),
-        last_name: $("#lname1").val()
-      },
-     {
-       id: 1,
-       first_name: $("#fname2").val(),
-       last_name: $("#fname2").val()
-     },
-   ];
+   var travelers = [];
+   var passCounter = 0;
+   $(".passeng").each(function(elem){
+     var traveler = {
+       id: passCounter,
+       first_name: $(this).find("input[name=fname]").val(),
+       last_name: $(this).find("input[name=lname]").val(),
+     };
+     travelers.push(traveler);
+     passCounter += 1;
+   });
+
    var billing_contact = {
      first_name: $("#fname1").val(),
      last_name: $("#lname1").val()
@@ -158,16 +161,32 @@ function getTripInfo(){
 
    var hotel_reservations = [
      {
-       hotel_name: "Moon Palace",
+       hotel_name: "Hotel Name",
        check_in: arrival,
        check_out: departure
      }
    ];
+   var air_reservations = null;
+   if($("#airport").val() != ""){
+     var departure_apc = $("#airport").val();
+     var arrival_apc = $("#airportTo").val();
+
+     air_reservations = [{
+      trip_type: "oneway",
+      itinerary:[{
+        arrival_apc: arrival_apc,
+        departure_apc: departure_apc,
+        departure_time: departure
+      }]
+     }];
+   }
+
    const tripInfo = {
      order_amount: total,
      billing_contact: billing_contact,
      travelers: travelers,
-     hotel_reservations: hotel_reservations
+     hotel_reservations: hotel_reservations,
+     air_reservations: air_reservations,
    };
    return tripInfo;
 }
