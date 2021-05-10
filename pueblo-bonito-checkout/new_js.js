@@ -22,6 +22,8 @@ window.upReady = function(){
    const tripInfo = getTripInfo();
    const tripId = getTripId();
 
+   console.log(tripInfo);
+
    if (tripId !== null && tripId != 'null') {
      window.Uplift.Agent.updateTrip(tripId, tripInfo); 
    } else {
@@ -95,11 +97,11 @@ function getTripInfo(){
    var total = parseFloat($("#TotalDue").val()).toFixed(2);
    total = parseInt(total.replace('.',''));
    var travelers = [
-     {
-       id: 0,
-       first_name: 'Arthur',//$("#fname1").val(),
-     last_name: 'Davis',//$("#lname1").val()
-     },
+      {
+        id: 0,
+        first_name: 'Arthur',//$("#fname1").val(),
+        last_name: 'Davis',//$("#lname1").val()
+      },
    //   {
    //     id: 1,
    //     first_name: $("#fname2").val(),
