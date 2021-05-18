@@ -80,6 +80,11 @@
    margin: 10px 5px 10px 2.5em!important;
    font-size: 0.75rem;
    line-height: 1.5;
+   font-weight: normal;
+}
+.paym-label-info{
+   font-size: .6rem;
+   font-weight: normal;
 }
 
 .paym-label::after{
@@ -94,6 +99,7 @@
 }
 
 .paym-append{
+   padding: 5px;
    display: flex;
    align-items: center;
    background-color: #d8d8d8;
@@ -116,4 +122,8 @@
    display: block;
    width: initial;
    margin: 10px auto;
+}
+
+.custom-price:after{
+   content: "USD Today"!important;
 }
