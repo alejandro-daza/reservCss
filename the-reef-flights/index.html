@@ -1307,6 +1307,7 @@ header#header>.sec-nav>ul.steps>li.current {color: #1A79B1 !important; border-bo
 
    </script>
    <link rel="stylesheet" href="https://beta.reservhotel.com/hotel_fastlink_css/152.css" type="text/css">
+   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <!--[if lt IE 7]><p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
@@ -1469,148 +1470,112 @@ header#header>.sec-nav>ul.steps>li.current {color: #1A79B1 !important; border-bo
                      </div>
                   </div>
                   <div class="row" style="background:#e8e7e7; padding:10px;padding-top: 20px !important;">
-                     <div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3" >
-                        <ul class="inline-travel-options">
-                           <li class="with-airport">
-                              <div class="ui-front">
-                                 <strong class="static-gray hidden-sm">From:</strong>
-                                 <span role="status" aria-live="polite" class="ui-helper-hidden-accessible" style="width: auto;"></span>
-                                 <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                                 <input style="width: auto;height: 33px;" class="airport-input ui-autocomplete-input" type="text" placeholder="Departing Airport" value="" autocomplete="off">
-                                 <ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="display: none;">
-                                    <li class="ui-menu-item" role="presentation">
-                                       <a id="ui-id-6" class="ui-corner-all" tabindex="-1">Washington Dulles International Apt,  US (IAD)</a>
-                                    </li>
-                                    <li class="ui-menu-item" role="presentation">
-                                       <a id="ui-id-7" class="ui-corner-all" tabindex="-1">Washington - All Airports, DC US (WAS)</a>
-                                    </li>
-                                    <li class="ui-menu-item" role="presentation">
-                                       <a id="ui-id-8" class="ui-corner-all" tabindex="-1">Washington Ronald Reagan National Apt,  US (DCA)</a>
-                                    </li>
-                                    <li class="ui-menu-item" role="presentation">
-                                       <a id="ui-id-9" class="ui-corner-all" tabindex="-1">Baltimore Washington International Apt (BWI)</a>
-                                    </li>
-                                 </ul>
-                              </div>
-                           </li>
-                        </ul>
+                     <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 mb-3">
+                        <span role="status" aria-live="polite" class="ui-helper-hidden-accessible" style="width: auto;"></span>
+                        <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                        <div class="travel-opt-group">
+                           <div class="opt-suffix">
+                              <span><strong>From:</strong></span>
+                           </div>
+                           <div class="opt-input">
+                              <input style="width: 100%;height: 33px;" class="airport-input ui-autocomplete-input" type="text" placeholder="Departing Airport" value="" autocomplete="off">
+                           </div>
+                           <ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="display: none;"></ul>
+                        </div>
                      </div>
-                     <div class="col-12 col-sm-6 col-md-auto col-lg-auto col-xl-auto list-book with-airport">
-                        <ul class="inline-travel-options ">
-                           <li class="with-airport">
-                              <strong class="static-gray">To:</strong>
-                              <div class="static-airport" style="white-space: nowrap; width: auto;height: 33px;">Cancun (CUN)</div>
-                           </li>
-                        </ul>
+                     <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 mb-3">
+                        <div class="travel-opt-group">
+                           <div class="opt-suffix">
+                              <span><strong>To:</strong></span>
+                           </div>
+                           <div class="opt-input">
+                              <div class="static-airport" style="white-space: nowrap; width: 100%;height: 33px;">Cancun (CUN)</div>
+                           </div>
+                        </div>
                      </div>
-                     <div class="col-6 col-sm-4 col-md-2 col-lg-2 col-xl-2" >
-                        <ul class="inline-travel-options">
-                           <li class="promo-items">
-                              <ul class="advanced_search">
-                                 <li class="with-select">
-                                    <select class="select-choices save full-select select-airline full-select2" id="fareclass__" >
-                                       <option value="E" class="selected">Economy</option>
-                                       <option value="S">Premium Economy</option>
-                                       <option value="B">Business</option>
-                                       <option value="F">First Class</option>
-                                    </select>
-                                 </li>
-                              </ul>
-                           </li>
-                        </ul>
+                     <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 mb-3">
+                        <select class="select-choices save full-select select-airline full-select2 travel-select" id="fareclass__" >
+                           <option value="E" class="selected">Economy</option>
+                           <option value="S">Premium Economy</option>
+                           <option value="B">Business</option>
+                           <option value="F">First Class</option>
+                        </select>
                      </div>
-                     <div class="col-6 col-sm-4 col-md-2 col-lg-2 col-xl-2" >
-                        <ul class="inline-travel-options">
-                           <li class="promo-items">
-                              <ul class="advanced_search">
-                                 <li class="with-select">
-                                    <select class="select-choices save full-select full-select2 select-airline full-select2" id="stops__" >
-                                       <option value="" class="selected">Stops</option>
-                                       <option value="0">Non-Stop</option>
-                                       <option value="1">1 Stop</option>
-                                       <option value="2">2 Stops</option>
-                                    </select>
-                                 </li>
-                              </ul>
-                           </li>
-                        </ul>
+                     <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 mb-3">
+                        <select class="select-choices save full-select full-select2 select-airline full-select2 travel-select" id="stops__" >
+                           <option value="" class="selected">Stops</option>
+                           <option value="0">Non-Stop</option>
+                           <option value="1">1 Stop</option>
+                           <option value="2">2 Stops</option>
+                        </select>
                      </div>
-                     <div class="col-6 col-sm-4 col-md-2 col-lg-2 col-xl-2" >
-                        <ul class="inline-travel-options">
-                           <li class="promo-items">
-                              <ul class="advanced_search">
-                                 <li class="with-select">
-                                    <select class="select-choices full-select that-select1 djs" id="airline__"  value="" style="width: auto;max-width: 130px;">
-                                       <option value="" selected="">Airline</option>
-                                       
-                                       <option value="VW">Aeromar Airlines</option>
-                                       <option value="AM">Aeromexico</option>
-                                       <option value="AB">Air Berlin</option>
-                                       <option value="AC">Air Canada</option>
-                                       <option value="UX">Air Europa</option>
-                                       <option value="AF">Air France</option>
-                                       <option value="JM">Air Jamaica</option>
-                                       <option value="TS">Air Transat</option>
-                                       <option value="FL">Airtran Airways</option>
-                                       <option value="AS">Alaska Airlines</option>
-                                       <option value="AZ">Alitalia</option>
-                                       <option value="AA">American Airlines</option>
-                                       <option value="AV">Avianca</option>
-                                       <option value="UP">Bahamasair</option>
-                                       <option value="BA">British Airways</option>
-                                       <option value="CM">COPA Panama</option>
-                                       <option value="9K">Cape Air</option>
-                                       <option value="BW">Caribbean Airlines</option>
-                                       <option value="KX">Cayman Airways</option>
-                                       <option value="DE">Condor</option>
-                                       <option value="CO">Continental Airlines</option>
-                                       <option value="DL">Delta Air Lines</option>
-                                       <option value="2D">Eastern Airlines</option>
-                                       <option value="U2">EasyJet Airlines</option>
-                                       <option value="MS">Egypt Air</option>
-                                       <option value="G3">Emerald Airways</option>
-                                       <option value="F9">Frontier Airlines</option>
-                                       <option value="4U">GermanWings</option>
-                                       <option value="H1">Hahn Air</option>
-                                       <option value="IB">Iberia</option>
-                                       <option value="7I">InselAir</option>
-                                       <option value="4O">InterJet</option>
-                                       <option value="U5">International Business Air</option>
-                                       <option value="B6">Jet Blue</option>
-                                       <option value="KL">KLM Royal Dutch Airlines</option>
-                                       <option value="KQ">Kenya Airways</option>
-                                       <option value="LR">LACSA - Lineasaereas Costarricenses SA</option>
-                                       <option value="4M">LAN Argentina</option>
-                                       <option value="LA">LAN Chile</option>
-                                       <option value="LI">LIAt - The Carribean Airline</option>
-                                       <option value="LH">Lufthansa</option>
-                                       <option value="MX">Mexicana</option>
-                                       <option value="NW">Northwest Airlines</option>
-                                       <option value="EB">Pullmantur Air</option>
-                                       <option value="FR">Ryanair</option>
-                                       <option value="LX">SWISS</option>
-                                       <option value="BB">Seaborne Aviation</option>
-                                       <option value="3M">Silver Airways</option>
-                                       <option value="SA">South African Airways - SAA</option>
-                                       <option value="WN">Southwest Airlines</option>
-                                       <option value="NK">Spirit Airlines</option>
-                                       <option value="SY">Sun Country Airlines</option>
-                                       <option value="WG">SunWing Airlines</option>
-                                       <option value="WO">Swoop</option>
-                                       <option value="TA">TACA International Airlines</option>
-                                       <option value="JJ">TAM - Transportes Aereos Meridionais</option>
-                                       <option value="UA">United Airlines</option>
-                                       <option value="VX">Virgin America</option>
-                                       <option value="VS">Virgin Atlantic</option>
-                                       <option value="VB">VivaAerobus</option>
-                                       <option value="Y4">Volaris</option>
-                                       <option value="WS">West Jet</option>
-                                       <option value="SE">XL Airways France</option>
-                                    </select>
-                                 </li>
-                              </ul>
-                           </li>
-                        </ul>
+                     <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 mb-3">
+                        <select class="select-choices full-select that-select1 travel-select djs" id="airline__"  value="">
+                           <option value="" selected="">Airline</option>
+                           <option value="VW">Aeromar Airlines</option>
+                           <option value="AM">Aeromexico</option>
+                           <option value="AB">Air Berlin</option>
+                           <option value="AC">Air Canada</option>
+                           <option value="UX">Air Europa</option>
+                           <option value="AF">Air France</option>
+                           <option value="JM">Air Jamaica</option>
+                           <option value="TS">Air Transat</option>
+                           <option value="FL">Airtran Airways</option>
+                           <option value="AS">Alaska Airlines</option>
+                           <option value="AZ">Alitalia</option>
+                           <option value="AA">American Airlines</option>
+                           <option value="AV">Avianca</option>
+                           <option value="UP">Bahamasair</option>
+                           <option value="BA">British Airways</option>
+                           <option value="CM">COPA Panama</option>
+                           <option value="9K">Cape Air</option>
+                           <option value="BW">Caribbean Airlines</option>
+                           <option value="KX">Cayman Airways</option>
+                           <option value="DE">Condor</option>
+                           <option value="CO">Continental Airlines</option>
+                           <option value="DL">Delta Air Lines</option>
+                           <option value="2D">Eastern Airlines</option>
+                           <option value="U2">EasyJet Airlines</option>
+                           <option value="MS">Egypt Air</option>
+                           <option value="G3">Emerald Airways</option>
+                           <option value="F9">Frontier Airlines</option>
+                           <option value="4U">GermanWings</option>
+                           <option value="H1">Hahn Air</option>
+                           <option value="IB">Iberia</option>
+                           <option value="7I">InselAir</option>
+                           <option value="4O">InterJet</option>
+                           <option value="U5">International Business Air</option>
+                           <option value="B6">Jet Blue</option>
+                           <option value="KL">KLM Royal Dutch Airlines</option>
+                           <option value="KQ">Kenya Airways</option>
+                           <option value="LR">LACSA - Lineasaereas Costarricenses SA</option>
+                           <option value="4M">LAN Argentina</option>
+                           <option value="LA">LAN Chile</option>
+                           <option value="LI">LIAt - The Carribean Airline</option>
+                           <option value="LH">Lufthansa</option>
+                           <option value="MX">Mexicana</option>
+                           <option value="NW">Northwest Airlines</option>
+                           <option value="EB">Pullmantur Air</option>
+                           <option value="FR">Ryanair</option>
+                           <option value="LX">SWISS</option>
+                           <option value="BB">Seaborne Aviation</option>
+                           <option value="3M">Silver Airways</option>
+                           <option value="SA">South African Airways - SAA</option>
+                           <option value="WN">Southwest Airlines</option>
+                           <option value="NK">Spirit Airlines</option>
+                           <option value="SY">Sun Country Airlines</option>
+                           <option value="WG">SunWing Airlines</option>
+                           <option value="WO">Swoop</option>
+                           <option value="TA">TACA International Airlines</option>
+                           <option value="JJ">TAM - Transportes Aereos Meridionais</option>
+                           <option value="UA">United Airlines</option>
+                           <option value="VX">Virgin America</option>
+                           <option value="VS">Virgin Atlantic</option>
+                           <option value="VB">VivaAerobus</option>
+                           <option value="Y4">Volaris</option>
+                           <option value="WS">West Jet</option>
+                           <option value="SE">XL Airways France</option>
+                        </select>
                      </div>
                      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" >
                         <div class="by-time" style="width: 50%;margin: auto;">

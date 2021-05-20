@@ -1,0 +1,28 @@
+.travel-opt-group{
+   display: flex;
+}
+
+.travel-select{
+   height: 2rem!important;
+   margin-bottom: 0px;
+}
+
+.travel-opt-group .opt-suffix{
+   display: flex;
+   align-items: center;
+   padding: 0 .5rem;
+   font-family: firasans-medium;
+   font-size: 12.13px;
+   font-weight: 400;
+   background: #868686;
+   color: #fff;
+   border-bottom-left-radius: 1px;
+   border-top-left-radius: 1px;
+}
+.travel-opt-group .opt-input{
+   width: 100%;
+}
+
+.travel-opt-group input[type=text]{
+   margin: 0;
+}
