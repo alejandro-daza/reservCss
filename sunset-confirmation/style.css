@@ -1,3 +1,62 @@
+.hotel-img{
+   max-height: 250px;
+}
 .extras h3{
    text-align: left;
+}
+
+.col-content .select-choices {
+   top: 0;
+   width: 100%;
+}
+
+.ammenities-price{
+   text-align: right;
+}
+
+.ammenities-price-spacing{
+   height: 1.5rem;
+}
+
+.add-amenity-btn {
+   margin-top: .75rem;
+   margin-right: 1.75rem;
+}
+
+.price-total {
+   width: initial;
+   float: none;
+   margin-right: 1.5rem;
+}
+
+@media (max-width: 768px){
+   .topborder .passengers-h3-1 {
+      border-bottom: none !important;
+   }
+}
+
+@media (max-width: 992px){
+   .hotel-img{
+      max-height: 250px;
+   }
+   .col-content .full-select {
+      margin-left: 0; 
+      text-align: right;
+      margin-top: 0;
+      width: 45% !important;
+   }
+   .price-total {
+      margin-top: .75rem;
+      margin-right: 0;
+   }
+   .ammenities-price-spacing{
+      height: .75rem;
+   }
+   .ammenities-price{
+      text-align: left;
+   }
+   .add-amenity-btn {
+      margin-top: 0;
+      margin-right: 0;
+   }
 }
